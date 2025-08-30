@@ -4,72 +4,74 @@ import service from "/service.png";
 function Services() {
   return (
     <>
-      <div className="flex  justify-between mt-7 mb-7 pl-32 pr-32">
-        <h1 className="text-4xl font-bold">What we Offer?</h1>
-        <button className="border-2 rounded-4xl pl-6 pr-6 border-y-indigo-400 bg-blue-700 text-white">
-          get your quates
+      {/* Header */}
+      <div className="flex flex-col sm:flex-row justify-between items-center mt-7 mb-7 px-6 sm:px-20">
+        <h1 className="text-2xl sm:text-4xl font-bold mb-4 sm:mb-0 text-center sm:text-left">
+          What we Offer?
+        </h1>
+        <button className="border-2 rounded-full px-6 py-2 border-indigo-400 bg-blue-700 text-white hover:bg-blue-800 transition">
+          Get your Quotation
         </button>
       </div>
-      <div className="border-2px grid grid-cols-3 h-[500px] m-32 mt-0 mb-5 justify-top items-top gap-5 space-x-5 shadow-2xl">
-        <div className="border-2 p-2 rounded-2xl shadow-2xl shadow-blue-400 hover:scale-y-105">
-          <div className="flex">
-            <img src={service} alt="serviceimg" className="h-8 w-8 m-3" />
-            <h1 className="text-black font-bold text-2xl p-3 pl-0">
+
+      {/* Cards Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 sm:px-20 mb-10">
+        {/* Card 1 */}
+        <div className="border-2 p-4 rounded-2xl shadow-lg hover:scale-105 transition">
+          <div className="flex items-center">
+            <img src={service} alt="serviceimg" className="h-8 w-8 mr-3" />
+            <h1 className="text-black font-bold text-xl sm:text-2xl">
               Our Services
             </h1>
           </div>
-          <div className="p-3">
-            <p className="p-3">Interior Service starting to end</p>
-            <p className="p-3">Steadwin Railing System</p>
-            <p className="p-3">Steadwin Consultancy Services</p>
-            <p className="p-3">Steadwin devloper</p>
+          <div className="mt-3 text-gray-700">
+            <p className="py-1">Interior Service starting to end</p>
+            <p className="py-1">Steadwin Railing System</p>
+            <p className="py-1">Steadwin Consultancy Services</p>
+            <p className="py-1">Steadwin Developer</p>
           </div>
         </div>
-        <div className="border-2 p-2 rounded-2xl shadow-blue-400 hover:scale-y-105">
-          <div className="Pricing p-3 pb-0 flex">
+
+        {/* Card 2 */}
+        <div className="border-2 p-4 rounded-2xl shadow-lg hover:scale-105 transition">
+          <div className="flex items-center">
             <img
               src="/price-service.svg"
               alt="pricesvg"
-              className="h-10 w-10 m-3"
+              className="h-10 w-10 mr-3"
             />
-            <h1 className="text-2xl font-bold p-3 pl-0">Pricing and charges</h1>
+            <h1 className="text-xl sm:text-2xl font-bold">
+              Pricing and Charges
+            </h1>
           </div>
-          <div>
-            <ul className="p-3 pt-0">
-              <li className="p-3">
-                Flat 10-year warranty¹ - Stay worry-free with our warranty
-                policy on modular products.
-              </li>
-              <li className="p-3">
-                Up to 1-year on-site service warranty¹ - Warranty on on-site
-                services such as painting, electrical, plumbing and more.
-              </li>
-            </ul>
-          </div>
+          <ul className="mt-3 text-gray-700">
+            <li className="py-2">
+              Flat 10-year warranty¹ - Stay worry-free with our warranty policy
+              on modular products.
+            </li>
+            <li className="py-2">
+              Up to 1-year on-site service warranty¹ - Painting, electrical,
+              plumbing and more.
+            </li>
+          </ul>
         </div>
-        <div className="border-2 p-2 rounded-2xl">
-          <div className="flex">
-            <img
-              src="/validity.svg"
-              alt="validity"
-              className="h-10 w-10 m-3 text-sky-300"
-            />
-            <h1 className="p-3 pl-0 text-2xl font-bold">Warranty</h1>
+
+        {/* Card 3 */}
+        <div className="border-2 p-4 rounded-2xl shadow-lg hover:scale-105 transition">
+          <div className="flex items-center">
+            <img src="/validity.svg" alt="validity" className="h-10 w-10 mr-3" />
+            <h1 className="text-xl sm:text-2xl font-bold">Warranty</h1>
           </div>
-          <div className="p-3">
-            <p className="p-3">
+          <div className="mt-3 text-gray-700">
+            <p className="py-2">
               We provide a 5-year warranty on all plywood supplied and installed
-              by our company. Ensures long-lasting durability when
-              used under normal conditions. Damage caused by fire, water
-              leakage, chemical exposure, or misuse is not covered under this
-              warranty.
+              by our company. Ensures long-lasting durability under normal
+              conditions.
             </p>
-            <p className="p-3">
+            <p className="py-2">
               Our waterproofing services come with a 7-year warranty against
               seepage, leakage, or dampness, provided the treated area is not
-              tampered with or structurally damaged. This warranty remains valid
-              only when the work has been carried out and maintained as per our
-              professional guidelines.
+              tampered with or structurally damaged.
             </p>
           </div>
         </div>

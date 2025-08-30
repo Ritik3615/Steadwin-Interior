@@ -1,72 +1,98 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Form() {
-  const[name, setName] = useState("");
+  const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const[email,setEmail] = useState("")
+  const [email, setEmail] = useState("");
+  const [agree, setAgree] = useState(false);
   const [error, setError] = useState("");
-
-  
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log("Name:", name);
-    console.log("Phone:", phone);
-
-
-    if (!name || !phone|| !email) {
-      setError("Look this section");
+    if (!name || !phone || !email) {
+      setError("⚠ Please fill all fields.");
       return;
     }
 
-    // Check Number
     if (!/^\d{10}$/.test(phone)) {
-      setError("Enter a Valid numbr");
+      setError("⚠ Enter a valid 10-digit phone number.");
+      return;
+    }
+
+    if (!agree) {
+      setError("⚠ You must agree to the Privacy Policy.");
       return;
     }
 
     setError("");
-    alert("We will connect You shortly");
+    alert("✅ Thank you! We will connect with you shortly.");
+
     setName("");
     setPhone("");
     setEmail("");
+    setAgree(false);
   };
+
   return (
-    <>
-      <div className="h-96 w-96 border-2 border-black-500 rounded-lg shadow-black flex justify-center items-center flex-col  m-10 bg-gray-400 p-10">
-        <h2 className="mb-4 text-3xl">Get your Cotation</h2>
-        <form className=" m-3 flex flex-col gap-4 max-w-md" >
-            {
-                error && (
-                    <p className="text-red-600 font-medium">{error}</p>
-                )
-            }
-          {/* <label htmlFor="Name">Enter Your Name</label> */}
+    <div className="w-[90%] sm:w-[80%] md:w-[400px] border rounded-lg shadow-lg bg-white p-6 mx-auto">
+      <h2 className="mb-4 text-xl sm:text-2xl font-bold text-center text-gray-800">
+        Get Your Quotation
+      </h2>
+
+      <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+        {error && <p className="text-red-600 font-medium text-sm">{error}</p>}
+
+        <input
+          type="text"
+          placeholder="Good Name"
+          className="border p-2 rounded-lg focus:ring-2 focus:ring-blue-400 text-sm sm:text-base"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+
+        <input
+          type="text"
+          placeholder="Enter Phone"
+          className="border p-2 rounded-lg focus:ring-2 focus:ring-blue-400 text-sm sm:text-base"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+        />
+
+        <input
+          type="email"
+          placeholder="Enter Email"
+          className="border p-2 rounded-lg focus:ring-2 focus:ring-blue-400 text-sm sm:text-base"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+
+        {/* Privacy Agreement */}
+        <div className="flex items-center gap-2 text-sm sm:text-base">
           <input
-            type="text"
-            placeholder="Good Name"
-            className="border-2 border-black p-2 item-center w-80 rounded-lg bg-white text-black"
-            value={name}
-            onChange={(e) =>setName(e.target.value)}
+            type="checkbox"
+            id="privacy"
+            checked={agree}
+            onChange={() => setAgree(!agree)}
+            className="cursor-pointer"
           />
-          <input
-            type="text"
-            placeholder="Enter Phone"
-            className="border-2 border-black p-2 item-center w-80 rounded-lg bg-white text-black"
-            value={phone}
-            onChange={(e => setPhone(e.target.value))}
-          />
-          <input type="email"
-          placeholder="Enter email"
-          className="border-2 border-black p-2 item-center w-80 rounded-lg bg-white text-black"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <button onClick   ={handleSubmit} className="border-2 border-black p-2 items-center w-80 rounded-lg bg-red-400 text-black">submit</button>
-        </form>
-      </div>
-    </>
+          <label htmlFor="privacy" className="text-gray-700">
+            I agree to the{" "}
+            <Link to="/Privicy" className="text-blue-600 hover:underline">
+              Privacy Policy
+            </Link>
+          </label>
+        </div>
+
+        <button
+          type="submit"
+          className="border p-2 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition text-sm sm:text-base"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
   );
 }
 
