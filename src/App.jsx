@@ -1,27 +1,41 @@
-import React from "react";
+import React, { Suspense, lazy, useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
-import Home from "./Components/Home";
-import About from "./Pages/About/About";
-import Contact from "./Pages/Contact/Contact";
-import Privicy from "./Pages/Privicy/Privicy";
-import Process from "./Pages/WorkFlow/Process";
+import Loader from "./Components/Loader";
 
+// Lazy Imports
+const Home = lazy(() => import("./Components/Home"));
+const About = lazy(() => import("./Pages/About/About"));
+const Contact = lazy(() => import("./Pages/Contact/Contact"));
+const Privicy = lazy(() => import("./Pages/Privicy/Privicy"));
+const Process = lazy(() => import("./Pages/WorkFlow/Process"));
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // loader 4 sec ke liye hi dikhe
+    const timer = setTimeout(() => setLoading(false), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
-    <div>
-      <Router>
-        <Navbar />
+    <Router>
+      <Navbar />
+      <Suspense fallback={<Loader />}>
         <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/about"  element={<About/>}/>
-        <Route path="/Contact" element={<Contact/>}/>
-        <Route path="/privicy" element={<Privicy/>}/>
-        <Route path="/Process" element={<Process/>}/>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/privicy" element={<Privicy />} />
+          <Route path="/process" element={<Process />} />
         </Routes>
-      </Router>
-    </div>
+      </Suspense>
+    </Router>
   );
 }
 

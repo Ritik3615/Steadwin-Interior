@@ -6,35 +6,107 @@ function About() {
     <>
       <div className="px-6 md:px-28 py-12">
         {/* Heading */}
-        <div className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8">
+        <div className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
           About <span className="text-amber-500">Steadwin Group</span>
         </div>
 
-        {/* Content */}
-        <p className="text-gray-700 leading-relaxed text-justify text-lg space-y-4">
-          At <strong>Steadwin Group</strong>, we believe every space tells a
-          story — a story of lifestyle, personality, and aspirations. With a
-          passion for transforming ordinary rooms into extraordinary living
-          experiences, we specialize in crafting interiors that blend
-          <span className="font-medium"> elegance, functionality, and comfort</span>.
-        </p>
+        {/* Intro Section */}
+        <div className="text-gray-700 leading-relaxed text-justify text-lg mb-12">
+          <p>
+            <strong>Steadwin Group</strong> was founded in <strong>2018</strong> with
+            a vision to transform spaces into experiences. Starting our journey
+            with <span className="font-medium">Interior Design</span>, we have now
+            expanded our expertise into <span className="font-medium">Railing Systems</span>,{" "}
+            <span className="font-medium">Consultancy</span>, and{" "}
+            <span className="font-medium">Development Services</span>.
+          </p>
+          <p className="mt-4">
+            From crafting modern, elegant homes to providing professional consultancy
+            for large-scale projects, our mission has always been to deliver
+            quality, innovation, and trust. Over the years, we’ve built not just
+            spaces, but long-lasting relationships with our clients.
+          </p>
+        </div>
 
-        <p className="text-gray-700 leading-relaxed text-justify text-lg mt-4">
-          From modern minimalism to timeless classics, our team of expert
-          designers works closely with clients to understand their needs and
-          deliver solutions tailored to their taste, budget, and lifestyle. We
-          don’t just design homes and offices; we design experiences that bring
-          joy, warmth, and a sense of belonging.
-        </p>
+        {/* Interior Section */}
+        <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
+          <img
+            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb9?q=80&w=1200&auto=format&fit=crop"
+            alt="Interior Design"
+            className="rounded-2xl shadow-xl w-full h-72 object-cover"
+          />
+          <div>
+            <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+              Interior Design
+            </h2>
+            <p className="text-gray-700 leading-relaxed">
+              Our interior design services are focused on creating elegant,
+              functional, and timeless spaces. From modern apartments to luxury
+              villas, we blend aesthetics with practicality to match every
+              lifestyle and budget.
+            </p>
+          </div>
+        </div>
 
-        <p className="text-gray-700 leading-relaxed text-justify text-lg mt-4">
-          With years of experience in <strong>residential and commercial
-          interiors</strong>, we ensure quality, innovation, and seamless
-          execution at every stage — from concept to completion. Our commitment
-          lies in creating spaces that inspire, uplift, and truly feel like
-          yours.
-        </p>
+        {/* Railing System Section */}
+        <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
+          <div>
+            <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+              Railing Systems
+            </h2>
+            <p className="text-gray-700 leading-relaxed">
+              Our premium railing systems combine durability and style,
+              delivering safety without compromising on aesthetics. Perfect for
+              modern homes, offices, and commercial spaces.
+            </p>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?q=80&w=1200&auto=format&fit=crop"
+            alt="Railing System"
+            className="rounded-2xl shadow-xl w-full h-72 object-cover"
+          />
+        </div>
+
+        {/* Consultancy Section */}
+        <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
+          <img
+            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop"
+            alt="Consultancy"
+            className="rounded-2xl shadow-xl w-full h-72 object-cover"
+          />
+          <div>
+            <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+              Consultancy
+            </h2>
+            <p className="text-gray-700 leading-relaxed">
+              With years of expertise in the industry, we provide end-to-end
+              consultancy for residential and commercial projects. From design
+              guidance to material selection and execution strategies, our
+              consultancy ensures your project is on the right track.
+            </p>
+          </div>
+        </div>
+
+        {/* Developer Services Section */}
+        <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
+          <div>
+            <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+              Developer Services
+            </h2>
+            <p className="text-gray-700 leading-relaxed">
+              Our developer services cover project management, planning, and
+              execution for large-scale ventures. With a focus on transparency
+              and innovation, we help developers bring their visions to life.
+            </p>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop"
+            alt="Developer Services"
+            className="rounded-2xl shadow-xl w-full h-72 object-cover"
+          />
+        </div>
       </div>
+
       <Footer />
     </>
   );

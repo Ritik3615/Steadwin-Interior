@@ -1,14 +1,15 @@
 import React, { useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 function Cards() {
   const containerRef = useRef(null);
 
   const scrollRight = () => {
-    containerRef.current.scrollBy({ left: 300, behavior: "smooth" });
+    containerRef.current.scrollBy({ left: 350, behavior: "smooth" });
   };
 
   const scrollLeft = () => {
-    containerRef.current.scrollBy({ left: -300, behavior: "smooth" });
+    containerRef.current.scrollBy({ left: -350, behavior: "smooth" });
   };
 
   const cardData = [
@@ -35,50 +36,72 @@ function Cards() {
   ];
 
   return (
-    <section className="px-6 md:px-32 py-10">
-      <h1 className="text-3xl font-bold mb-8 text-center">
-        Lets Connect With Your Dream Home
+    <section className="relative px-6 md:px-20 py-12 bg-gradient-to-b from-white via-gray-50 to-white">
+      <h1 className="text-4xl font-extrabold mb-12 text-center text-gray-800">
+        Let’s Connect With Your Dream Home
       </h1>
 
-      {/* Card container */}
+      {/* Left Scroll Button */}
+      <button
+        onClick={scrollLeft}
+        className="hidden md:flex absolute left-6 top-1/2 -translate-y-1/2 bg-white border-2 border-gray-200 p-3 rounded-full shadow-md hover:shadow-lg hover:scale-110 transition"
+      >
+        <ChevronLeft size={24} className="text-gray-700" />
+      </button>
+
+      {/* Cards Container */}
       <div
         ref={containerRef}
-        className="flex gap-5 overflow-x-auto p-4 scrollbar-thin scrollbar-thumb-gray-400"
+        className="flex gap-6 overflow-x-auto scroll-smooth scrollbar-hide px-2"
       >
         {cardData.map((item, index) => (
           <div
             key={index}
-            className="border-2 rounded-3xl flex-shrink-0 w-[250px] sm:w-[280px] md:w-1/3 bg-white shadow-md"
+            className="group border rounded-3xl flex-shrink-0 w-[270px] sm:w-[300px] md:w-[340px] bg-white shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative"
           >
             {/* Card Image */}
-            <img
-              src={item.image}
-              alt={item.type}
-              className="object-cover w-full h-48 sm:h-60 md:h-72 rounded-t-3xl"
-            />
+            <div className="relative">
+              <img
+                src={item.image}
+                alt={item.type}
+                className="object-cover w-full h-80 sm:h-96 rounded-3xl"
+              />
 
-            {/* Card Content */}
-            <div className="p-4 text-center">
-              <h2 className="font-bold text-amber-700 text-lg">
-                Starting At: {item.type}
-              </h2>
-              <p className="text-gray-700">{item.price}</p>
+              {/* Badge Overlay (Type + Price) */}
+              <div className="absolute top-4 left-4 space-y-2">
+                <span className="bg-blue-600 text-white text-sm font-semibold px-3 py-1 rounded-full shadow-md">
+                  {item.type}
+                </span>
+                <span className="bg-amber-600 text-white text-sm font-semibold px-3 py-1 rounded-full shadow-md block">
+                  Starting at {item.price}
+                </span>
+              </div>
 
-              {/* Buttons */}
-              <div className="flex flex-col sm:flex-row justify-around gap-2 mt-4">
-                <button className="border-2 px-3 py-2 rounded-2xl text-blue-900 hover:bg-blue-50">
-                  Book Consultation
-                </button>
-                <a href="#">
-                  <button className="border-2 px-3 py-2 rounded-2xl text-blue-700 hover:bg-blue-50">
-                    View Details
+              {/* Hover Overlay - Buttons at Bottom */}
+              <div className="absolute inset-0 rounded-3xl overflow-hidden">
+                <div className="absolute bottom-0 left-0 right-0 bg-black/40 opacity-0 group-hover:opacity-100 transition p-4 flex justify-center gap-3">
+                  <button className="border-2 px-4 py-2 rounded-2xl text-blue-900 font-medium bg-white hover:bg-blue-50 transition">
+                    Book Consultation
                   </button>
-                </a>
+                  <a href="#">
+                    <button className="border-2 px-4 py-2 rounded-2xl text-white bg-blue-600 hover:bg-blue-700 transition">
+                      View Details
+                    </button>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         ))}
       </div>
+
+      {/* Right Scroll Button */}
+      <button
+        onClick={scrollRight}
+        className="hidden md:flex absolute right-6 top-1/2 -translate-y-1/2 bg-white border-2 border-gray-200 p-3 rounded-full shadow-md hover:shadow-lg hover:scale-110 transition"
+      >
+        <ChevronRight size={24} className="text-gray-700" />
+      </button>
     </section>
   );
 }
