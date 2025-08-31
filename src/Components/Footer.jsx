@@ -4,7 +4,7 @@ import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 function Footer() {
   return (
-    <footer className="bg-blue-950 text-white py-12 px-6 md:px-20 mt-10">
+    <footer className="text-black bg-gradient-to-r from-blue-500 via-slate-700 to-red-400 py-12 px-6 md:px-20 mt-10">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-16">
         {/* Company Info */}
         <div>
@@ -59,13 +59,13 @@ function Footer() {
         <div>
           <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
           <div className="flex gap-5">
-            <a href="#" className="hover:text-amber-400 transition">
+            <a href="#" className="hover:text-amber-400 transition text-blue-600">
               <Facebook size={22} />
             </a>
-            <a href="#" className="hover:text-amber-400 transition">
+            <a href="#" className="hover:text-amber-400 transition text-pink-800">
               <Instagram size={22} />
             </a>
-            <a href="#" className="hover:text-amber-400 transition">
+            <a href="#" className="hover:text-amber-400 transition text-blue-300">
               <Linkedin size={22} />
             </a>
           </div>

@@ -3,12 +3,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Loader from "./Components/Loader";
 
+
 // Lazy Imports
 const Home = lazy(() => import("./Components/Home"));
 const About = lazy(() => import("./Pages/About/About"));
 const Contact = lazy(() => import("./Pages/Contact/Contact"));
 const Privicy = lazy(() => import("./Pages/Privicy/Privicy"));
 const Process = lazy(() => import("./Pages/WorkFlow/Process"));
+const Admin = lazy(() => import("./Pages/Admin/Admin"));
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -33,6 +35,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/privicy" element={<Privicy />} />
           <Route path="/process" element={<Process />} />
+          <Route path="Admin" element={<Admin/>}/>
         </Routes>
       </Suspense>
     </Router>
