@@ -15,7 +15,7 @@ function Navbar() {
     { name: "About", path: "/About" },
     { name: "Contact", path: "/Contact" },
     { name: "Latest News", path: "/news" },
-    { name: "Admin", path: "/admin", hidden: true },
+    { name: "Admin", path: "/Admin", hidden: true },
     { name: "Subadmin", path: "/subadmin", hidden: true },
   ];
 
