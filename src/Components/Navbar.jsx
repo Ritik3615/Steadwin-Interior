@@ -47,7 +47,7 @@ function Navbar() {
           <div className="flex items-center gap-2">
             <img src={logo} alt="logo" className="h-12 w-12 rounded-full" />
             <Link to="/" className="text-xl font-bold text-gray-800">
-              Steadwin Group
+              Steadwin
             </Link>
           </div>
 
