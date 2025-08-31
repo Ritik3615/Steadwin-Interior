@@ -15,8 +15,7 @@ function Navbar() {
     { name: "About", path: "/About" },
     { name: "Contact", path: "/Contact" },
     { name: "Latest News", path: "/news" },
-    // 👇 Yeh dono UI me dikhenge hi nahi, sirf search se
-    { name: "Admin", path: "/Admin", hidden: true },
+    { name: "Admin", path: "/admin", hidden: true },
     { name: "Subadmin", path: "/subadmin", hidden: true },
   ];
 
@@ -27,7 +26,6 @@ function Navbar() {
     { name: "Steadwin Consultancy", path: "/services/consultancy" },
   ];
 
-  // 🔍 search filter
   const handleSearch = (query) => {
     setSearchQuery(query);
     if (query.trim() === "") {
@@ -54,7 +52,7 @@ function Navbar() {
             </Link>
           </div>
 
-          {/* Center Nav */}
+          {/* Center Nav (Desktop Only) */}
           <div className="hidden md:flex items-center space-x-8 text-black">
             {Nav.filter((item) => !item.hidden && item.name !== "Latest News").map((item, index) => (
               <motion.div
@@ -130,7 +128,7 @@ function Navbar() {
             </Link>
           </div>
 
-          {/* Right Button */}
+          {/* Right Button (Desktop Only) */}
           <div className="hidden md:flex">
             <Link
               to="/quote"
@@ -148,6 +146,67 @@ function Navbar() {
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu Content */}
+      {isOpen && (
+        <div className="md:hidden bg-white shadow-lg p-4 space-y-4">
+          {Nav.filter((item) => !item.hidden).map((item, idx) => (
+            <Link
+              key={idx}
+              to={item.path}
+              onClick={() => setIsOpen(false)}
+              className="block text-gray-700 hover:text-blue-600 font-medium"
+            >
+              {item.name}
+            </Link>
+          ))}
+
+          {/* Services */}
+          <div className="space-y-2">
+            <div className="font-medium text-gray-800">Services</div>
+            {serviceCategories.map((srv, idx) => (
+              <Link
+                key={idx}
+                to={srv.path}
+                onClick={() => setIsOpen(false)}
+                className="block pl-3 text-gray-600 hover:text-blue-600"
+              >
+                {srv.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Search Bar in Mobile */}
+          <div className="flex items-center bg-gray-100 rounded-lg px-3 py-2">
+            <Search size={18} className="text-gray-500 mr-2" />
+            <input
+              type="text"
+              placeholder="Search..."
+              value={searchQuery}
+              onChange={(e) => handleSearch(e.target.value)}
+              className="bg-transparent outline-none text-sm w-full"
+            />
+          </div>
+
+          {/* Latest News */}
+          <Link
+            to="/news"
+            onClick={() => setIsOpen(false)}
+            className="block text-gray-700 hover:text-blue-600 font-medium"
+          >
+            Latest News
+          </Link>
+
+          {/* Quote button */}
+          <Link
+            to="/quote"
+            onClick={() => setIsOpen(false)}
+            className="block bg-blue-600 text-white text-center px-4 py-2 rounded-xl shadow hover:bg-blue-700 transition"
+          >
+            Get Your Quote
+          </Link>
+        </div>
+      )}
     </nav>
   );
 }
