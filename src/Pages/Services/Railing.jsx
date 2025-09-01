@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion } from "motion/react";
-// import Railing1 from ""
 
 function Railing() {
   const Place = ["Stair", "Roof", "Baalkoni"];
@@ -8,7 +7,7 @@ function Railing() {
   return (
     <>
       <div className="px-20 py-10 ">
-        <img src="/public/Railing1.jpg" alt="Railingimg"  className="w-full h-[300px] relative -z-50 scale-100 rounded-4xl"/>
+        <img src="/Railing2.jpg" alt="Railingimg"  className="w-full h-[300px] relative -z-50 scale-100 rounded-4xl"/>
         <h1 className="absolute inset-60 object-cover text-center text-4xl text-white font-bold scale-3d hover:text-black">Our Best showcase Services For Railing</h1>
       </div>
 
