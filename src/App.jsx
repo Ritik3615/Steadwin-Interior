@@ -2,6 +2,7 @@ import React, { Suspense, lazy, useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Loader from "./Components/Loader";
+// import  from "";
 
 
 // Lazy Imports
@@ -11,6 +12,9 @@ const Contact = lazy(() => import("./Pages/Contact/Contact"));
 const Privicy = lazy(() => import("./Pages/Privicy/Privicy"));
 const Process = lazy(() => import("./Pages/WorkFlow/Process"));
 const Admin = lazy(() => import("./Pages/Admin/Admin"));
+const Interior = lazy(() => import("./Pages/Services/Interior"));
+const Railing = lazy (() =>import("./Pages/Services/Railing"))
+
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -36,6 +40,8 @@ function App() {
           <Route path="/privicy" element={<Privicy />} />
           <Route path="/process" element={<Process />} />
           <Route path="Admin" element={<Admin/>}/>
+          <Route path="/Services/Interior" element={<Interior/>}/>
+          <Route path="services/railing" element={<Railing/>}/>
         </Routes>
       </Suspense>
     </Router>

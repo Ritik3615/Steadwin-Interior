@@ -17,11 +17,11 @@ function Navbar() {
     { name: "Latest News", path: "/news" },
     { name: "Admin", path: "/Admin", hidden: true },
     { name: "Subadmin", path: "/subadmin", hidden: true },
-  ];
+  ];  
 
   const serviceCategories = [
-    { name: "Steadwin Interior", path: "/services/interior" },
-    { name: "Steadwin Railing", path: "/services/railing" },
+    { name: "Steadwin Interior", path: "Services/Interior" },
+    { name: "Steadwin Railing", path: "services/railing" },
     { name: "Steadwin Developer", path: "/services/developer" },
     { name: "Steadwin Consultancy", path: "/services/consultancy" },
   ];
@@ -77,6 +77,7 @@ function Navbar() {
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
+                  
                   className="absolute top-10 left-0 bg-white shadow-xl rounded-xl p-3 w-56 space-y-2"
                 >
                   {serviceCategories.map((srv, idx) => (
