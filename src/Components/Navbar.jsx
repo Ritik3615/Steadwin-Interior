@@ -20,10 +20,10 @@ function Navbar() {
   ];  
 
   const serviceCategories = [
-    { name: "Steadwin Interior", path: "Services/Interior" },
-    { name: "Steadwin Railing", path: "services/railing" },
-    { name: "Steadwin Developer", path: "/services/developer" },
-    { name: "Steadwin Consultancy", path: "/services/consultancy" },
+    { name: "Consultancy", path: "/services/consultancy" },
+    { name: "Developer", path: "/services/developer" },
+    { name: "Interior", path: "Services/Interior" },
+    { name: "Railing", path: "services/railing" },
   ];
 
   const handleSearch = (query) => {
@@ -48,7 +48,7 @@ function Navbar() {
           <div className="flex items-center gap-2">
             <img src={logo} alt="logo" className="h-12 w-12 rounded-full" />
             <Link to="/" className="text-xl font-bold text-gray-800">
-              <span className="text-blue-700">STEAD</span>WIN
+              <span className="text-sky-400">STEAD</span>WIN
             </Link>
           </div>
 
@@ -78,7 +78,7 @@ function Navbar() {
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   
-                  className="absolute top-10 left-0 bg-white shadow-xl rounded-xl p-3 w-56 space-y-2"
+                  className="absolute top-10 left-0 bg-white shadow-xl rounded-xl p-3 w-40 space-y-2"
                 >
                   {serviceCategories.map((srv, idx) => (
                     <Link
@@ -102,7 +102,7 @@ function Navbar() {
                   placeholder="Search..."
                   value={searchQuery}
                   onChange={(e) => handleSearch(e.target.value)}
-                  className="bg-transparent outline-none text-sm w-40"
+                  className="bg-transparent outline-none text-sm w-32"
                 />
               </div>
               {searchResults.length > 0 && (
@@ -133,7 +133,7 @@ function Navbar() {
           <div className="hidden md:flex">
             <Link
               to="/quote"
-              className="bg-blue-600 text-white px-4 py-2 rounded-xl shadow hover:bg-blue-700 transition"
+              className="bg-sky-400 text-white px-4 py-2 rounded-xl shadow hover:bg-blue-700 transition"
             >
               Get Your Quote
             </Link>

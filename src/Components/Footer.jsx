@@ -4,7 +4,7 @@ import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 function Footer() {
   return (
-    <footer className="text-black bg-gradient-to-r from-blue-500 via-slate-700 to-red-400 py-12 px-6 md:px-20 mt-10">
+    <footer className="text-black bg-sky-500 py-12 px-6 md:px-20 mt-10">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-16">
         {/* Company Info */}
         <div>
@@ -73,9 +73,9 @@ function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-700 mt-10 pt-4 text-center text-sm text-gray-400">
+      <div className="border-t border-gray-700 mt-10 pt-4 text-center text-sm text-black">
         © 2025{" "}
-        <span className="text-amber-400 font-semibold">Steadwin Group</span>. All
+        <span className="text-black font-semibold">Steadwin Group</span>. All
         rights reserved.
       </div>
     </footer>
