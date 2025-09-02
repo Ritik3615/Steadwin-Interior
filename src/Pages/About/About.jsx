@@ -4,12 +4,22 @@ import Footer from "../../Components/Footer";
 function About() {
   return (
     <>
-      <div className="px-6 md:px-28 py-12">
-        {/* Heading */}
-        <div className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
-          About <span className="text-amber-500">Steadwin Group</span>
-        </div>
+      {/* Hero Section with Background */}
+      <div
+        className="relative bg-cover bg-center h-[40vh] flex items-center justify-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop')",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/50"></div>
+        <h1 className="relative text-4xl md:text-6xl font-extrabold text-white text-center drop-shadow-lg">
+          About <span className="text-amber-400">Steadwin Group</span>
+        </h1>
+      </div>
 
+      {/* Main Content */}
+      <div className="px-6 md:px-28 py-12">
         {/* Intro Section */}
         <div className="text-gray-700 leading-relaxed text-justify text-lg mb-12">
           <p>
@@ -33,10 +43,10 @@ function About() {
           <img
             src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb9?q=80&w=1200&auto=format&fit=crop"
             alt="Interior Design"
-            className="rounded-2xl shadow-xl w-full h-72 object-cover"
+            className="rounded-2xl shadow-xl w-full h-64 md:h-72 object-cover"
           />
           <div>
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
               Interior Design
             </h2>
             <p className="text-gray-700 leading-relaxed">
@@ -51,7 +61,7 @@ function About() {
         {/* Railing System Section */}
         <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
           <div>
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
               Railing Systems
             </h2>
             <p className="text-gray-700 leading-relaxed">
@@ -63,7 +73,7 @@ function About() {
           <img
             src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?q=80&w=1200&auto=format&fit=crop"
             alt="Railing System"
-            className="rounded-2xl shadow-xl w-full h-72 object-cover"
+            className="rounded-2xl shadow-xl w-full h-64 md:h-72 object-cover"
           />
         </div>
 
@@ -72,10 +82,10 @@ function About() {
           <img
             src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop"
             alt="Consultancy"
-            className="rounded-2xl shadow-xl w-full h-72 object-cover"
+            className="rounded-2xl shadow-xl w-full h-64 md:h-72 object-cover"
           />
           <div>
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
               Consultancy
             </h2>
             <p className="text-gray-700 leading-relaxed">
@@ -90,7 +100,7 @@ function About() {
         {/* Developer Services Section */}
         <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
           <div>
-            <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
               Developer Services
             </h2>
             <p className="text-gray-700 leading-relaxed">
@@ -102,7 +112,7 @@ function About() {
           <img
             src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop"
             alt="Developer Services"
-            className="rounded-2xl shadow-xl w-full h-72 object-cover"
+            className="rounded-2xl shadow-xl w-full h-64 md:h-72 object-cover"
           />
         </div>
       </div>
