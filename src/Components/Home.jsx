@@ -4,6 +4,7 @@ import Cards from "../Card/Cards";
 import Services from "../Pages/Services/Services";
 import Partners from "../Pages/Partners/Partners";
 import Footer from "../Components/Footer";
+import AboutHome from "../Pages/AboutHome/AboutHome";
 
 const heroSlides = [
   {
@@ -125,7 +126,8 @@ function Home() {
           </Link>
         </div>
       </div>
-
+          {/* About us */}
+          <AboutHome/>
       {/* Cards */}
       <Cards />
 
