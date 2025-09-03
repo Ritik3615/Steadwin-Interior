@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Instagram, Linkedin ,  } from "lucide-react";
 
 function Footer() {
   return (
-    <footer className="text-black bg-sky-500 py-12 px-6 md:px-20 mt-10">
+    <footer className="text-black bg-blue-500 py-12 px-6 md:px-20 mt-10">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-16">
         {/* Company Info */}
         <div>
@@ -73,7 +73,7 @@ function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-700 mt-10 pt-4 text-center text-sm text-black">
+      <div className="border-t bg-white rounded-3xl pb-2 border-gray-700 mt-10 pt-4 text-center text-sm text-black">
         © 2025{" "}
         <span className="text-black font-semibold">Steadwin Group</span>. All
         rights reserved.
