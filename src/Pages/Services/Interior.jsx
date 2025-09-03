@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Footer from "../../Components/Footer";
+
 
 function InteriorShowcase() {
   const [activeSection, setActiveSection] = useState("Hall");
@@ -127,6 +129,7 @@ function InteriorShowcase() {
           ))}
         </div>
       </div>
+      <Footer/>
     </>
   );
 }
