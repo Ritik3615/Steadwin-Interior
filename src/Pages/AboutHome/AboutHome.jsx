@@ -38,7 +38,7 @@ function AboutHome() {
   }, []);
 
   return (
-    <div className="w-full py-16 bg-sky-50">
+    <div className="w-full py-16 px-20 bg-sky-50">
       {/* Heading */}
       <motion.h1
         className="text-center text-5xl font-extrabold mb-12 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent tracking-wide"
@@ -82,12 +82,12 @@ function AboutHome() {
             {desc.map((data, i) => (
               <div
                 key={i}
-                className="p-5 rounded-2xl border border-gray-200 bg-white shadow hover:shadow-2xl hover:-translate-y-1 transition"
+                className="p-5 rounded-2xl border text-white border-gray-200 bg-gradient-to-r bg-blue-900 via-slate-700 to-red-400 shadow hover:shadow-2xl hover:-translate-y-1 transition"
               >
-                <h2 className="text-xl font-semibold text-gray-800">
+                <h2 className="text-xl font-semibold text-white">
                   {data.Title}
                 </h2>
-                <p className="pb-3 text-gray-600">{data.desc}</p>
+                <p className="pb-3 text-white">{data.desc}</p>
                 <Link
                   to={data.Link}
                   className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-sm rounded-lg hover:scale-105 transition px-4 py-2 inline-block"

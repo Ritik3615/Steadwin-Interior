@@ -22,8 +22,8 @@ function Navbar() {
   const serviceCategories = [
     { name: "Consultancy", path: "/services/consultancy" },
     { name: "Developer", path: "/services/developer" },
-    { name: "Interior", path: "Services/Interior" },
-    { name: "Railing", path: "services/railing" },
+    { name: "Interior", path: "/Services/Interior" },
+    { name: "Railing", path: "/services/railing" },
   ];
 
   const handleSearch = (query) => {

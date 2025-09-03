@@ -136,20 +136,20 @@ function Home() {
       <Services />
 
       {/* Process CTA */}
-      <div className="relative w-full py-32 flex flex-col justify-center items-center text-center overflow-hidden">
+      <div className="relative mx-20 rounded-2xl py-32 flex flex-col justify-center items-center text-center overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop"
           alt="Workflow Background"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover rounded-2xl"
         />
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/40  "></div>
         <div className="relative z-10 flex flex-col items-center px-6">
           <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-8 drop-shadow-lg">
             Curious About Our Workflow?
           </h2>
           <Link
             to="/Process"
-            className="px-10 py-4 bg-gradient-to-r from-amber-500 to-pink-500 hover:from-amber-600 hover:to-pink-600 text-white text-lg md:text-xl font-semibold rounded-full shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-1 duration-300"
+            className="px-10 py-4 bg-gradient-to-r from-blue-500 to-slate-500 hover:from-amber-600 hover:to-pink-600 text-white text-lg md:text-xl font-semibold rounded-full shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-1 duration-300"
           >
             Explore Our Workflow →
           </Link>

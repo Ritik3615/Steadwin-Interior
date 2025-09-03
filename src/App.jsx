@@ -14,6 +14,8 @@ const Process = lazy(() => import("./Pages/WorkFlow/Process"));
 const Admin = lazy(() => import("./Pages/Admin/Admin"));
 const Interior = lazy(() => import("./Pages/Services/Interior"));
 const Railing = lazy (() =>import("./Pages/Services/Railing"))
+const Consultancy = lazy (() =>import("./Pages/Services/Consultancy"))
+const Developer = lazy (() =>import("./Pages/Services/Developer"))
 
 
 function App() {
@@ -42,6 +44,8 @@ function App() {
           <Route path="Admin" element={<Admin/>}/>
           <Route path="/Services/Interior" element={<Interior/>}/>
           <Route path="services/railing" element={<Railing/>}/>
+          <Route path="/services/consultancy" element= {<Consultancy/>}/>
+          <Route path="/services/developer" element= {<Developer/>}/>
         </Routes>
       </Suspense>
     </Router>
