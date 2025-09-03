@@ -16,6 +16,7 @@ const Interior = lazy(() => import("./Pages/Services/Interior"));
 const Railing = lazy (() =>import("./Pages/Services/Railing"))
 const Consultancy = lazy (() =>import("./Pages/Services/Consultancy"))
 const Developer = lazy (() =>import("./Pages/Services/Developer"))
+const Quote = lazy (() =>import("./Form/Quote"))
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
           <Route path="services/railing" element={<Railing/>}/>
           <Route path="/services/consultancy" element= {<Consultancy/>}/>
           <Route path="/services/developer" element= {<Developer/>}/>
+          <Route path="/quote" element= {<Quote/>}/>
         </Routes>
       </Suspense>
     </Router>
