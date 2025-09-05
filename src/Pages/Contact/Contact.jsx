@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "../../Components/Footer";
-import Form from "../../Form/Quote"; // adjust path according to your project structure
+import Form from "../../Components/Form";
+ // adjust path according to your project structure
 
 function Contact() {
   return (
@@ -29,10 +30,7 @@ function Contact() {
         </div>
       </div>
       {/* Imported Form Component */}
-      <div className="">
-        <Form />
-      </div>
-
+      <Form/>
       <Footer />
     </>
   );
