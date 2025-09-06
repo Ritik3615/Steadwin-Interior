@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
-const slide = [{ img: "/img1.jpg" },];
+const slide = [{ img: "/img1.jpg" }];
 
 function AboutHome() {
   const desc = [
@@ -78,7 +78,6 @@ function AboutHome() {
           viewport={{ once: true }}
         >
           {/* Services list */}
-          
 
           {/* About Section */}
           <div className="text-left mt-4 md:mt-6">
@@ -87,10 +86,21 @@ function AboutHome() {
             </h2>
             <p className="text-gray-600 leading-relaxed text-sm md:text-base">
               At <span className="font-semibold text-blue-500">Steadwin</span>,
-              we deliver interior design, consultancy, development, and railing
-              solutions with a focus on quality and customer satisfaction.
+              we strive to create spaces and solutions that blend functionality
+              with aesthetic appeal. Our team of experts ensures every project
+              is tailored to meet the unique needs of our clients, whether it’s
+              designing interiors, offering professional consultancy, providing
+              custom development solutions, or installing high-quality railings
+              that enhance safety and style.
             </p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est commodi pariatur, amet natus non eveniet dolore ratione accusantium veniam eos distinctio autem, accusamus sapiente quam tempore ullam. Aspernatur facilis excepturi in rerum ut sit omnis temporibus ea, voluptas dolorum ipsa, fugit dolores. Vero, maxime? Optio consequatur quaerat magni dolore repellendus fugit vitae debitis vel natus rem odit sed esse quia a laudantium dignissimos consequuntur itaque, quasi quidem necessitatibus. Reiciendis, perspiciatis vitae soluta quidem molestiae placeat sit rem, at doloribus repellat et animi optio, tenetur nostrum saepe aut provident! Dicta at, temporibus possimus facere quia tempore explicabo obcaecati ratione exercitationem eligendi.</p>
+            <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+              We believe in delivering excellence at every step. From initial
+              consultation to final implementation, our focus is on quality,
+              precision, and innovation. With years of experience and a passion
+              for perfection, Steadwin has built a reputation for transforming
+              ideas into reality while exceeding client expectations.
+            </p>
+
             <Link to="/About">
               <motion.button
                 whileHover={{
