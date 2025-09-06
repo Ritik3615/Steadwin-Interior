@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
-const slide = [{ img: "/img1.jpg" }, { img: "/Railing2.jpg" }];
+const slide = [{ img: "/img1.jpg" },];
 
 function AboutHome() {
   const desc = [
@@ -41,7 +41,7 @@ function AboutHome() {
     <div className="w-full py-12 md:py-16 px-5 md:px-20 bg-sky-50">
       {/* Heading */}
       <motion.h1
-        className="text-center text-3xl md:text-5xl font-extrabold mb-10 md:mb-12 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent tracking-wide"
+        className="text-center text-3xl md:text-5xl font-extrabold md:mb-12 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent tracking-wide"
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -78,25 +78,7 @@ function AboutHome() {
           viewport={{ once: true }}
         >
           {/* Services list */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
-            {desc.map((data, i) => (
-              <div
-                key={i}
-                className="p-4 md:p-5 rounded-2xl border text-white border-gray-200 bg-gradient-to-r from-blue-900 via-slate-700 to-red-400 shadow hover:shadow-2xl hover:-translate-y-1 transition"
-              >
-                <h2 className="text-lg md:text-xl font-semibold text-white">
-                  {data.Title}
-                </h2>
-                <p className="pb-2 md:pb-3 text-sm md:text-base text-white">{data.desc}</p>
-                <Link
-                  to={data.Link}
-                  className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-xs md:text-sm rounded-lg hover:scale-105 transition px-3 md:px-4 py-1.5 md:py-2 inline-block"
-                >
-                  Learn More
-                </Link>
-              </div>
-            ))}
-          </div>
+          
 
           {/* About Section */}
           <div className="text-left mt-4 md:mt-6">
@@ -108,6 +90,7 @@ function AboutHome() {
               we deliver interior design, consultancy, development, and railing
               solutions with a focus on quality and customer satisfaction.
             </p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est commodi pariatur, amet natus non eveniet dolore ratione accusantium veniam eos distinctio autem, accusamus sapiente quam tempore ullam. Aspernatur facilis excepturi in rerum ut sit omnis temporibus ea, voluptas dolorum ipsa, fugit dolores. Vero, maxime? Optio consequatur quaerat magni dolore repellendus fugit vitae debitis vel natus rem odit sed esse quia a laudantium dignissimos consequuntur itaque, quasi quidem necessitatibus. Reiciendis, perspiciatis vitae soluta quidem molestiae placeat sit rem, at doloribus repellat et animi optio, tenetur nostrum saepe aut provident! Dicta at, temporibus possimus facere quia tempore explicabo obcaecati ratione exercitationem eligendi.</p>
             <Link to="/About">
               <motion.button
                 whileHover={{

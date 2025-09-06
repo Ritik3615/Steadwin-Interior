@@ -3,9 +3,9 @@
 @import "tailwindcss";
 
 /* Hero image style */
-.hero img {
-  height: 626px;
-}
+/* .hero img {
+  height: 80vh;
+} */
 
 /* Sab text ke liye global font */
 body {

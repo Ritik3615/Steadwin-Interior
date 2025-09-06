@@ -17,6 +17,8 @@ const Consultancy = lazy(() => import("./Pages/Services/Consultancy"));
 const Developer = lazy(() => import("./Pages/Services/Developer"));
 const Quote = lazy(() => import("./Form/Quote"));
 const Login = lazy(() => import("../src/Pages/Authontication/Login"));
+const Gallery = lazy(() => import("./Pages/Gallery/Gallery"));
+const Brouchure = lazy(() => import("./Pages/Brouchure/Brouchure"));
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -55,6 +57,8 @@ function App() {
           <Route path="/services/consultancy" element={<Consultancy />} />
           <Route path="/services/developer" element={<Developer />} />
           <Route path="/quote" element={<Quote />} />
+          <Route path="/Gallery" element={<Gallery />} />
+          <Route path="/Brouchure" element={<Brouchure />} />
         </Routes>
       </Suspense>
     </Router>

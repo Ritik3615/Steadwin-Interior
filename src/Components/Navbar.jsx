@@ -13,10 +13,14 @@ function Navbar() {
   const Nav = [
     { name: "Home", path: "/" },
     { name: "About", path: "/About" },
-    { name: "Contact", path: "/Contact" },
+    { name: "Services", path: "/Services" },
     { name: "Latest News", path: "/news" },
+    { name: "Gallery", path: "/Gallery" },
+    { name: "Brouchure", path: "/Brouchure" },
+    { name: "Contact", path: "/Contact" },
     { name: "Admin", path: "/Admin", hidden: true },
     { name: "Subadmin", path: "/subadmin", hidden: true },
+   
   ];  
 
   const serviceCategories = [
@@ -54,7 +58,7 @@ function Navbar() {
 
           {/* Center Nav (Desktop Only) */}
           <div className="hidden md:flex items-center space-x-8 text-black">
-            {Nav.filter((item) => !item.hidden && item.name !== "Latest News").map((item, index) => (
+            {Nav.filter((item) => !item.hidden && item.name !== "").map((item, index) => (
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.1, color: "#155dfc" }}
@@ -64,7 +68,7 @@ function Navbar() {
               </motion.div>
             ))}
 
-            {/* Services Dropdown */}
+            {/* Services Dropdown
             <div
               className="relative cursor-pointer"
               onMouseEnter={() => setServiceOpen(true)}
@@ -91,42 +95,12 @@ function Navbar() {
                   ))}
                 </motion.div>
               )}
-            </div>
+            </div> */}
 
-            {/* Search Bar */}
-            <div className="relative">
-              <div className="flex items-center bg-gray-100 rounded-lg px-3 py-1">
-                <Search size={18} className="text-gray-500 mr-2" />
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  value={searchQuery}
-                  onChange={(e) => handleSearch(e.target.value)}
-                  className="bg-transparent outline-none text-sm w-32"
-                />
-              </div>
-              {searchResults.length > 0 && (
-                <div className="absolute top-10 left-0 bg-white shadow-lg rounded-lg w-48 p-2 z-50">
-                  {searchResults.map((res, idx) => (
-                    <Link
-                      key={idx}
-                      to={res.path}
-                      className="block px-3 py-1 text-gray-700 hover:bg-gray-100 rounded-md"
-                    >
-                      {res.name}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+            
 
             {/* Latest News */}
-            <Link
-              to="/news"
-              className="cursor-pointer hover:text-blue-600 font-medium"
-            >
-              Latest News
-            </Link>
+    
           </div>
 
           {/* Right Button (Desktop Only) */}

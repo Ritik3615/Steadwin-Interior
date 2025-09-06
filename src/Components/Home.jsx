@@ -6,6 +6,8 @@ import Partners from "../Pages/Partners/Partners";
 import Footer from "../Components/Footer";
 import AboutHome from "../Pages/AboutHome/AboutHome";
 import News from "../Pages/News/News";
+import ContactSidebar from "./ConatctSidebaar";
+import ServicesGrid from "../Pages/OurService/OurService";
 
 const heroSlides = [
   {
@@ -77,19 +79,19 @@ function Home() {
   }, []);
 
   // Popup timer
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowPopup(true);
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setShowPopup(true);
+  //   }, 5000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   return (
     <>
       {/* Hero Section */}
       <div
         ref={heroRef}
-        className="relative w-full h-[80vh] overflow-hidden flex items-center justify-center"
+        className="relative w-full h-[90vh] overflow-hidden flex items-center justify-center"
         onMouseEnter={stopSlide}
         onMouseLeave={startSlide}
       >
@@ -103,7 +105,7 @@ function Home() {
               key={index}
               src={slide.img}
               alt={`Slide ${index + 1}`}
-              className="w-full h-[80vh] object-cover flex-shrink-0"
+              className="w-full h-[100vh] object-cover flex-shrink-0"
             />
           ))}
         </div>
@@ -127,8 +129,11 @@ function Home() {
           </Link>
         </div>
       </div>
+      {/* contactsidebar */}
+      <ContactSidebar />
       {/* About us */}
       <AboutHome />
+      <ServicesGrid />
       {/* Cards */}
       <Cards />
 
