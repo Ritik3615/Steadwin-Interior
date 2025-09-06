@@ -3,22 +3,22 @@ import { Link } from "react-router-dom";
 const services = [
   {
     name: "Consultancy Services",
-    image: "/images/consultancy.jpg", // apna image path daal
+    image: "/Homeimage/consultancy.jpeg",
     path: "/Services/Consultancy",
   },
   {
     name: "Developer",
-    image: "/images/developer.jpg",
+    image: "/Homeimage/Developer.jpg",
     path: "/Services/Developer",
   },
   {
     name: "Interior",
-    image: "/images/interior.jpg",
+    image: "/Homeimage/interior.jpg",
     path: "/Services/Interior",
   },
   {
     name: "Railing",
-    image: "/images/railing.jpg",
+    image: "/Homeimage/Railing.jpg",
     path: "/Services/Railing",
   },
 ];
