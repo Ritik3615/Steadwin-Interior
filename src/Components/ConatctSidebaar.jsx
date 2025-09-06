@@ -68,7 +68,7 @@ function ContactSidebar() {
         {/* WhatsApp */}
         <div className="relative p-2">
           <motion.a
-            href="https://wa.me/917338495036"
+            href="https://wa.me/918792695400"
             target="_blank"
             className="block"
             onMouseEnter={() => setIsHoveringWhatsApp(true)}
@@ -93,7 +93,7 @@ function ContactSidebar() {
         {/* Call */}
         <div className="relative p-2">
           <motion.a
-            href="tel:+917338495036"
+            href="tel:+918792695400"
             className="block"
             onMouseEnter={() => setIsHoveringCall(true)}
             onMouseLeave={() => setIsHoveringCall(false)}
