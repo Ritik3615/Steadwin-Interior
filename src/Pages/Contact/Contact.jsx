@@ -19,13 +19,13 @@ function Contact() {
             love to hear from you.
           </p>
           <p>
-            <strong>📍 Address:</strong> 123 Steadwin Street, New Delhi, India
+            <strong>📍 Address:</strong> 76 , Mylasandra Rd, Suraksha Nagar ,Yelenahalli , Begur , Bengaluru , Karnataka , 560068
           </p>
           <p>
-            <strong>📞 Phone:</strong> +91 98765 43210
+            <strong>📞 Phone:</strong> +91 8792695400
           </p>
           <p>
-            <strong>📧 Email:</strong> contact@steadwin.com
+            <strong>📧 Email:</strong> info@Steadwin.in
           </p>
         </div>
       </div>
