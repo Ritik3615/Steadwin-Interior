@@ -50,9 +50,9 @@ function Footer() {
         {/* Contact Us */}
         <div>
           <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-          <p className="text-gray-300 text-sm">123, Delhi, India</p>
-          <p className="text-gray-300 text-sm mt-1">+91 9536254385</p>
-          <p className="text-gray-300 text-sm mt-1">info@steadwin.in</p>
+          <p className="text-gray-300 text-sm">76 , Mylasandra Rd, Suraksha Nagar ,Yelenahalli , Begur , Bengaluru , Karnataka , 560068</p>
+          <p className="text-gray-300 text-sm mt-1">+91 8792695400</p>
+          <p className="text-gray-300 text-sm mt-1">info@Steadwin.in</p>
         </div>
 
         {/* Social Media */}
