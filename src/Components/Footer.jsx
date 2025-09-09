@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin ,  } from "lucide-react";
+import logo from "../assets/logo.png"; // Example logo (replace with yours)
 
 function Footer() {
   return (
@@ -10,9 +11,9 @@ function Footer() {
         <div>
           <h2 className="text-2xl font-bold mb-3">Steadwin Group</h2>
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png" // Example logo (replace with yours)
+            src={logo}
             alt="Steadwin Group Logo"
-            className="rounded-full w-20 h-20 object-cover mb-4 shadow-lg"
+            className="w-20 mb-3 rounded-full shadow-lg "
           />
           <p className="text-gray-300 text-sm leading-relaxed">
             We design beautiful interiors that inspire and comfort. Bringing

@@ -4,7 +4,7 @@ function Admin() {
   const [quotes, setQuotes] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/quotes")
+    fetch("http://localhost:8080/api/fetchdata")
       .then((res) => res.json())
       .then((data) => setQuotes(data))
       .catch((err) => console.error("Error fetching quotes:", err));
@@ -18,7 +18,7 @@ function Admin() {
         <table className="min-w-full border-collapse">
           <thead>
             <tr className="bg-gray-200 text-left">
-              <th className="p-3 border">ID</th>
+              {/* <th className="p-3 border">ID</th> */}
               <th className="p-3 border">Name</th>
               <th className="p-3 border">Email</th>
               <th className="p-3 border">Phone</th>
@@ -30,7 +30,7 @@ function Admin() {
             {quotes.length > 0 ? (
               quotes.map((q) => (
                 <tr key={q.id} className="hover:bg-gray-100">
-                  <td className="p-3 border">{q.id}</td>
+                  {/* <td className="p-3 border">{q.id}</td> */}
                   <td className="p-3 border">{q.name}</td>
                   <td className="p-3 border">{q.email}</td>
                   <td className="p-3 border">{q.phone}</td>
