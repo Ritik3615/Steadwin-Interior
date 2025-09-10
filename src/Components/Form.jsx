@@ -31,10 +31,11 @@ function Form() {
     setError("");
 
     try {
-      const response = await fetch("http://localhost:8080/api/quotes", {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/fetchdata`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, phone, email, property, message }),
+        credentials: "include"
       });
 
       if (response.ok) {

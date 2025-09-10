@@ -22,7 +22,7 @@ const Brouchure = lazy(() => import("./Pages/Brouchure/Brouchure"));
 
 function App() {
   const [loading, setLoading] = useState(true);
-
+  // console.log(import.meta.env.VITE_BACKEND_URL);
   useEffect(() => {
     // loader 3 sec ke liye hi dikhe
     const timer = setTimeout(() => setLoading(false), 3000);

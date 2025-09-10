@@ -31,11 +31,15 @@ function ContactSidebar() {
     setError("");
 
     try {
-      const response = await fetch("http://localhost:8080/api/quotes", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, phone, email, message }),
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/api/fetchdata`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, phone, email, message }),
+          credentials: "include", // required because backend has allowCredentials(true)
+        }
+      );
 
       if (response.ok) {
         alert("✅ Thank you! We will connect with you shortly.");
@@ -122,9 +126,7 @@ function ContactSidebar() {
         }`}
       >
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-lg font-semibold text-blue-900">
-            Contact Form
-          </h2>
+          <h2 className="text-lg font-semibold text-blue-900">Contact Form</h2>
           <button
             onClick={() => setIsOpen(false)}
             className="text-gray-500 hover:text-red-500"
@@ -134,9 +136,7 @@ function ContactSidebar() {
         </div>
 
         <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
-          {error && (
-            <p className="text-red-500 text-sm font-medium">{error}</p>
-          )}
+          {error && <p className="text-red-500 text-sm font-medium">{error}</p>}
 
           <input
             type="text"
