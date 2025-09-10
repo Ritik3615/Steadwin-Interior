@@ -6,24 +6,23 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
-  e.preventDefault();
-  // temporary frontend password
-  if (username === "steadwin" && password === "steadwin@123") {
-    localStorage.setItem("token", "frontend-pass"); // save dummy token
-    navigate("/admin"); // go to admin
-  } else {
-    setError("❌ Invalid credentials");
-  }
-};
+    e.preventDefault();
+
+    // Temporary frontend credentials
+    if (username === "steadwin" && password === "steadwin@123") {
+      sessionStorage.setItem("token", "frontend-pass"); // save token in sessionStorage
+      navigate("/admin"); // redirect to admin
+    } else {
+      setError("❌ Invalid credentials");
+    }
+  };
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
-      {/* Background Video */}
-      <img
+      <video
         autoPlay
         loop
         muted
@@ -31,8 +30,6 @@ function Login() {
         className="absolute w-full h-full object-cover"
         src={video}
       />
-
-      {/* Overlay */}
       <div className="absolute w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
         <form
           onSubmit={handleLogin}
@@ -41,7 +38,6 @@ function Login() {
           <h2 className="text-3xl font-extrabold mb-6 text-center tracking-wide text-white">
             Admin Login
           </h2>
-
           {error && <p className="text-red-500 mb-4 text-center">{error}</p>}
 
           <input
@@ -52,7 +48,6 @@ function Login() {
             onChange={(e) => setUsername(e.target.value)}
             required
           />
-
           <input
             type="password"
             placeholder="Password"
@@ -64,19 +59,10 @@ function Login() {
 
           <button
             type="submit"
-            className={`w-full p-3 rounded-md font-semibold text-lg transition-colors ${
-              loading
-                ? "bg-blue-400 cursor-not-allowed"
-                : "bg-blue-600 hover:bg-blue-700"
-            }`}
-            disabled={loading}
+            className="w-full p-3 rounded-md font-semibold text-lg bg-blue-600 hover:bg-blue-700"
           >
-            {loading ? "Logging in..." : "Login"}
+            Login
           </button>
-
-          <p className="mt-4 text-gray-300 text-sm text-center">
-            Unauthorized access is prohibited.
-          </p>
         </form>
       </div>
     </div>

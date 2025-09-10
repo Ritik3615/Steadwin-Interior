@@ -1,8 +1,7 @@
 import { Navigate } from "react-router-dom";
 
 const PrivateRoute = ({ children }) => {
-  // temporary token for frontend testing
-  const token = localStorage.getItem("token") || "frontend-pass"; 
+  const token = sessionStorage.getItem("token"); // check sessionStorage
   return token ? children : <Navigate to="/login" replace />;
 };
 
