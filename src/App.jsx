@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PrivateRoute from "./utils/PrivateRoute";
 import Navbar from "./Components/Navbar";
 import Loader from "./Components/Loader";
+import AdminHome from "./Components/AdminHome";
 
 // Lazy Imports
 const Home = lazy(() => import("./Components/Home"));
@@ -59,6 +60,7 @@ function App() {
           <Route path="/quote" element={<Quote />} />
           <Route path="/Gallery" element={<Gallery />} />
           <Route path="/Brouchure" element={<Brouchure />} />
+          <Route path="/Home" element={<AdminHome />} />
         </Routes>
       </Suspense>
     </Router>

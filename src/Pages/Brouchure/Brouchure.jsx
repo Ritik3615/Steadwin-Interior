@@ -52,7 +52,7 @@ function Brouchure() {
                 download
                 className={`px-5 py-3 rounded-lg text-white font-semibold text-center bg-${brochure.color}-600 hover:bg-${brochure.color}-700 transition duration-300`}
               >
-                Download {brochure.title}
+                <button>Download {brochure.title}</button>
               </a>
             </div>
           ))}
