@@ -27,3 +27,29 @@ body {
   animation: marquee 30s linear infinite;
 }
 
+
+/* Thin, pretty, minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;            /* thin scrollbar width */
+  height: 6px;           /* thin horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;   /* invisible track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.3); /* soft gray with transparency */
+  border-radius: 9999px;                       /* full round */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(100, 100, 100, 0.5); /* slightly darker on hover */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 100, 100, 0.3) transparent;
+}
+

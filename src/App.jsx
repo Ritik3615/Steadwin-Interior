@@ -1,69 +1,191 @@
 import React, { Suspense, lazy, useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import PrivateRoute from "./utils/PrivateRoute";
-import Navbar from "./Components/Navbar";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Loader from "./Components/Loader";
-import AdminHome from "./Components/AdminHome";
+import Navbar from "./Components/Navbar";
+import AdminApp from "./Admin/AdminApp";
+import PrivateRoute from "./Admin/Components/PrivateRoute";
+import { AuthProvider } from "./Admin/context/Authcontext";
+import SubAdminApp from "./Admin/SubAdmin/SubAdminApp";
+import { useAuth } from "./Admin/context/Authcontext";
 
-// Lazy Imports
+// Lazy load pages
 const Home = lazy(() => import("./Components/Home"));
 const About = lazy(() => import("./Pages/About/About"));
 const Contact = lazy(() => import("./Pages/Contact/Contact"));
 const Privicy = lazy(() => import("./Pages/Privicy/Privicy"));
 const Process = lazy(() => import("./Pages/WorkFlow/Process"));
-const Admin = lazy(() => import("./Pages/Admin/Admin"));
+// const Admin = lazy(() => import("./Pages/Admin/Admin"));
 const Interior = lazy(() => import("./Pages/Services/Interior"));
 const Railing = lazy(() => import("./Pages/Services/Railing"));
 const Consultancy = lazy(() => import("./Pages/Services/Consultancy"));
 const Developer = lazy(() => import("./Pages/Services/Developer"));
 const Quote = lazy(() => import("./Form/Quote"));
-const Login = lazy(() => import("../src/Pages/Authontication/Login"));
+const Login = lazy(() => import("./Admin/Authontication/Login"));
 const Gallery = lazy(() => import("./Pages/Gallery/Gallery"));
 const Brouchure = lazy(() => import("./Pages/Brouchure/Brouchure"));
+const AdminHome = lazy(() => import("./Components/AdminHome"));
 
 function App() {
   const [loading, setLoading] = useState(true);
-  // console.log(import.meta.env.VITE_BACKEND_URL);
+  const location = useLocation();
+  const { user } = useAuth();
+
   useEffect(() => {
-    // loader 3 sec ke liye hi dikhe
     const timer = setTimeout(() => setLoading(false), 3000);
     return () => clearTimeout(timer);
   }, []);
 
-  if (loading) {
-    return <Loader />;
-  }
+  if (loading) return <Loader />;
 
   return (
-    <Router>
-      <Navbar />
-      <Suspense fallback={<Loader />}>
+    <>
+      <AuthProvider>
+        {/* Hide Navbar on login */}
+        {!location.pathname.startsWith("/login") &&
+          !location.pathname.toLowerCase().startsWith("/admin") &&
+          !location.pathname.toLowerCase().startsWith("/subadmin") && (
+            <Navbar />
+          )}
+
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/privicy" element={<Privicy />} />
-          <Route path="/process" element={<Process />} />
-          <Route path="/login" element={<Login />} />
           <Route
-            path="/admin"
+            path="/"
             element={
-              <PrivateRoute>
-                <Admin />
-              </PrivateRoute>
+              <Suspense fallback={<Loader />}>
+                <Home />
+              </Suspense>
             }
           />
-          <Route path="/services/interior" element={<Interior />} />
-          <Route path="/services/railing" element={<Railing />} />
-          <Route path="/services/consultancy" element={<Consultancy />} />
-          <Route path="/services/developer" element={<Developer />} />
-          <Route path="/quote" element={<Quote />} />
-          <Route path="/Gallery" element={<Gallery />} />
-          <Route path="/Brouchure" element={<Brouchure />} />
-          <Route path="/Home" element={<AdminHome />} />
+          <Route
+            path="/about"
+            element={
+              <Suspense fallback={<Loader />}>
+                <About />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Contact />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/privicy"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Privicy />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/process"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Process />
+              </Suspense>
+            }
+          />
+
+          <Route
+            path="/login"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Login />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/subadmin/*"
+            element={
+              <Suspense fallback={<Loader />}>
+                <PrivateRoute>
+                  <SubAdminApp />
+                </PrivateRoute>
+              </Suspense>
+            }
+          />
+
+          <Route
+            path="/admin/*"
+            element={
+              <Suspense fallback={<Loader />}>
+                <PrivateRoute>
+                  <AdminApp user={user} />
+                </PrivateRoute>
+              </Suspense>
+            }
+          />
+
+          <Route
+            path="/services/interior"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Interior />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/services/railing"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Railing />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/services/consultancy"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Consultancy />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/services/developer"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Developer />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/quote"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Quote />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/gallery"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Gallery />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/brouchure"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Brouchure />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/home"
+            element={
+              <Suspense fallback={<Loader />}>
+                <AdminHome />
+              </Suspense>
+            }
+          />
         </Routes>
-      </Suspense>
-    </Router>
+      </AuthProvider>
+    </>
   );
 }
 

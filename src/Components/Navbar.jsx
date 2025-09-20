@@ -6,9 +6,9 @@ import logo from "../assets/logo.png";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [serviceOpen, setServiceOpen] = useState(false);
+  // const [serviceOpen, setServiceOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
+  // const [searchResults, setSearchResults] = useState([]);
 
   const Nav = [
     { name: "Home", path: "/" },
