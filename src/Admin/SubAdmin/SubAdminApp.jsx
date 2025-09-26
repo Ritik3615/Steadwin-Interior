@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import SideBaar from "../Components/SideBaar";
 import { sideConfig } from "../SideConfig";
-import Dashboard from "../Pages/Dashboard";
+import Dashboard from "../SubAdmin/Pages/Dashboard";
 import Sales from "../Pages/Sales";
 import Users from "../Pages/Users";
 
@@ -21,7 +21,7 @@ const SubAdminApp = ({ user }) => {
           <Route path="/subadmin" element={<Navigate to="/subadmin/dashboard" replace />} />
           <Route path="/subadmin/dashboard" element={<Dashboard />} />
           <Route path="/subadmin/sales" element={<Sales />} />
-          <Route path="/subadmin/users" element={<Users />} />
+          <Route path="/subadmin/users" element={<Users/>} />
           <Route path="*" element={<Dashboard />} />
         </Routes>
       </div>

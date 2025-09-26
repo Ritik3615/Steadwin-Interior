@@ -19,120 +19,244 @@ import {
   Settings,
   CalendarDays,
   Wallet,
+  DockIcon,
+  TicketCheck,
 } from "lucide-react";
+import { FcManager, FcSalesPerformance } from "react-icons/fc";
+import { GrOrderedList, GrUserAdmin } from "react-icons/gr";
+import { MdInventory, MdPayment, MdPayments } from "react-icons/md";
+import { PiInvoice, PiTrayArrowUpFill } from "react-icons/pi";
+import { RiSecurePaymentFill } from "react-icons/ri";
+import { SiAdminer, SiStaffbase } from "react-icons/si";
+import { WiRefresh } from "react-icons/wi";
 export const sideConfig = {
-  admin: [
-    { name: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
-    { name: "Parties", path: "/parties", icon: Users },
-    { name: "Items", path: "/items", icon: Boxes },
-    { name: "Sales", path: "/sales", icon: Box },
-    { name: "Quotation/Estimate", path: "/quotation", icon: EqualSquareIcon },
-    { name: "Payment in", path: "/payment", icon: HandCoins },
-    { name: "Sales-Return", path: "/salesreturn", icon: SquareStack },
-    { name: "Purchases", path: "/purchases", icon: Landmark },
-    { name: "Reports", path: "/reports", icon: NotebookText },
-    // Account and billing
-    { name: "Cash and Bank", path: "/cash", icon: PiggyBank },
-    { name: "E-Invoicing", path: "/invoicing", icon: Files },
-    { name: "Automated-Bills", path: "/bills", icon: ReceiptText },
-    { name: "Expenses", path: "/expenses", icon: BanknoteArrowDown },
-    { name: "POS Billing", path: "/pos", icon: BookMarkedIcon },
+  admin: {
+    general: [
+      { name: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
+      { name: "Parties", path: "/parties", icon: Users },
+      {
+        name: "Items",
+        path: "/items",
+        icon: Boxes,
+        children: [
+          { name: "inventry", path: "/items/inventry", icon: MdInventory },
+          { name: "godown", path: "/items/godown", icon: WiRefresh },
+        ],
+      },
+      {
+        name: "Sales",
+        icon: Box,
+        children: [
+          {
+            name: "Sales invoice",
+            path: "/sales",
+            icon: PiInvoice,
+          },
+          {
+            name: "Quotation/Estimate",
+            path: "/sales/quotation",
+            icon: EqualSquareIcon,
+          },
+          { name: "Payment in", path: "/sales/payment", icon: HandCoins },
+          { name: "Sales-Return", path: "/sales/salesreturn", icon: FcSalesPerformance },
+        ],
+      },
+
+      { name: "Purchases", path: "/purchases", icon: Landmark , children:[
+        { name: "Purchase Invoice", path: "/purchases/purchaseinvoice", icon: TicketCheck },
+        { name: "Payment out", path: "/purchases/PaymentOut", icon: MdPayment },
+        { name: "Purchase Return", path: "/purchases/PurchaseReturn", icon: RiSecurePaymentFill },
+        { name: "Purchase Order", path: "/purchases/PurchaseOrder", icon: GrOrderedList },
+
+      ]},
+      { name: "Reports", path: "/reports", icon: NotebookText },
+    ],
+    accounting: [
+      // Account and billing
+      { name: "Cash and Bank", path: "/cash", icon: PiggyBank },
+      { name: "E-Invoicing", path: "/invoicing", icon: Files },
+      { name: "Automated-Bills", path: "/bills", icon: ReceiptText },
+      { name: "Expenses", path: "/expenses", icon: BanknoteArrowDown },
+      { name: "POS Billing", path: "/pos", icon: BookMarkedIcon },
+    ],
+
     // Business Tools
-    {
-      name: "Attendance & Payroll >",
-      path: "/staffattendance",
-      icon: PresentationIcon,
-      children: [
-        {
-          name: "Attendance",
-          path: "/staffattendance/attendance",
-          icon: CalendarDays,
-        },
-        {
-          name: "Payroll",
-          path: "/staffattendance/payroll",
-          icon: Wallet,
-        },
-      ],
-    },
-    { name: "Manage Users", path: "/users", icon: ShieldUser },
-    { name: "Online Orders", path: "/online", icon: ShoppingCart },
-    { name: "Settings", path: "/settings", icon: Settings },
-  ],
-  subadmin: [
-    { name: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
-    { name: "Parties", path: "/parties", icon: Users },
-    { name: "Items", path: "/items", icon: Boxes },
-    { name: "Sales", path: "/sales", icon: Box },
-    { name: "Quotation/Estimate", path: "/quotation", icon: EqualSquareIcon },
-    { name: "Payment in", path: "/payment", icon: HandCoins },
-    { name: "Sales-Return", path: "/salesreturn", icon: SquareStack },
-    { name: "Purchases", path: "/purchases", icon: Landmark },
-    { name: "Reports", path: "/reports", icon: NotebookText },
-    // Account and billing
-    { name: "Cash and Bank", path: "/cash", icon: PiggyBank },
-    { name: "E-Invoicing", path: "/invoicing", icon: Files },
-    { name: "Automated-Bills", path: "/bills", icon: ReceiptText },
-    { name: "Expenses", path: "/expenses", icon: BanknoteArrowDown },
-    { name: "POS Billing", path: "/pos", icon: BookMarkedIcon },
+    businessTools: [
+      {
+        name: "Attendance & Payroll ",
+        path: "/staffattendance",
+        icon: SiStaffbase,
+        children: [
+          {
+            name: "Attendance",
+            path: "/staffattendance/attendance",
+            icon: CalendarDays,
+          },
+          {
+            name: "Payroll",
+            path: "/staffattendance/payroll",
+            icon: MdPayments,
+          },
+        ],
+      },
+      { name: "Manage Users", path: "/users", icon: GrUserAdmin },
+      { name: "HR Portal", path: "/Hrportal", icon: FcManager },
+      { name: "Online Orders", path: "/online", icon: ShoppingCart },
+      { name: "Settings", path: "/settings", icon: Settings },
+    ],
+  },
+
+  subadmin: {
+    general: [
+      { name: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
+      { name: "Parties", path: "/parties", icon: Users },
+      {
+        name: "Items",
+        path: "/items",
+        icon: Boxes,
+        children: [
+          { name: "inventry", path: "/items/inventry", icon: MdInventory },
+          { name: "godown", path: "/items/godown", icon: WiRefresh },
+        ],
+      },
+      {
+        name: "Sales",
+
+        icon: Box,
+        children: [
+          {
+            name: "Sales invoice",
+            path: "/sales",
+            icon: PiInvoice,
+          },
+          {
+            name: "Quotation/Estimate",
+            path: "/quotation",
+            icon: EqualSquareIcon,
+          },
+          { name: "Payment in", path: "/payment", icon: HandCoins },
+          { name: "Sales-Return", path: "/salesreturn", icon: FcSalesPerformance },
+        ],
+      },
+
+      { name: "Purchases", path: "/purchases", icon: Landmark , children:[
+        { name: "Purchase Invoice", path: "/purchases/purchaseinvoice", icon: TicketCheck },
+        { name: "Payment out", path: "/purchases/PaymentOut", icon: MdPayment },
+        { name: "Purchase Return", path: "/purchases/PurchaseReturn", icon: RiSecurePaymentFill },
+        { name: "Purchase Order", path: "/purchases/PurchaseOrder", icon: GrOrderedList },
+
+      ]},
+      { name: "Reports", path: "/reports", icon: NotebookText },
+    ],
+    accounting: [
+      // Account and billing
+      { name: "Cash and Bank", path: "/cash", icon: PiggyBank },
+      { name: "E-Invoicing", path: "/invoicing", icon: Files },
+      { name: "Automated-Bills", path: "/bills", icon: ReceiptText },
+      { name: "Expenses", path: "/expenses", icon: BanknoteArrowDown },
+      { name: "POS Billing", path: "/pos", icon: BookMarkedIcon },
+    ],
+
     // Business Tools
-    {
-      name: "Attendance & Payroll >",
-      path: "/staffattendance",
-      icon: PresentationIcon,
-      children: [
-        {
-          name: "Attendance",
-          path: "/staffattendance/attendance",
-          icon: CalendarDays,
-        },
-        {
-          name: "Payroll",
-          path: "/staffattendance/payroll",
-          icon: Wallet,
-        },
-      ],
-    },
-    { name: "Manage Users", path: "/users", icon: ShieldUser },
-    { name: "Online Orders", path: "/online", icon: ShoppingCart },
-    { name: "Settings", path: "/settings", icon: Settings },
-  ],
-  employee: [
-    { name: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
-    { name: "Parties", path: "/parties", icon: Users },
-    { name: "Items", path: "/items", icon: Boxes },
-    { name: "Sales", path: "/sales", icon: Box },
-    { name: "Quotation/Estimate", path: "/quotation", icon: EqualSquareIcon },
-    { name: "Payment in", path: "/payment", icon: HandCoins },
-    { name: "Sales-Return", path: "/salesreturn", icon: SquareStack },
-    { name: "Purchases", path: "/purchases", icon: Landmark },
-    { name: "Reports", path: "/reports", icon: NotebookText },
-    // Account and billing
-    { name: "Cash and Bank", path: "/cash", icon: PiggyBank },
-    { name: "E-Invoicing", path: "/invoicing", icon: Files },
-    { name: "Automated-Bills", path: "/bills", icon: ReceiptText },
-    { name: "Expenses", path: "/expenses", icon: BanknoteArrowDown },
-    { name: "POS Billing", path: "/pos", icon: BookMarkedIcon },
+    businessTools: [
+      {
+        name: "Attendance & Payroll ",
+        path: "/staffattendance",
+        icon: SiStaffbase,
+        children: [
+          {
+            name: "Attendance",
+            path: "/staffattendance/attendance",
+            icon: CalendarDays,
+          },
+          {
+            name: "Payroll",
+            path: "/staffattendance/payroll",
+            icon: MdPayments,
+          },
+        ],
+      },
+      { name: "Manage Users", path: "/users", icon: GrUserAdmin },
+      { name: "HR Portal", path: "/Hrportal", icon: FcManager },
+      { name: "Online Orders", path: "/online", icon: ShoppingCart },
+      { name: "Settings", path: "/settings", icon: Settings },
+    ],
+  },
+
+  employee: {
+    general: [
+      { name: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
+      { name: "Parties", path: "/parties", icon: Users },
+      {
+        name: "Items",
+        path: "/items",
+        icon: Boxes,
+        children: [
+          { name: "inventry", path: "/items/inventry", icon: MdInventory },
+          { name: "godown", path: "/items/godown", icon: WiRefresh },
+        ],
+      },
+      {
+        name: "Sales",
+
+        icon: Box,
+        children: [
+          {
+            name: "Sales invoice",
+            path: "/sales",
+            icon: PiInvoice,
+          },
+          {
+            name: "Quotation/Estimate",
+            path: "/quotation",
+            icon: EqualSquareIcon,
+          },
+          { name: "Payment in", path: "/payment", icon: HandCoins },
+          { name: "Sales-Return", path: "/salesreturn", icon: FcSalesPerformance },
+        ],
+      },
+
+      { name: "Purchases", path: "/purchases", icon: Landmark , children:[
+        { name: "Purchase Invoice", path: "/purchases/purchaseinvoice", icon: TicketCheck },
+        { name: "Payment out", path: "/purchases/PaymentOut", icon: MdPayment },
+        { name: "Purchase Return", path: "/purchases/PurchaseReturn", icon: RiSecurePaymentFill },
+        { name: "Purchase Order", path: "/purchases/PurchaseOrder", icon: GrOrderedList },
+
+      ]},
+      { name: "Reports", path: "/reports", icon: NotebookText },
+    ],
+    accounting: [
+      // Account and billing
+      { name: "Cash and Bank", path: "/cash", icon: PiggyBank },
+      { name: "E-Invoicing", path: "/invoicing", icon: Files },
+      { name: "Automated-Bills", path: "/bills", icon: ReceiptText },
+      { name: "Expenses", path: "/expenses", icon: BanknoteArrowDown },
+      { name: "POS Billing", path: "/pos", icon: BookMarkedIcon },
+    ],
+
     // Business Tools
-    {
-      name: "Attendance & Payroll >",
-      path: "/staffattendance",
-      icon: PresentationIcon,
-      children: [
-        {
-          name: "Attendance",
-          path: "/staffattendance/attendance",
-          icon: CalendarDays,
-        },
-        {
-          name: "Payroll",
-          path: "/staffattendance/payroll",
-          icon: Wallet,
-        },
-      ],
-    },
-    { name: "Manage Users", path: "/users", icon: ShieldUser },
-    { name: "Online Orders", path: "/online", icon: ShoppingCart },
-    { name: "Settings", path: "/settings", icon: Settings },
-  ],
+    businessTools: [
+      {
+        name: "Attendance & Payroll ",
+        path: "/staffattendance",
+        icon: SiStaffbase,
+        children: [
+          {
+            name: "Attendance",
+            path: "/staffattendance/attendance",
+            icon: CalendarDays,
+          },
+          {
+            name: "Payroll",
+            path: "/staffattendance/payroll",
+            icon: MdPayments,
+          },
+        ],
+      },
+      { name: "Manage Users", path: "/users", icon: GrUserAdmin },
+      { name: "HR Portal", path: "/subadmin/Hrportal", icon: FcManager },
+      { name: "Online Orders", path: "/online", icon: ShoppingCart },
+      { name: "Settings", path: "/settings", icon: Settings },
+    ],
+  },
 };

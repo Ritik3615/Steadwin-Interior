@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import logo from "../../assets/logo.png";
 import { useAuth } from "../context/Authcontext";
 import { useNavigate } from "react-router-dom";
+import OfferSlides from "../Pages/OfferSlides";
 
 function Login() {
+
   const { login } = useAuth(); // context se login function le liya
   const navigate = useNavigate();
 
@@ -26,7 +28,7 @@ function Login() {
       role: role,
       token: "dummy-jwt-token", // yaha backend se real token aayega
     };
-    console.log(userData)
+    console.log(userData);
     login(userData); // context me save
 
     // role ke hisaab se navigate
@@ -39,69 +41,83 @@ function Login() {
     } // redirect
   };
 
+
+
   return (
-    <div
-      className="h-screen bg-cover bg-center bg-no-repeat relative"
-      style={{ backgroundImage: "url('/bgimage.jpg')" }}
-    >
-      <div className="absolute bg-black inset-0 opacity-30"></div>
-      <div className="relative flex justify-center items-center flex-col pt-3">
-        <img src={logo} alt="Logo" className="h-20 mx-auto rounded-full" />
-        <h1 className="text-2xl font-bold bg-blue-100 px-2 rounded-2xl mt-2">
-          Steadwin group
-        </h1>
-      </div>
+    <>
+      <div
+        className="h-screen bg-cover bg-center bg-no-repeat relative"
+        style={{ backgroundImage: "url('/image-bg.png')" }}
+      >
+        <div className="absolute bg-black inset-0 opacity-30"></div>
+        <div className="relative flex justify-center items-center flex-col pt-3">
+          <img src={logo} alt="Logo" className="h-20 mx-auto rounded-full" />
+          <h1 className="text-2xl font-bold bg-blue-100 px-2 rounded-2xl mt-2">
+            Steadwin group
+          </h1>
+        </div>
 
-      <div className="relative h-[400px] w-[450px] flex flex-col justify-center items-center m-auto mt-5 rounded-3xl shadow-2xl bg-white/20">
-        <h1 className="text-3xl px-2 rounded-xl font-bold text-white">
-          Steadwin Login
-        </h1>
+        <div className="relative h-[400px] w-[900px] bg-sky-700 grid grid-cols-2 justify-center items-center m-auto mt-5 rounded-3xl shadow-2xl">
+          <div className="p-5 text-white text-center">
+            <h1 className="text-3xl px-2 rounded-xl font-bold text-white">
+              Login
+            </h1>
 
-        <form
-          onSubmit={handleSubmit}
-          className="flex flex-col gap-5 mt-5 text-white"
-        >
-          <input
-            type="text"
-            value={userid}
-            onChange={(e) => setUserid(e.target.value)}
-            placeholder="Enter UserId"
-            className="placeholder-blue-50 px-2 py-1 rounded-2xl border-2 text-black"
-          />
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Enter Password"
-            className="placeholder-blue-50 px-2 py-1 rounded-2xl border-2 text-black"
-          />
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-5 mt-5 text-white"
+            >
+              <input
+                type="text"
+                value={userid}
+                onChange={(e) => setUserid(e.target.value)}
+                placeholder="Enter UserId"
+                className="placeholder-blue-50 px-2 py-1 rounded-2xl border-2 mx-7 text-black"
+              />
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Enter Password"
+                className="placeholder-blue-50 px-2 py-1 rounded-2xl border-2 mx-7 text-black"
+              />
 
-          <div className="mt-5 flex gap-5">
-            {person.map((p) => (
-              <label key={p} className="flex items-center gap-2">
-                <input
-                  type="radio"
-                  name="role"
-                  value={p}
-                  checked={role === p}
-                  onChange={() => setRole(p)}
-                />
-                <span className="bg-sky-100 px-2 rounded-2xl text-black">
-                  {p}
-                </span>
-              </label>
-            ))}
+              <div className="mt-5 flex gap-5 mx-7">
+                {person.map((p) => (
+                  <label key={p} className="flex items-center gap-2">
+                    <input
+                      type="radio"
+                      name="role"
+                      value={p}
+                      checked={role === p}
+                      onChange={() => setRole(p)}
+                    />
+                    <span className="bg-sky-100 px-2 rounded-2xl text-black">
+                      {p}
+                    </span>
+                  </label>
+                ))}
+              </div>
+
+              <button
+                type="submit"
+                className="bg-slate-400 text-black px-4 py-1 text-xl font-semibold rounded-2xl mx-6 hover:bg-green-600 hover:text-white hover:scale-105 transition-transform"
+              >
+                Submit
+              </button>
+            </form>
+            <p className="p-2">
+              <a className="text-white hover:text-blue-900" href="">
+                forget password
+              </a>
+            </p>
           </div>
-
-          <button
-            type="submit"
-            className="bg-slate-400 text-black px-4 py-1 text-xl font-semibold rounded-2xl"
-          >
-            Submit
-          </button>
-        </form>
+          <div className="relative p-5 text-white text-center h-full w-full shadow-2xl">
+           <OfferSlides/>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
