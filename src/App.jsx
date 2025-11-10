@@ -15,15 +15,13 @@ const Contact = lazy(() => import("./Pages/Contact/Contact"));
 const Privicy = lazy(() => import("./Pages/Privicy/Privicy"));
 const Process = lazy(() => import("./Pages/WorkFlow/Process"));
 // const Admin = lazy(() => import("./Pages/Admin/Admin"));
-const Interior = lazy(() => import("./Pages/Services/Interior"));
-const Railing = lazy(() => import("./Pages/Services/Railing"));
-const Consultancy = lazy(() => import("./Pages/Services/Consultancy"));
-const Developer = lazy(() => import("./Pages/Services/Developer"));
 const Quote = lazy(() => import("./Form/Quote"));
 const Login = lazy(() => import("./Admin/Authontication/Login"));
 const Gallery = lazy(() => import("./Pages/Gallery/Gallery"));
 const Brouchure = lazy(() => import("./Pages/Brouchure/Brouchure"));
 const AdminHome = lazy(() => import("./Components/AdminHome"));
+const ServicesPage = lazy(() => import("./Pages/Services/ServicesPage"));
+const OffersNewsPage = lazy(() => import("./Pages/News/OffersNewsPage"));
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -120,34 +118,18 @@ function App() {
           />
 
           <Route
-            path="/services/interior"
+            path="/Services"
             element={
               <Suspense fallback={<Loader />}>
-                <Interior />
+                <ServicesPage />
               </Suspense>
             }
           />
           <Route
-            path="/services/railing"
+            path="/news"
             element={
               <Suspense fallback={<Loader />}>
-                <Railing />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/services/consultancy"
-            element={
-              <Suspense fallback={<Loader />}>
-                <Consultancy />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/services/developer"
-            element={
-              <Suspense fallback={<Loader />}>
-                <Developer />
+                <OffersNewsPage />
               </Suspense>
             }
           />

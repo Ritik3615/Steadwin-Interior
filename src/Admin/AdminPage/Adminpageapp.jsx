@@ -1,7 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { sideConfig } from "../SideConfig";
 import SideBaar from "../Components/SideBaar";
-import Dashboard from "../AdminPage/Pages/Dashboard";
 import Parties from "../AdminPage/Pages/Parties";
 import Reports from "../AdminPage/Pages/Reports";
 import Inventry from "./Pages/Item/Inventry";
@@ -25,6 +24,8 @@ import Payroll from "./Pages/BusinessTools/StaffAttendance/Payroll";
 import HrPortal from "./Pages/BusinessTools/HrPortal";
 import OnlineOrders from "./Pages/BusinessTools/OnlineOrders";
 import Settings from "./Pages/BusinessTools/Settings";
+import Leads from "./Pages/Leads";
+import Dashboard from "./Dashboard/Dashboard";
 
 const Adminpageapp = ({ user }) => {
   // role fix
@@ -45,11 +46,11 @@ const Adminpageapp = ({ user }) => {
       <div className="fixed">
         <SideBaar
           sideConfig={menuItems}
-          userName={user?.name || "Ritik"}
+          userName={user?.email || "Ritik"}
           role={role}
         />
       </div>
-      <div className="flex-1 overflow-y-auto ml-64 rounded-l-2xl">
+      <div className="flex-1 overflow-y-auto md:ml-[270px] ml-[100px] rounded-l-2xl">
         <Routes>
           <Route
             path="/admin"
@@ -60,6 +61,7 @@ const Adminpageapp = ({ user }) => {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/parties" element={<Parties />} />
           <Route path="/reports" element={<Reports />} />
+          <Route path="/leads" element={<Leads />} />
           <Route path="/items/inventry" element={<Inventry />} />
           <Route path="/items/godown" element={<Godown />} />
           <Route path="/purchases/paymentOut" element={<PaymentOut />} />
@@ -83,7 +85,7 @@ const Adminpageapp = ({ user }) => {
 
           {/* sales part */}
           <Route path="/sales/payment" element={<PaymentIn/>} />
-          <Route path="/sales/quotation" element={<Quotation/>} />
+          <Route path="/quotation" element={<Quotation/>} />
           <Route path="/sales" element={<SalesInvoice/>} />
           <Route path="/sales/salesreturn" element={<SalesReturn/>} />
 

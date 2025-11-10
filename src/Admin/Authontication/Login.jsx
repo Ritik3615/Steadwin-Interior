@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import OfferSlides from "../Pages/OfferSlides";
 
 function Login() {
-
   const { login } = useAuth(); // context se login function le liya
   const navigate = useNavigate();
 
@@ -14,7 +13,35 @@ function Login() {
   const [password, setPassword] = useState("");
   const person = ["Admin", "SubAdmin", "User"];
 
-  const handleSubmit = (e) => {
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+
+  //   if (!userid || !password || !role) {
+  //     alert("Please fill all fields");
+  //     return;
+  //   }
+
+  //   // fake authentication (backend connect karoge to api call karna)
+  //   const userData = {
+  //     name: userid,
+  //     role: role,
+  //     token: "dummy-jwt-token", // yaha backend se real token aayega
+  //   };
+  //   console.log(userData);
+  //   login(userData); // context me save
+
+  //   // role ke hisaab se navigate
+  //   if (userData.role === "Admin") {
+  //     navigate("/admin/dashboard");
+  //   } else if (userData.role === "SubAdmin") {
+  //     navigate("/SubAdmin/dashboard");
+  //   } else {
+  //     navigate("/user/dashboard");
+  //   } // redirect
+
+  // };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!userid || !password || !role) {
@@ -22,26 +49,37 @@ function Login() {
       return;
     }
 
-    // fake authentication (backend connect karoge to api call karna)
-    const userData = {
-      name: userid,
-      role: role,
-      token: "dummy-jwt-token", // yaha backend se real token aayega
-    };
-    console.log(userData);
-    login(userData); // context me save
+    try {
+      const response = await fetch("http://localhost:8081/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: userid, password: password }),
+      });
 
-    // role ke hisaab se navigate
-    if (userData.role === "Admin") {
-      navigate("/admin/dashboard");
-    } else if (userData.role === "SubAdmin") {
-      navigate("/SubAdmin/dashboard");
-    } else {
-      navigate("/user/dashboard");
-    } // redirect
+      if (!response.ok) {
+        throw new Error("Invalid credentials");
+      }
+
+      const userData = await response.json();
+      console.log(userData);
+
+      // Use backend role if available, otherwise frontend selected role
+      const finalRole = userData.role || role;
+      userData.role = finalRole;
+      console.log(finalRole)
+      // Save in context
+      login(userData);
+      console.log(userData);
+
+      // Navigate based on role
+      if (finalRole === "Admin") navigate("/Admin/Dashboard");
+      else if (finalRole === "SubAdmin") navigate("/SubAdmin/dashboard");
+      else navigate("/user/dashboard");
+    } catch (error) {
+      console.error(error);
+      alert(error.message);
+    }
   };
-
-
 
   return (
     <>
@@ -113,7 +151,7 @@ function Login() {
             </p>
           </div>
           <div className="relative p-5 text-white text-center h-full w-full shadow-2xl">
-           <OfferSlides/>
+            <OfferSlides />
           </div>
         </div>
       </div>

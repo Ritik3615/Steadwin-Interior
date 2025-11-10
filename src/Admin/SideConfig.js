@@ -21,6 +21,8 @@ import {
   Wallet,
   DockIcon,
   TicketCheck,
+  Settings2Icon,
+  User,
 } from "lucide-react";
 import { FcManager, FcSalesPerformance } from "react-icons/fc";
 import { GrOrderedList, GrUserAdmin } from "react-icons/gr";
@@ -34,6 +36,7 @@ export const sideConfig = {
     general: [
       { name: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
       { name: "Parties", path: "/parties", icon: Users },
+      { name: "Leads", path: "/leads", icon: Users },
       {
         name: "Items",
         path: "/items",
@@ -52,32 +55,61 @@ export const sideConfig = {
             path: "/sales",
             icon: PiInvoice,
           },
-          {
-            name: "Quotation/Estimate",
-            path: "/sales/quotation",
-            icon: EqualSquareIcon,
-          },
+          // {
+          //   name: "Quotation/Estimate",
+          //   path: "/sales/quotation",
+          //   icon: EqualSquareIcon,
+          // },
           { name: "Payment in", path: "/sales/payment", icon: HandCoins },
-          { name: "Sales-Return", path: "/sales/salesreturn", icon: FcSalesPerformance },
+          {
+            name: "Sales-Return",
+            path: "/sales/salesreturn",
+            icon: FcSalesPerformance,
+          },
         ],
       },
 
-      { name: "Purchases", path: "/purchases", icon: Landmark , children:[
-        { name: "Purchase Invoice", path: "/purchases/purchaseinvoice", icon: TicketCheck },
-        { name: "Payment out", path: "/purchases/PaymentOut", icon: MdPayment },
-        { name: "Purchase Return", path: "/purchases/PurchaseReturn", icon: RiSecurePaymentFill },
-        { name: "Purchase Order", path: "/purchases/PurchaseOrder", icon: GrOrderedList },
-
-      ]},
+      {
+        name: "Purchases",
+        path: "/purchases",
+        icon: Landmark,
+        children: [
+          {
+            name: "Purchase Invoice",
+            path: "/purchases/purchaseinvoice",
+            icon: TicketCheck,
+          },
+          {
+            name: "Payment out",
+            path: "/purchases/PaymentOut",
+            icon: MdPayment,
+          },
+          {
+            name: "Purchase Return",
+            path: "/purchases/PurchaseReturn",
+            icon: RiSecurePaymentFill,
+          },
+          {
+            name: "Purchase Order",
+            path: "/purchases/PurchaseOrder",
+            icon: GrOrderedList,
+          },
+        ],
+      },
       { name: "Reports", path: "/reports", icon: NotebookText },
+      {
+        name: "Quotation/Estimate",
+        path: "/quotation",
+        icon: EqualSquareIcon,
+      },
     ],
     accounting: [
       // Account and billing
       { name: "Cash and Bank", path: "/cash", icon: PiggyBank },
       { name: "E-Invoicing", path: "/invoicing", icon: Files },
-      { name: "Automated-Bills", path: "/bills", icon: ReceiptText },
+      // { name: "Automated-Bills", path: "/bills", icon: ReceiptText },
       { name: "Expenses", path: "/expenses", icon: BanknoteArrowDown },
-      { name: "POS Billing", path: "/pos", icon: BookMarkedIcon },
+      // { name: "POS Billing", path: "/pos", icon: BookMarkedIcon },
     ],
 
     // Business Tools
@@ -102,7 +134,7 @@ export const sideConfig = {
       { name: "Manage Users", path: "/users", icon: GrUserAdmin },
       { name: "HR Portal", path: "/Hrportal", icon: FcManager },
       { name: "Online Orders", path: "/online", icon: ShoppingCart },
-      { name: "Settings", path: "/settings", icon: Settings },
+      // { name: "Settings", path: "/settings", icon: Settings },
     ],
   },
 
@@ -135,17 +167,41 @@ export const sideConfig = {
             icon: EqualSquareIcon,
           },
           { name: "Payment in", path: "/payment", icon: HandCoins },
-          { name: "Sales-Return", path: "/salesreturn", icon: FcSalesPerformance },
+          {
+            name: "Sales-Return",
+            path: "/salesreturn",
+            icon: FcSalesPerformance,
+          },
         ],
       },
 
-      { name: "Purchases", path: "/purchases", icon: Landmark , children:[
-        { name: "Purchase Invoice", path: "/purchases/purchaseinvoice", icon: TicketCheck },
-        { name: "Payment out", path: "/purchases/PaymentOut", icon: MdPayment },
-        { name: "Purchase Return", path: "/purchases/PurchaseReturn", icon: RiSecurePaymentFill },
-        { name: "Purchase Order", path: "/purchases/PurchaseOrder", icon: GrOrderedList },
-
-      ]},
+      {
+        name: "Purchases",
+        path: "/purchases",
+        icon: Landmark,
+        children: [
+          {
+            name: "Purchase Invoice",
+            path: "/purchases/purchaseinvoice",
+            icon: TicketCheck,
+          },
+          {
+            name: "Payment out",
+            path: "/purchases/PaymentOut",
+            icon: MdPayment,
+          },
+          {
+            name: "Purchase Return",
+            path: "/purchases/PurchaseReturn",
+            icon: RiSecurePaymentFill,
+          },
+          {
+            name: "Purchase Order",
+            path: "/purchases/PurchaseOrder",
+            icon: GrOrderedList,
+          },
+        ],
+      },
       { name: "Reports", path: "/reports", icon: NotebookText },
     ],
     accounting: [
@@ -212,17 +268,41 @@ export const sideConfig = {
             icon: EqualSquareIcon,
           },
           { name: "Payment in", path: "/payment", icon: HandCoins },
-          { name: "Sales-Return", path: "/salesreturn", icon: FcSalesPerformance },
+          {
+            name: "Sales-Return",
+            path: "/salesreturn",
+            icon: FcSalesPerformance,
+          },
         ],
       },
 
-      { name: "Purchases", path: "/purchases", icon: Landmark , children:[
-        { name: "Purchase Invoice", path: "/purchases/purchaseinvoice", icon: TicketCheck },
-        { name: "Payment out", path: "/purchases/PaymentOut", icon: MdPayment },
-        { name: "Purchase Return", path: "/purchases/PurchaseReturn", icon: RiSecurePaymentFill },
-        { name: "Purchase Order", path: "/purchases/PurchaseOrder", icon: GrOrderedList },
-
-      ]},
+      {
+        name: "Purchases",
+        path: "/purchases",
+        icon: Landmark,
+        children: [
+          {
+            name: "Purchase Invoice",
+            path: "/purchases/purchaseinvoice",
+            icon: TicketCheck,
+          },
+          {
+            name: "Payment out",
+            path: "/purchases/PaymentOut",
+            icon: MdPayment,
+          },
+          {
+            name: "Purchase Return",
+            path: "/purchases/PurchaseReturn",
+            icon: RiSecurePaymentFill,
+          },
+          {
+            name: "Purchase Order",
+            path: "/purchases/PurchaseOrder",
+            icon: GrOrderedList,
+          },
+        ],
+      },
       { name: "Reports", path: "/reports", icon: NotebookText },
     ],
     accounting: [
@@ -259,4 +339,11 @@ export const sideConfig = {
       { name: "Settings", path: "/settings", icon: Settings },
     ],
   },
+  settingsitems:[
+    {name: "Manage Business ", path: "/settings/business", icon: DockIcon},
+    {name: "Invoice Settings" , path: "/settings/invoicesetting", icon: Settings2Icon},
+    {name: "Manage Users ", path: "/settings/manage", icon: User},
+
+  ]
 };
+

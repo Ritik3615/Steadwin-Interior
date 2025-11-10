@@ -16,12 +16,12 @@ const heroSlides = [
     desc: "Designs that blend functionality with timeless aesthetics for your dream home.",
     link: "/Services/Interior",
   },
-  {
-    img: "https://images.unsplash.com/photo-1615874959474-d609969a20ed?q=80&w=1200&auto=format&fit=crop",
-    title: "Luxury Living Spaces",
-    desc: "Transform your interiors into elegant, cozy, and stylish spaces.",
-    link: "/Services/Interior",
-  },
+  // {
+  //   img: "https://images.unsplash.com/photo-1615874959474-d609969a20ed?q=80&w=1200&auto=format&fit=crop",
+  //   title: "Luxury Living Spaces",
+  //   desc: "Transform your interiors into elegant, cozy, and stylish spaces.",
+  //   link: "/Services/Interior",
+  // },
   {
     img: "https://images.pexels.com/photos/276551/pexels-photo-276551.jpeg",
     title: "Premium Railing Systems",
@@ -41,12 +41,12 @@ const heroSlides = [
     link: "/about",
   },
 
-  {
-    img: "https://images.pexels.com/photos/7166942/pexels-photo-7166942.jpeg",
-    title: "Timeless Comfort",
-    desc: "Experience interiors that remain elegant and relevant for years.",
-    link: "/process",
-  },
+  // {
+  //   img: "https://images.pexels.com/photos/7166942/pexels-photo-7166942.jpeg",
+  //   title: "Timeless Comfort",
+  //   desc: "Experience interiors that remain elegant and relevant for years.",
+  //   link: "/process",
+  // },
 ];
 
 function Home() {

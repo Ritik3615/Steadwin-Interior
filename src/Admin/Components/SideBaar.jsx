@@ -1,13 +1,29 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { motion } from "motion/react";
+import { Link , useNavigate } from "react-router-dom";
+import { Settingsitems } from "../settingsitems";
+import { useAuth } from "../context/Authcontext";
 
 function SideBaar({ sideConfig, userName, role }) {
+  const {logout} = useAuth();
+  const nevigate  = useNavigate();
+
+  const handleLogout = () =>{
+    logout();
+    nevigate("/login");
+  }
+
+  const [openSettings, setOpenSettings] = useState(false);
   const [open, setOpen] = useState({});
   const [overlay, setOverlay] = useState(false); // overlay state
   const prefix =
     role === "admin" ? "/admin" : role === "subadmin" ? "/subadmin" : "/user";
 
-  const config = sideConfig || { general: [], accounting: [], businessTools: [] };
+  const config = sideConfig || {
+    general: [],
+    accounting: [],
+    businessTools: [],
+  };
 
   const renderItems = (items) =>
     items.map((item) => {
@@ -77,47 +93,85 @@ function SideBaar({ sideConfig, userName, role }) {
       )}
 
       {/* Sidebar */}
-      <section className="fixed left-0 top-0 w-[250px] mx-1 rounded-r-2xl h-screen bg-blue-900 text-white flex flex-col justify-between z-40">
+      <section className="fixed left-0 top-0 w-1/6 mx-1 rounded-r-2xl h-screen bg-blue-900 text-white flex flex-col justify-between z-40">
         {/* Top user info */}
-        <div className="flex items-center p-4 border-b border-gray-700 sticky">
+        <Link
+          to="/admin/settings"
+          className="flex items-center p-2 m-2 border-b-2 border-black sticky hover:bg-white hover:text-black rounded-4xl"
+          onClick={() =>
+            openSettings ? setOpenSettings(false) : setOpenSettings(true)
+          }
+        >
           <div className="bg-amber-300 rounded-full h-10 w-10 flex items-center justify-center">
             {userName[0]}
           </div>
           <div className="ml-3">
             <div className="font-medium">{userName}</div>
-            <div className="text-xs text-gray-400">{role}</div>
+            <div className="text-xs text-gray-300">{role}</div>
           </div>
+        </Link>
 
-          {/* Mobile toggle button */}
-          <button
+        {openSettings && (
+          <motion.div
+            className="fixed inset-0 max-h-1/5 w-1/6 mt-20 ml-1 space-y-1 bg-slate-300 text-black rounded-lg "
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            // exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 1 }}
+          >
+            {Settingsitems.map((item) => {
+              const Icon = item.icon;
+              return (
+                <Link
+                  to={item.path}
+                  key={item.name}
+                  className="flex items-center text-xs gap-2 px-3 py-2 rounded-md hover:bg-blue-500"
+                >
+                  {Icon && <Icon size={16} />}
+                  <span>{item.name}</span>
+                </Link>
+              );
+            })}
+          </motion.div>
+        )}
+
+        {/* Mobile toggle button */}
+        {/* <button
             className="ml-auto text-white md:hidden"
             onClick={() => setOverlay(!overlay)}
           >
             ☰
-          </button>
-        </div>
+          </button> */}
+        {/* <div className="border">
+
+          </div> */}
 
         {/* Sidebar menu */}
         <div className="px-2 mt-3 flex-1 overflow-y-auto text-sm">
-          <div className="text-gray-400 uppercase text-xs px-3 mt-3 mb-1">
+          <div className="text-gray-300 uppercase text-xs px-3 mt-3 mb-1">
             General
           </div>
           {renderItems(config.general)}
 
-          <div className="text-gray-400 uppercase text-xs px-3 mt-4 mb-1">
+          <div className="text-gray-300 uppercase text-xs px-3 mt-4 mb-1">
             Account & Billing
           </div>
           {renderItems(config.accounting)}
 
-          <div className="text-gray-400 uppercase text-xs px-3 mt-4 mb-1">
+          <div className="text-gray-300 uppercase text-xs px-3 mt-4 mb-1">
             Business Tools
           </div>
           {renderItems(config.businessTools)}
         </div>
 
         {/* Footer */}
-        <div className="p-4 text-gray-500 text-xs text-center">
-          100% Secure | ISO Certified
+        <div className="p-3 border-t border-gray-500 text-xs text-gray-300 space-y-1 text-center pb-3 bg-slate-600 rounded-b-2xl">
+          <div className="flex justify-center text-center border-2 m-auto p-1 rounded-lg bg-blue-400 text-white text-xs hover:bg-red-700 w-20">
+            <button className=" " onClick={handleLogout}>Logout</button>
+          </div>
+          <div className=" m-2">
+            &copy; 2024 Steadwin Group
+          </div>
         </div>
       </section>
     </>

@@ -47,9 +47,9 @@ function Navbar() {
   return (
     <nav className="bg-white shadow-2xl sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-center h-16">
           {/* Left logo */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 pr-7">
             <Link to="/">
               <img src={logo} alt="logo" className="h-12 w-12 rounded-full" />
             </Link>
@@ -106,14 +106,14 @@ function Navbar() {
           </div>
 
           {/* Right Button (Desktop Only) */}
-          <div className="hidden md:flex">
+          {/* <div className="hidden md:flex">
             <Link
-              to="/quote"
+              to="/login"
               className="bg-sky-400 text-white px-4 py-2 rounded-xl shadow hover:bg-blue-700 transition"
             >
-              Get Your Quote
+              Login
             </Link>
-          </div>
+          </div> */}
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
@@ -176,11 +176,11 @@ function Navbar() {
 
           {/* Quote button */}
           <Link
-            to="/quote"
+            to="/login"
             onClick={() => setIsOpen(false)}
             className="block bg-blue-600 text-white text-center px-4 py-2 rounded-xl shadow hover:bg-blue-700 transition"
           >
-            Get Your Quote
+            login
           </Link>
         </div>
       )}
