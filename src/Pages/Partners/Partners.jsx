@@ -11,7 +11,7 @@ const partners = [
 
 const Partners = () => {
   return (
-    <section className="bg-gradient-to-r from-amber-50 via-gray-50 to-amber-100 py-16 overflow-hidden">
+    <section className="bg-white py-16 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 text-center">
         {/* Heading */}
         <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
