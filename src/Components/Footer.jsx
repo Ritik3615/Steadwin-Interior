@@ -5,7 +5,7 @@ import logo from "../assets/logo.png"; // Example logo (replace with yours)
 
 function Footer() {
   return (
-    <footer className="text-black bg-slate-500 py-12 px-6 md:px-20 mt-10">
+    <footer className="text-black bg-[#2b5d7c] py-12 px-6 md:px-20 mt-10">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-16">
         {/* Company Info */}
         <div>

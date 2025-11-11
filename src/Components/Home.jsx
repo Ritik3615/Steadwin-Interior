@@ -132,8 +132,9 @@ function Home() {
       {/* contactsidebar */}
       <ContactSidebar />
       {/* About us */}
-      <AboutHome />
       <ServicesGrid />
+      {/* About */}
+      <AboutHome />
       {/* Cards */}
       <Cards />
 

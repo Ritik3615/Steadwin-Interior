@@ -53,3 +53,12 @@ body {
   scrollbar-color: rgba(100, 100, 100, 0.3) transparent;
 }
 
+div.sidebaar {
+  background-color: #235177; /* Change to a darker blue on hover */
+}
+
+div.arrow {
+  background-color: #022E41; /* Change to a darker gray on hover */
+  /* h61ce70 */
+}
+

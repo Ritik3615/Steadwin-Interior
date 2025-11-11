@@ -67,7 +67,7 @@ function GallerySection({ title, images }) {
             <img
               src={img}
               alt={`${title} ${index + 1}`}
-              className="w-full h-60 object-cover transform hover:scale-105 transition duration-300"
+              className="w-full h-60 object-cover transform hover:scale-105 hover:-scale-z-150 transition duration-300"
             />
           </div>
         ))}
