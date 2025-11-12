@@ -27,11 +27,11 @@ function ServicesGrid() {
   return (
     <>
       <div>
-        <h2 className="text-2xl px-30 pt-60 underline">Our Services</h2>
+        <h2 className="text-2xl px-30 pt-60 underline overflow-hidden">Our Services</h2>
         <span className="underline w-20"></span>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 px-30  py-32">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 px-30  py-32 overflow-hidden">
         {services.map((service, index) => (
           <div
             key={index}
@@ -46,7 +46,11 @@ function ServicesGrid() {
 
             {/* Hover Overlay */}
             <div className="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition duration-500 flex flex-col items-center justify-center">
-              <span className="text-white text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia repellat rem eligendi enim, ullam dolorem ut est molestias eius nihil?</span>
+              <span className="text-white text-center">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Mollitia repellat rem eligendi enim, ullam dolorem ut est
+                molestias eius nihil?
+              </span>
               <Link
                 to={service.path}
                 className="border border-white px-6 py-2 text-white text-sm font-semibold hover:bg-white hover:text-black transition"

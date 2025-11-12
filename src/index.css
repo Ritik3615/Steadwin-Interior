@@ -10,7 +10,14 @@
 /* Sab text ke liye global font */
 body {
   font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
+
+html, body, #root {
+  width: 100%;
+  overflow-x: hidden !important;
+}
+
 
 @keyframes marquee {
   0% {
@@ -30,7 +37,7 @@ body {
 
 /* Thin, pretty, minimal scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;            /* thin scrollbar width */
+  width: 2px;            /* thin scrollbar width */
   height: 6px;           /* thin horizontal scrollbar */
 }
 

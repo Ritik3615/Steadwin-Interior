@@ -129,7 +129,12 @@ function Home() {
           </Link>
         </div>
       </div>
-      <div className="absolute bg-white inset-0 h-72 top-5/6 w-3/5 z-20 mx-auto flex items-center justify-center rounded-lg shadow-lg p-4">
+      <div
+        className="absolute left-1/2 transform -translate-x-1/2 top-[85%] 
+                bg-white w-[90%] md:w-3/5 h-auto md:h-72 
+                z-20 flex items-center justify-center 
+                rounded-lg shadow-lg p-4"
+      >
         <div>
           <div>
             <h1 className="text-center mb-4 text-2xl text-blue-600 font-serif font-bold">
@@ -137,12 +142,14 @@ function Home() {
             </h1>
             <p className="text-center p-3">
               <span>
-                About Steadwin India Private Limited "Steadwin for
-                right people" Steadwin India Private Limited is a
-                pioneering entity dedicated to providing superior quality
-                products that precisely meet our customers' diverse
+                About Steadwin India Private Limited "Steadwin for right people"
+                Steadwin India Private Limited is a pioneering entity dedicated
+                to providing superior quality products that precisely meet our
+                customers' diverse
               </span>
-              <Link to="/About" className="text-blue-900">...read more</Link>
+              <Link to="/About" className="text-blue-900">
+                ...read more
+              </Link>
             </p>
           </div>
           <div className="text-center m-auto gap-4 flex justify-center mt-6 flex-col md:flex-row">
