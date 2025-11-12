@@ -27,11 +27,11 @@ function ServicesGrid() {
   return (
     <>
       <div>
-        <h2 className="text-2xl px-30 pt-60 underline overflow-hidden">Our Services</h2>
-        <span className="underline w-20"></span>
+        <h2 className="text-3xl md:px-30 px-20 pt-80 md:pt-72 text-center overflow-hidden text-[#2b5d7c]">Our Services</h2>
+        <span className="block md:w-[200px] lg:w-20% w-[150px] rounded-lg h-1 mx-auto mt-3 bg-[#2b5d7c]"></span>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 px-30  py-32 overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 md:px-30 px-15 py-32 overflow-hidden">
         {services.map((service, index) => (
           <div
             key={index}

@@ -27,7 +27,7 @@ const News = () => {
   return (
     <section className="bg-white px-6 md:px-30 py-12">
       {/* Section Heading */}
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 border-b-2 border-blue-400 inline-block pb-2">
+      <h2 className="text-3xl md:text-4xl font-bold flex justify-center text-center mb-10 border-b-2 border-[#2b5d7c] pb-2">
         LATEST NEWS
       </h2>
 
@@ -59,11 +59,14 @@ const News = () => {
       </div>
 
       {/* View All Button */}
-      <Link to="/News" className="flex justify-center mt-12">
-        <button className="px-8 py-3 bg-[#1E90FF] text-white font-semibold rounded-md hover:bg-blue-600 transition">
+      <div className="flex justify-center mt-12">
+        <Link
+          to="/News"
+          className="inline-block px-8 py-3 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition-colors duration-300"
+        >
           VIEW ALL UPDATES
-        </button>
-      </Link>
+        </Link>
+      </div>
     </section>
   );
 };

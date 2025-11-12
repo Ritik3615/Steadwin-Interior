@@ -47,14 +47,14 @@ function Navbar() {
   return (
     <nav className="bg-white shadow-2xl sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-center h-16">
+        <div className="flex items-center justify-between md:justify-center h-16">
           {/* Left logo */}
-          <div className="flex items-center gap-2 pr-7">
+          <div className="flex items-center gap-2 md:mr-7">
             <Link to="/">
               <img src={logo} alt="logo" className="h-12 w-12 rounded-full" />
             </Link>
-            <Link to="/" className="text-xl font-bold text-gray-800">
-              <span className="text-sky-400">STEAD</span>WIN
+            <Link to="/" className="text-3xl font-bold text-gray-800">
+              <span className="text-[#2b5d7c]">STEAD</span><span>WIN</span>
             </Link>
           </div>
 

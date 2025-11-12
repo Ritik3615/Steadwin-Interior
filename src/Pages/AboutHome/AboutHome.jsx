@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
-const slide = [{ img: "/img1.jpg" }];
+const slide = [{ img: "/company-image.jpg" }];
 
 function AboutHome() {
   const desc = [
@@ -41,14 +41,14 @@ function AboutHome() {
     <div className="w-full py-12 md:py-16 px-5 md:px-20">
       {/* Heading */}
       <motion.h1
-        className="text-center text-3xl md:text-5xl font-extrabold md:mb-12 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent tracking-wide"
+        className="text-center text-3xl md:text-5xl font-extrabold md:mb-12 bg-[#2b5d7c] bg-clip-text text-transparent tracking-wide"
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
         About Us
-        <span className="block w-24 h-1 mx-auto mt-3 bg-gradient-to-r from-blue-400 to-indigo-600 rounded-full"></span>
+        <span className="block md:w-[240px] lg:w-20% w-[150px] rounded-lg h-1 mx-auto mt-3 bg-[#2b5d7c]"></span>
       </motion.h1>
 
       <div className="flex flex-col lg:flex-row items-center justify-center gap-10 px-4 md:px-12 py-16 bg-gray-50">

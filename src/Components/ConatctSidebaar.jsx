@@ -68,7 +68,7 @@ function ContactSidebar() {
       {/* Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed right-0 z-50 transform transition-all duration-500 bg-black w-12 h-6 flex items-center justify-center rounded-tl-xl ${
+        className={`fixed right-0 z-50 transform transition-all duration-500 bg-black w-10 md:w-12 h-6 flex items-center justify-center rounded-tl-xl ${
           isOpen ? "top-[calc(50%-167px)]" : "top-1/2 -translate-y-1/2 rounded-l-xl"
         }`}
         aria-label="toggle contact sidebar"
@@ -82,7 +82,7 @@ function ContactSidebar() {
 
       {/* Sidebar (keeps w-10 h-56) */}
       <div
-        className={`fixed right-0 top-1/2 -translate-y-1/2 z-40 text-white w-12 h-72 flex flex-col justify-between rounded-l-2xl transition-transform duration-500 ease-in-out overflow-visible ${
+        className={`fixed right-0 top-1/2 -translate-y-1/2 z-40 text-white w-10 md:w-12 h-72 flex flex-col justify-between rounded-l-2xl transition-transform duration-500 ease-in-out overflow-visible ${
           isOpen
             ? "translate-x-0 pointer-events-auto"
             : "translate-x-full pointer-events-none opacity-60"
