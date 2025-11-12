@@ -133,7 +133,7 @@ function Home() {
         <div>
           <div>
             <h1 className="text-center mb-4 text-2xl text-blue-600 font-serif font-bold">
-              Right Work Decor
+              Steadwin Group
             </h1>
             <p className="text-center p-3">
               <span>

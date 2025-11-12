@@ -79,9 +79,18 @@ function GallerySection({ title, images }) {
 function Gallery() {
   return (
     <div className="px-4 md:px-16 py-8 bg-gray-50">
-      <h1 className="text-4xl font-extrabold text-center mb-12 text-blue-800">
-        Our Interior Gallery
-      </h1>
+      <div
+        className="relative bg-cover bg-center h-[40vh] flex items-center justify-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop')",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/50"></div>
+        <h1 className="relative text-4xl md:text-6xl font-extrabold text-white text-center drop-shadow-lg">
+          Our<span className="text-amber-400 px-3">Gallary</span>
+        </h1>
+      </div>
 
       <GallerySection title="Stair Railings" images={stairImages} />
       <GallerySection title="Living Halls" images={hallImages} />

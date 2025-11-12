@@ -69,7 +69,7 @@ function ContactSidebar() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`fixed right-0 z-50 transform transition-all duration-500 bg-black w-12 h-6 flex items-center justify-center rounded-tl-xl ${
-          isOpen ? "md:top-[39%] lg:top-[32%] xs:top-[196px] xl:top-[38%] top-[39%] 2xl:top-[26%]" : "top-1/2 -translate-y-1/2 rounded-l-xl"
+          isOpen ? "top-20" : "top-1/2 -translate-y-1/2 rounded-l-xl"
         }`}
         aria-label="toggle contact sidebar"
       >

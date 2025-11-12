@@ -32,7 +32,7 @@ const News = () => {
       </h2>
 
       {/* News Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
         {newsData.map((item, index) => (
           <div
             key={index}
@@ -42,7 +42,7 @@ const News = () => {
             <img
               src={item.img}
               alt={item.title}
-              className="h-[280px] md:h-[340px] w-full object-cover px-3"
+              className="h-[280px] md:h-[340px] w-full object-cover px-3 "
             />
 
             {/* Content */}
