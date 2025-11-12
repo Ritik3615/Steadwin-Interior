@@ -38,7 +38,7 @@ function AboutHome() {
   }, []);
 
   return (
-    <div className="w-full py-12 md:py-16 px-5 md:px-20 bg-sky-50">
+    <div className="w-full py-12 md:py-16 px-5 md:px-20">
       {/* Heading */}
       <motion.h1
         className="text-center text-3xl md:text-5xl font-extrabold md:mb-12 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent tracking-wide"
@@ -51,67 +51,73 @@ function AboutHome() {
         <span className="block w-24 h-1 mx-auto mt-3 bg-gradient-to-r from-blue-400 to-indigo-600 rounded-full"></span>
       </motion.h1>
 
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-8 md:gap-12 px-2 md:px-10">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-10 px-4 md:px-12 py-16 bg-gray-50">
         {/* Left side: Image */}
-        <div className="relative w-full lg:w-[650px] h-[300px] md:h-[500px] flex justify-center mb-8 lg:mb-0">
-          <AnimatePresence mode="wait">
-            <motion.img
-              key={index}
-              src={slide[index].img}
-              alt="About"
-              className="w-full h-full object-cover rounded-3xl shadow-2xl border-4 border-blue-200"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 1.05 }}
-              transition={{ duration: 1 }}
-              viewport={{ once: true }}
-            />
-          </AnimatePresence>
+        <div className="relative w-full lg:w-[650px] h-[350px] md:h-[500px]">
+          <motion.img
+            src={slide[index].img}
+            alt="About Organization"
+            className="w-full h-full object-cover rounded-lg shadow-2xl"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.05 }}
+            transition={{ duration: 1 }}
+          />
         </div>
 
-        {/* Right side: Text */}
+        {/* Right side: Content */}
         <motion.div
-          className="w-full lg:w-1/2 space-y-6 md:space-y-10"
+          className="w-full lg:w-1/2 space-y-8 text-center lg:text-left"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          {/* Services list */}
+          {/* Title */}
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 uppercase tracking-wide">
+            About Our <span className="text-blue-500">Organization</span>
+          </h2>
 
-          {/* About Section */}
-          <div className="text-left mt-4 md:mt-6">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 md:mb-3">
-              About Steadwin
-            </h2>
-            <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-              At <span className="font-semibold text-blue-500">Steadwin</span>,
-              we strive to create spaces and solutions that blend functionality
-              with aesthetic appeal. Our team of experts ensures every project
-              is tailored to meet the unique needs of our clients, whether it’s
-              designing interiors, offering professional consultancy, providing
-              custom development solutions, or installing high-quality railings
-              that enhance safety and style.
-            </p>
-            <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-              We believe in delivering excellence at every step. From initial
-              consultation to final implementation, our focus is on quality,
-              precision, and innovation. With years of experience and a passion
-              for perfection, Steadwin has built a reputation for transforming
-              ideas into reality while exceeding client expectations.
-            </p>
+          {/* Subheading */}
+          <p className="text-gray-700 text-sm md:text-base">
+            About{" "}
+            <span className="font-semibold text-gray-900">
+              Steadwin India Private Limited
+            </span>
+          </p>
 
-            <Link to="/About">
-              <motion.button
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0px 0px 15px rgba(59,130,246,0.6)",
-                }}
-                className="mt-4 md:mt-6 px-6 md:px-7 py-2 md:py-3 bg-gradient-to-r from-blue-400 to-indigo-500 text-white font-semibold rounded-full shadow-lg"
-              >
-                View More About Us
-              </motion.button>
+          <p className="italic text-gray-500 text-sm md:text-base">
+            “Want a premium space connect us”
+          </p>
+
+          {/* Description */}
+          <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+            Steadwin India Private Limited is a pioneering entity dedicated to
+            providing superior quality interior and architectural solutions that
+            precisely meet our customers’ diverse requirements. Our team focuses
+            on functionality, innovation, and aesthetic design that ensures
+            every project delivers excellence.
+            <Link
+              to="/About"
+              className="text-blue-500 font-semibold hover:underline ml-1"
+            >
+              Read More
             </Link>
+          </p>
+
+          {/* Icon + Services Count */}
+          <div className="flex flex-col items-center justify-center pt-8">
+            <div className="bg-white rounded-full shadow-xl p-4">
+              <img
+                src="/factory-icon.svg"
+                alt="Factory Icon"
+                className="w-10 h-10"
+              />
+            </div>
+            <p className="text-blue-600 font-bold text-2xl mt-3">19</p>
+            <p className="text-gray-600 font-medium text-sm">
+              Services Available
+            </p>
           </div>
         </motion.div>
       </div>

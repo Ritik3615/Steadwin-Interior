@@ -129,6 +129,38 @@ function Home() {
           </Link>
         </div>
       </div>
+      <div className="absolute bg-white inset-0 h-72 top-5/6 w-3/5 z-20 mx-auto flex items-center justify-center rounded-lg shadow-lg p-4">
+        <div>
+          <div>
+            <h1 className="text-center mb-4 text-2xl text-blue-600 font-serif font-bold">
+              Right Work Decor
+            </h1>
+            <p className="text-center p-3">
+              <span>
+                About Steadwin India Private Limited "Steadwin for
+                right people" Steadwin India Private Limited is a
+                pioneering entity dedicated to providing superior quality
+                products that precisely meet our customers' diverse
+              </span>
+              <Link to="/About" className="text-blue-900">...read more</Link>
+            </p>
+          </div>
+          <div className="text-center m-auto gap-4 flex justify-center mt-6 flex-col md:flex-row">
+            <Link
+              to="/Services"
+              className="border p-3 px-6 bg-sky-500 text-white rounded"
+            >
+              View Services
+            </Link>
+            <Link
+              to="/Quote"
+              className="border p-3 px-6 bg-black text-white rounded"
+            >
+              Send Enquery
+            </Link>
+          </div>
+        </div>
+      </div>
       {/* contactsidebar */}
       <ContactSidebar />
       {/* About us */}

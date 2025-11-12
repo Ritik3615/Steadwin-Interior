@@ -1,69 +1,71 @@
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+import { Link } from "lucide-react";
+import React from "react";
 
-function News() {
-  const data = [
-    { img: "/ganesh.png", title: "Happy Ganesh Chaturthi", offer: "Get 10% off" },
-    { img: "pexels1.jpg", title: "Festival Special", offer: "Flat 15% off" },
-    { img: "/ganesh.png", title: "New Arrival", offer: "20% Discount" },
-    { img: "pexels1.jpg", title: "Limited Time Offer", offer: "Buy 1 Get 1 Free" },
-    { img: "/ganesh.png", title: "Mega Sale", offer: "Up to 50% Off" },
+const News = () => {
+  const newsData = [
+    {
+      img: "/ganesh.png",
+      title:
+        "Premium Aluminium Windows: Engineered for Endurance, Designed for Modern Living",
+    },
+    {
+      img: "/pexels1.jpg",
+      title: "TOSTEM TADA 2025, Transformed by Right Work Décor!",
+    },
+    {
+      img: "/ganesh.png",
+      title:
+        "Aluminium Sliding Doors for Modern Homes – Available at Right Work Décor, Bangalore",
+    },
+    // {
+    //   img: "/pexels1.jpg",
+    //   title:
+    //     "Innovation You Can See Through – Right Work’s Latest Design Approach",
+    // },
   ];
 
-  const settings = {
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
-    responsive: [
-      {
-        breakpoint: 1024, // medium screens
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 768, // small screens
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
-
   return (
-    <div className="mx-5 md:mx-20 my-10">
-      <h1 className="text-2xl md:text-3xl font-bold text-center mb-7">
-        Updates and New Offers
-      </h1>
+    <section className="bg-white px-6 md:px-30 py-12">
+      {/* Section Heading */}
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 border-b-2 border-blue-400 inline-block pb-2">
+        LATEST NEWS
+      </h2>
 
-      <Slider {...settings}>
-        {data.map((value, index) => (
+      {/* News Cards Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {newsData.map((item, index) => (
           <div
             key={index}
-            className="flex flex-col items-center p-4 rounded-2xl shadow-md mx-2"
+            className="bg-white shadow-lg rounded-md overflow-hidden transition-transform duration-300 hover:-translate-y-2 border border-gray-100"
           >
+            {/* Image */}
             <img
-              src={value.img}
-              alt={value.title}
-              className="object-cover rounded-xl h-[250px] md:h-[400px] w-full"
+              src={item.img}
+              alt={item.title}
+              className="h-[280px] md:h-[340px] w-full object-cover px-3"
             />
-            <div className="text-center mt-3">
-              <h1 className="text-lg md:text-xl font-semibold">{value.title}</h1>
-              <p className="text-gray-600">{value.offer}</p>
-              <button className="mt-2 px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition">
-                View More
+
+            {/* Content */}
+            <div className="p-5 text-center flex flex-col items-center justify-between h-[180px]">
+              <p className="text-gray-700 text-sm md:text-base mb-4 leading-relaxed">
+                {item.title}
+              </p>
+              <button className="px-5 py-2 bg-[#1E90FF] text-white text-sm font-semibold rounded-md hover:bg-blue-600 transition">
+                READ MORE
               </button>
             </div>
           </div>
         ))}
-      </Slider>
-    </div>
+      </div>
+
+      {/* View All Button */}
+      <Link to="/News" className="flex justify-center mt-12">
+        <button className="px-8 py-3 bg-[#1E90FF] text-white font-semibold rounded-md hover:bg-blue-600 transition">
+          VIEW ALL UPDATES
+        </button>
+      </Link>
+    </section>
   );
-}
+};
 
 export default News;
