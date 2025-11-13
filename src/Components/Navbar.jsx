@@ -127,7 +127,7 @@ function Navbar() {
         </div>
 
         {/* ---------- CENTER SECTION ---------- */}
-        <div className="hidden xl:flex items-center space-x-8 text-black">
+        <div className="hidden md:flex items-center space-x-8 text-black">
           {Nav.filter((item) => !item.hidden && item.name !== "").map(
             (item, index) => (
               <motion.div
@@ -152,7 +152,7 @@ function Navbar() {
         </div>
 
         {/* ---------- MOBILE MENU BUTTON ---------- */}
-        <div className="xl:hidden flex items-center">
+        <div className="md:hidden flex items-center">
           <button onClick={() => setIsOpen(!isOpen)} className="p-2">
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -161,7 +161,7 @@ function Navbar() {
 
       {/* ---------- MOBILE DROPDOWN ---------- */}
       {isOpen && (
-        <div className="xl:hidden bg-white shadow-lg p-4 space-y-4">
+        <div className="md:hidden bg-white shadow-lg p-4 space-y-4">
           {Nav.filter((item) => !item.hidden).map((item, idx) => (
             <Link
               key={idx}
