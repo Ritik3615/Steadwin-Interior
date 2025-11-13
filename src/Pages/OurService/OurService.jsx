@@ -31,7 +31,7 @@ function ServicesGrid() {
         <span className="block md:w-[200px] lg:w-20% w-[150px] rounded-lg h-1 mx-auto mt-3 bg-[#2b5d7c]"></span>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 md:px-30 px-15 py-32 overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 md:px-30 px-8 py-32 overflow-hidden">
         {services.map((service, index) => (
           <div
             key={index}

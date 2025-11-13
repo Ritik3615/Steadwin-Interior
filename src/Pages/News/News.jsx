@@ -1,4 +1,4 @@
-import { Link } from "lucide-react";
+import { Link } from "react-router-dom"; // ✅ Correct import
 import React from "react";
 
 const News = () => {
@@ -62,7 +62,9 @@ const News = () => {
       <div className="flex justify-center mt-12">
         <Link
           to="/News"
-          className="inline-block px-8 py-3 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition-colors duration-300"
+          className="inline-block px-10 py-3 bg-gradient-to-r from-[#2b5d7c] to-[#3c8dbc]
+               text-white font-semibold rounded-full shadow-lg
+               hover:from-[#1f445c] hover:to-[#367fa9] hover:shadow-xl transition-all duration-300"
         >
           VIEW ALL UPDATES
         </Link>

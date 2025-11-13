@@ -91,7 +91,7 @@ function Home() {
       {/* Hero Section */}
       <div
         ref={heroRef}
-        className="relative w-full h-[90vh] overflow-hidden flex items-center justify-center"
+        className="relative w-full h-[96vh] overflow-hidden flex items-center justify-center"
         onMouseEnter={stopSlide}
         onMouseLeave={startSlide}
       >
@@ -130,8 +130,8 @@ function Home() {
         </div>
       </div>
       <div
-        className="absolute left-1/2 transform -translate-x-1/2 top-[85%] 
-                bg-white w-[90%] md:w-3/4 h-auto md:h-72 
+        className="absolute left-1/2 transform -translate-x-1/2 top-[73vh] 
+                bg-white w-[90%] md:w-3/4 h-auto md:h-60 
                 z-20 flex items-center justify-center 
                 rounded-lg shadow-lg p-4"
       >
@@ -142,10 +142,9 @@ function Home() {
             </h1>
             <p className="text-center p-3">
               <span>
-                About Steadwin India Private Limited "Steadwin for right people"
-                Steadwin India Private Limited is a pioneering entity dedicated
-                to providing superior quality products that precisely meet our
-                customers' diverse
+                At <span className="font-bold text-[#2b5d7c]">STEADWIN GROUP</span>, we specialize in development, interior
+                design, consultancy, and railing systems — creating spaces that
+                blend innovation, quality, and style.
               </span>
               <Link to="/About" className="text-[#2b5d7c]">
                 ...read more
@@ -181,7 +180,7 @@ function Home() {
       <Services />
 
       {/* Process CTA */}
-      <div className="relative mx-20 rounded-2xl py-32 flex flex-col justify-center items-center text-center overflow-hidden">
+      <div className="relative mx-8 md:px-20 rounded-2xl py-32 flex flex-col justify-center items-center text-center overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop"
           alt="Workflow Background"
