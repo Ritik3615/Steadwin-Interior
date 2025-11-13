@@ -13,6 +13,7 @@ import {
   Instagram,
 } from "lucide-react";
 import logo from "../assets/logo.png";
+import TopBar from "../Pages/Topbaar";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,75 +44,7 @@ function Navbar() {
   return (
     <nav className="bg-white shadow-2xl w-full fixed top-0 z-50">
       {/* Top Blue Line */}
-      <div className="h-7 text-white hidden md:flex justify-between bg-gray-700 items-center px-12 border-b text-sm">
-        {/* Left side: mail + phone */}
-        <div className="flex gap-6 items-center">
-          <a
-            href="mailto:info@Steadwin.in"
-            className="flex items-center gap-1 font-medium hover:text-blue-300 transition"
-          >
-            {/* <span>Mail:</span> */}
-            <Mail
-              className="h-4 w-4"
-              style={{
-                stroke: "url(#grad1)",
-              }}
-            />
-
-            <svg width="0" height="0">
-              <defs>
-                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#ff5f6d" />
-                  <stop offset="100%" stopColor="#ffc371" />
-                </linearGradient>
-              </defs>
-            </svg>
-
-            <span>info@Steadwin.in</span>
-          </a>
-
-          <a
-            href="tel:+918792695400"
-            className="flex items-center gap-2 font-medium hover:text-blue-300 transition"
-          >
-            {/* <span>Phone:</span> */}
-            <PhoneForwardedIcon className="h-4 w-4 text-green-600" />
-            <span>+91 8792695400</span>
-          </a>
-        </div>
-
-        {/* Right side: social icons */}
-        <div className="flex gap-3 items-center">
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Linkedin className="h-4 w-4 text-blue-600 hover:text-blue-300 transition" />
-          </a>
-          <a
-            href="https://youtube.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Youtube className="h-4 w-4 text-red-950 hover:text-blue-300 transition" />
-          </a>
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Facebook className="h-4 w-4 text-blue-900 hover:text-blue-300 transition" />
-          </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Instagram className="h-4 w-4 text-red-500 hover:text-blue-300 transition" />
-          </a>
-        </div>
-      </div>
+      <TopBar/>
 
       {/* Main Navbar */}
       <div className="flex items-center justify-between h-20 w-full px-8">
@@ -144,7 +77,7 @@ function Navbar() {
         {/* ---------- RIGHT SECTION ---------- */}
         <div className="hidden md:flex">
           <Link
-            to="/frenchises"
+            to="/quote"
             className="bg-[#2b5d7c] text-white font-medium px-6 py-2 rounded-3xl hover:bg-[#1f445c] transition"
           >
             Frenchises

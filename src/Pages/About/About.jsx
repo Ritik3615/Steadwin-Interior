@@ -5,36 +5,39 @@ function About() {
   return (
     <>
       {/* Hero Section with Background */}
-      <div
-        className="relative bg-cover bg-center h-[40vh] flex items-center justify-center"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop')",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/50"></div>
-        <h1 className="relative text-4xl md:text-6xl font-extrabold text-white text-center drop-shadow-lg">
-          About <span className="text-amber-400">Steadwin Group</span>
-        </h1>
-      </div>
+      <section className="relative h-[80vh] flex items-center justify-center text-center overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop"
+          alt="Investor Relations"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="relative z-10 px-6 max-w-3xl">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            About{" "}
+            <span className="text-amber-400">Steadwin Group</span>
+          </h1>
+        </div>
+      </section>
 
       {/* Main Content */}
       <div className="px-6 md:px-28 py-12">
         {/* Intro Section */}
         <div className="text-gray-700 leading-relaxed text-justify text-lg mb-12">
           <p>
-            <strong>Steadwin Group</strong> was founded in <strong>2018</strong> with
-            a vision to transform spaces into experiences. Starting our journey
-            with <span className="font-medium">Interior Design</span>, we have now
-            expanded our expertise into <span className="font-medium">Railing Systems</span>,{" "}
+            <strong>Steadwin Group</strong> was founded in <strong>2018</strong>{" "}
+            with a vision to transform spaces into experiences. Starting our
+            journey with <span className="font-medium">Interior Design</span>,
+            we have now expanded our expertise into{" "}
+            <span className="font-medium">Railing Systems</span>,{" "}
             <span className="font-medium">Consultancy</span>, and{" "}
             <span className="font-medium">Development Services</span>.
           </p>
           <p className="mt-4">
-            From crafting modern, elegant homes to providing professional consultancy
-            for large-scale projects, our mission has always been to deliver
-            quality, innovation, and trust. Over the years, we’ve built not just
-            spaces, but long-lasting relationships with our clients.
+            From crafting modern, elegant homes to providing professional
+            consultancy for large-scale projects, our mission has always been to
+            deliver quality, innovation, and trust. Over the years, we’ve built
+            not just spaces, but long-lasting relationships with our clients.
           </p>
         </div>
 
