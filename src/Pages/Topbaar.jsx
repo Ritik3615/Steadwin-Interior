@@ -22,10 +22,10 @@ const TopBar = () => {
   return (
     <div
       className={`overflow-hidden transition-all duration-500 ease-in-out ${
-        isHidden ? "h-0 opacity-0" : "h-7 opacity-100"
+        isHidden ? "h-0 opacity-0" : "Md:h-7 opacity-100"
       }`}
     >
-      <div className="text-white hidden md:flex justify-between bg-[#121212] items-center px-12 border-b text-sm h-7">
+      <div className="text-white hidden md:flex justify-between bg-[#121212] items-center px-12 border-b text-sm md:h-7">
         {/* Left side: mail + phone */}
         <div className="flex gap-8 items-center">
           <a
