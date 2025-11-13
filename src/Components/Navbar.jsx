@@ -43,7 +43,7 @@ function Navbar() {
   return (
     <nav className="bg-white shadow-2xl w-full fixed top-0 z-50">
       {/* Top Blue Line */}
-      <div className="h-7 text-white hidden md:flex justify-between bg-[#2b5d7c] items-center px-12 border-b text-sm">
+      <div className="h-7 text-white hidden md:flex justify-between bg-gray-700 items-center px-12 border-b text-sm">
         {/* Left side: mail + phone */}
         <div className="flex gap-6 items-center">
           <a
