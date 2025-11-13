@@ -8,6 +8,7 @@ import AboutHome from "../Pages/AboutHome/AboutHome";
 import News from "../Pages/News/News";
 import ContactSidebar from "./ConatctSidebaar";
 import ServicesGrid from "../Pages/OurService/OurService";
+import GalleryCard from "../Pages/Gallery/GallaryCard";
 
 const heroSlides = [
   {
@@ -16,12 +17,6 @@ const heroSlides = [
     desc: "Designs that blend functionality with timeless aesthetics for your dream home.",
     link: "/Services/Interior",
   },
-  // {
-  //   img: "https://images.unsplash.com/photo-1615874959474-d609969a20ed?q=80&w=1200&auto=format&fit=crop",
-  //   title: "Luxury Living Spaces",
-  //   desc: "Transform your interiors into elegant, cozy, and stylish spaces.",
-  //   link: "/Services/Interior",
-  // },
   {
     img: "https://images.pexels.com/photos/276551/pexels-photo-276551.jpeg",
     title: "Premium Railing Systems",
@@ -40,13 +35,6 @@ const heroSlides = [
     desc: "Building innovative, sustainable, and modern living spaces with trust and excellence.",
     link: "/about",
   },
-
-  // {
-  //   img: "https://images.pexels.com/photos/7166942/pexels-photo-7166942.jpeg",
-  //   title: "Timeless Comfort",
-  //   desc: "Experience interiors that remain elegant and relevant for years.",
-  //   link: "/process",
-  // },
 ];
 
 function Home() {
@@ -55,7 +43,7 @@ function Home() {
   const intervalRef = useRef(null);
   const heroRef = useRef(null);
 
-  // Function to start auto-slide
+  // Auto-slide
   const startSlide = () => {
     if (!intervalRef.current) {
       intervalRef.current = setInterval(() => {
@@ -63,8 +51,6 @@ function Home() {
       }, 3000);
     }
   };
-
-  // Function to stop auto-slide
   const stopSlide = () => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
@@ -72,23 +58,14 @@ function Home() {
     }
   };
 
-  // Start auto-slide on mount
   useEffect(() => {
     startSlide();
     return () => stopSlide();
   }, []);
 
-  // Popup timer
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setShowPopup(true);
-  //   }, 5000);
-  //   return () => clearTimeout(timer);
-  // }, []);
-
   return (
     <>
-      {/* Hero Section */}
+      {/* HERO SECTION (no padding) */}
       <div
         ref={heroRef}
         className="relative w-full h-[96vh] overflow-hidden flex items-center justify-center"
@@ -113,7 +90,7 @@ function Home() {
         {/* Overlay */}
         <div className="absolute inset-0 bg-black opacity-40"></div>
 
-        {/* Dynamic Text */}
+        {/* Text */}
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-6 md:px-20 text-center">
           <h1 className="text-white text-4xl md:text-5xl font-bold mb-6">
             {heroSlides[currentIndex].title}
@@ -129,29 +106,25 @@ function Home() {
           </Link>
         </div>
       </div>
-      <div
-        className="absolute left-1/2 transform -translate-x-1/2 top-[73vh] 
-                bg-white w-[90%] md:w-3/4 h-auto md:h-60 
-                z-20 flex items-center justify-center 
-                rounded-lg shadow-lg p-4"
-      >
-        <div>
-          <div>
-            <h1 className="text-center mb-4 text-2xl text-[#2b5d7c] font-serif font-bold">
-              Steadwin Group
-            </h1>
-            <p className="text-center p-3">
-              <span>
-                At <span className="font-bold text-[#2b5d7c]">STEADWIN GROUP</span>, we specialize in development, interior
-                design, consultancy, and railing systems — creating spaces that
-                blend innovation, quality, and style.
-              </span>
-              <Link to="/About" className="text-[#2b5d7c]">
-                ...read more
-              </Link>
-            </p>
-          </div>
-          <div className="text-center m-auto gap-4 flex justify-center mt-6 flex-col md:flex-row">
+
+      {/* COMPANY INTRO (inside padding) */}
+      <div className="relative px-6 md:px-20 -mt-28 z-20">
+        <div className="bg-white w-full md:w-3/4 mx-auto rounded-lg shadow-lg p-8 text-center">
+          <h1 className="mb-4 text-2xl text-[#2b5d7c] font-serif font-bold">
+            Steadwin Group
+          </h1>
+          <p className="mb-6 text-gray-700">
+            At <span className="font-bold text-[#2b5d7c]">STEADWIN GROUP</span>,
+            we specialize in development, interior design, consultancy, and
+            railing systems — creating spaces that blend innovation, quality,
+            and style.
+            <Link to="/About" className="text-[#2b5d7c]">
+              {" "}
+              ...read more
+            </Link>
+          </p>
+
+          <div className="flex flex-col md:flex-row justify-center gap-4">
             <Link
               to="/Services"
               className="border p-3 px-6 bg-[#2b5d7c] text-white rounded"
@@ -162,50 +135,50 @@ function Home() {
               to="/Quote"
               className="border p-3 px-6 bg-black text-white rounded"
             >
-              Send Enquery
+              Send Enquiry
             </Link>
           </div>
         </div>
       </div>
-      {/* contactsidebar */}
+
+      {/* SIDEBAR */}
       <ContactSidebar />
-      {/* About us */}
-      <ServicesGrid />
-      {/* About */}
-      <AboutHome />
-      {/* Cards */}
-      <Cards />
 
-      {/* Services */}
-      <Services />
+      {/* CONTENT SECTIONS — all with consistent padding */}
+      <div className="px-6 md:px-20 space-y-24 mt-20">
+        <ServicesGrid />
+        <AboutHome />
+        <Cards />
+        <Services />
 
-      {/* Process CTA */}
-      <div className="relative mx-8 md:px-20 rounded-2xl py-32 flex flex-col justify-center items-center text-center overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop"
-          alt="Workflow Background"
-          className="absolute inset-0 w-full h-full object-cover rounded-2xl"
-        />
-        <div className="absolute inset-0 bg-black/40  "></div>
-        <div className="relative z-10 flex flex-col items-center px-6">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-8 drop-shadow-lg">
-            Curious About Our Workflow?
-          </h2>
-          <Link
-            to="/Process"
-            className="px-10 py-4 bg-gradient-to-r from-blue-500 to-slate-500 hover:from-amber-600 hover:to-pink-600 text-white text-lg md:text-xl font-semibold rounded-full shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-1 duration-300"
-          >
-            Explore Our Workflow →
-          </Link>
+        {/* Process CTA */}
+        <div className="relative rounded-2xl py-32 flex flex-col justify-center items-center text-center overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop"
+            alt="Workflow Background"
+            className="absolute inset-0 w-full h-full object-cover rounded-2xl"
+          />
+          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="relative z-10 flex flex-col items-center px-6">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-8 drop-shadow-lg">
+              Curious About Our Workflow?
+            </h2>
+            <Link
+              to="/Process"
+              className="px-10 py-4 bg-gradient-to-r from-blue-500 to-slate-500 hover:from-amber-600 hover:to-pink-600 text-white text-lg md:text-xl font-semibold rounded-full shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-1 duration-300"
+            >
+              Explore Our Workflow →
+            </Link>
+          </div>
         </div>
+
+        {/* News & Partners */}
+        <News />
+        <GalleryCard/>
+        <Partners />
       </div>
 
-      {/* updates and news  */}
-      <News />
-      {/* Partners */}
-      <Partners />
-
-      {/* Footer */}
+      {/* FOOTER (no padding adjustment) */}
       <Footer />
 
       {/* Popup Form */}

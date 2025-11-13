@@ -7,6 +7,7 @@ import PrivateRoute from "./Admin/Components/PrivateRoute";
 import { AuthProvider } from "./Admin/context/Authcontext";
 import SubAdminApp from "./Admin/SubAdmin/SubAdminApp";
 import { useAuth } from "./Admin/context/Authcontext";
+import Investors from "./Pages/Investors/Investors";
 
 // Lazy load pages
 const Home = lazy(() => import("./Components/Home"));
@@ -162,6 +163,14 @@ function App() {
             element={
               <Suspense fallback={<Loader />}>
                 <AdminHome />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/investors"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Investors/>
               </Suspense>
             }
           />

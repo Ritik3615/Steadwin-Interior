@@ -25,14 +25,17 @@ const News = () => {
   ];
 
   return (
-    <section className="bg-white px-6 md:px-30 py-12">
+    <section className="bg-white px-6 md:px-10 py-12">
       {/* Section Heading */}
-      <h2 className="text-3xl md:text-4xl font-bold flex justify-center text-center mb-10 border-b-2 border-[#2b5d7c] pb-2">
-        LATEST NEWS
-      </h2>
+      <div>
+        <h2 className="text-center text-3xl md:text-5xl font-extrabold md:mb-7 bg-[#2b5d7c] bg-clip-text text-transparent tracking-wide mt-20 ">
+          Latest News
+        </h2>
+        <span className="block md:w-[200px] lg:w-[340px] w-[150px] rounded-lg h-1 mx-auto mt-3 bg-[#2b5d7c]"></span>
+      </div>
 
       {/* News Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mt-10">
         {newsData.map((item, index) => (
           <div
             key={index}

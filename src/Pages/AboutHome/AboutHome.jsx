@@ -38,7 +38,7 @@ function AboutHome() {
   }, []);
 
   return (
-    <div className="w-full py-12 md:py-16 px-5 md:px-20">
+    <div className="w-full py-12 md:py-16 md:px-20">
       {/* Heading */}
       <motion.h1
         className="text-center text-3xl md:text-5xl font-extrabold md:mb-12 bg-[#2b5d7c] bg-clip-text text-transparent tracking-wide"

@@ -43,14 +43,14 @@ function Navbar() {
   return (
     <nav className="bg-white shadow-2xl w-full fixed top-0 z-50">
       {/* Top Blue Line */}
-      <div className="h-7 text-black hidden md:flex justify-between items-center px-4 border-b text-sm">
+      <div className="h-7 text-white hidden md:flex justify-between bg-[#2b5d7c] items-center px-12 border-b text-sm">
         {/* Left side: mail + phone */}
         <div className="flex gap-6 items-center">
           <a
             href="mailto:info@Steadwin.in"
             className="flex items-center gap-1 font-medium hover:text-blue-300 transition"
           >
-            <span>Mail:</span>
+            {/* <span>Mail:</span> */}
             <Mail
               className="h-4 w-4"
               style={{
@@ -74,7 +74,7 @@ function Navbar() {
             href="tel:+918792695400"
             className="flex items-center gap-2 font-medium hover:text-blue-300 transition"
           >
-            <span>Phone:</span>
+            {/* <span>Phone:</span> */}
             <PhoneForwardedIcon className="h-4 w-4 text-green-600" />
             <span>+91 8792695400</span>
           </a>
@@ -174,16 +174,16 @@ function Navbar() {
           ))}
 
           {/* Frenchises Button in Mobile */}
-          <Link
+          {/* <Link
             to="/frenchises"
             onClick={() => setIsOpen(false)}
             className="block bg-[#2b5d7c] text-white text-center px-4 py-2 rounded-3xl shadow hover:bg-[#1f445c] transition"
           >
             Frenchises
-          </Link>
+          </Link> */}
 
           {/* Services Dropdown */}
-          <div className="space-y-2">
+          {/* <div className="space-y-2">
             <div className="font-medium text-gray-800">Services</div>
             {serviceCategories.map((srv, idx) => (
               <Link
@@ -195,7 +195,7 @@ function Navbar() {
                 {srv.name}
               </Link>
             ))}
-          </div>
+          </div> */}
 
           {/* Search Bar in Mobile */}
           <div className="flex items-center bg-gray-100 rounded-lg px-3 py-2">
@@ -210,13 +210,13 @@ function Navbar() {
           </div>
 
           {/* Login Button */}
-          <Link
+          {/* <Link
             to="/login"
             onClick={() => setIsOpen(false)}
             className="block bg-blue-600 text-white text-center px-4 py-2 rounded-xl shadow hover:bg-blue-700 transition"
           >
             Login
-          </Link>
+          </Link> */}
         </div>
       )}
     </nav>
