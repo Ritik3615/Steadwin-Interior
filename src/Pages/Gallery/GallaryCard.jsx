@@ -1,24 +1,24 @@
 import React from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Hall20 from "/HAll/Hall20.jpg";
+import Railing10 from "/Railing/Railing10.jpg";
+import Bedroom32 from "/Bedroom/bedroom32.jpg";
 
 const galleryItems = [
   {
     title: "Luxury Sliding Windows",
     subtitle: "The perfect blend of durability and style for modern homes.",
-    imageUrl:
-      "https://placehold.co/400x400/f1f5f9/1e293b?text=Window+Product+1",
+    imageUrl:Hall20,
   },
   {
     title: "Japanese Engineering",
     subtitle: "Revolutionary housing solutions now available.",
-    imageUrl:
-      "https://placehold.co/600x400/0f172a/f1f5f9?text=Modern+Facade+2",
+    imageUrl: Railing10,
   },
   {
     title: "Sleek Modern Doors",
     subtitle: "Experience the future of seamless living and elegance.",
-    imageUrl:
-      "https://placehold.co/400x400/cbd5e1/1e293b?text=Exterior+View+3",
+    imageUrl: Bedroom32,
   },
 ];
 
@@ -28,7 +28,7 @@ function Gallery({ title, subtitle, imageUrl }) {
       <img
         src={imageUrl}
         alt={title}
-        className="w-full h-full object-cover"
+        className="w-full h-56 object-cover"
         onError={(e) => {
           e.target.src =
             "https://placehold.co/400x400/94a3b8/ffffff?text=Image+Missing";
@@ -51,7 +51,7 @@ function Gallery({ title, subtitle, imageUrl }) {
 
 export default function GalleryCard() {
   return (
-    <section className=" bg-gray-50 p-6">
+    <section className=" bg-gray-50 p-6 px-12">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="flex justify-between items-center mb-10">
@@ -59,7 +59,7 @@ export default function GalleryCard() {
             <h1 className="text-3xl font-semibold text-slate-800">
               Our Gallery
             </h1>
-            <div className="w-12 h-1 bg-blue-600 mt-2 rounded"></div>
+            <div className="w-38 h-1 bg-blue-600 mt-2 rounded"></div>
           </div>
 
           {/* Arrows */}
@@ -74,7 +74,7 @@ export default function GalleryCard() {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {galleryItems.map((item, i) => (
             <Gallery key={i} {...item} />
           ))}

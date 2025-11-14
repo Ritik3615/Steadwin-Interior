@@ -11,6 +11,8 @@ import News from "../Pages/News/News";
 import ContactSidebar from "./ConatctSidebaar";
 import ServicesGrid from "../Pages/OurService/OurService";
 import GalleryCard from "../Pages/Gallery/GallaryCard";
+import FeaturesSection from "../Pages/singlepage/WhyUs";
+import StatsSection from "../Pages/Singlepage/StatsSection";
 
 const heroSlides = [
   {
@@ -32,8 +34,8 @@ const heroSlides = [
     link: "Services/Consultancy",
   },
   {
-    img: "https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg",
-    title: "Steadwin Developers",
+    img: "/Railing/Railing12.jpg",
+    title: "Trusted Development Solutions",
     desc: "Building innovative, sustainable, and modern living spaces with trust and excellence.",
     link: "/about",
   },
@@ -44,6 +46,7 @@ function Home() {
   const [showPopup, setShowPopup] = useState(false);
   const intervalRef = useRef(null);
   const heroRef = useRef(null);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   // Auto-slide
   const startSlide = () => {
@@ -64,6 +67,29 @@ function Home() {
     startSlide();
     return () => stopSlide();
   }, []);
+
+  useEffect(() => {
+    const checkScroll = () => {
+      const scrollPos = window.scrollY + window.innerHeight;
+      const pageHeight = document.documentElement.scrollHeight;
+
+      if (scrollPos >= pageHeight * 0.9) setShowScrollTop(true);
+      else setShowScrollTop(false);
+    };
+
+    window.addEventListener("scroll", checkScroll);
+    return () => window.removeEventListener("scroll", checkScroll);
+  }, []);
+
+  const nextSlide = () => {
+    stopSlide();
+    setCurrentIndex((prev) => (prev + 1) % heroSlides.length);
+  };
+
+  const prevSlide = () => {
+    stopSlide();
+    setCurrentIndex((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1));
+  };
 
   return (
     <>
@@ -90,7 +116,29 @@ function Home() {
         </div>
 
         {/* Overlay */}
+        {/* Overlay */}
         <div className="absolute inset-0 bg-black opacity-40"></div>
+
+        {/* LEFT BUTTON */}
+        {/* LEFT BUTTON */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-[50px] z-30 top-1/2 -translate-y-1/2 bg-white/40 
+             hover:bg-white/80 text-black p-3 rounded-full backdrop-blur 
+             transition shadow-lg"
+        >
+          ❮
+        </button>
+
+        {/* RIGHT BUTTON */}
+        <button
+          onClick={nextSlide}
+          className="absolute right-[50px] z-30 top-1/2 -translate-y-1/2 bg-white/40 
+             hover:bg-white/80 text-black p-3 rounded-full backdrop-blur 
+             transition shadow-lg"
+        >
+          ❯
+        </button>
 
         {/* Text */}
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-6 md:px-20 text-center">
@@ -152,6 +200,8 @@ function Home() {
         <AboutHome />
         <Cards />
         <Services />
+        <FeaturesSection />
+        <StatsSection />
 
         {/* Process CTA */}
         <div className="relative rounded-2xl py-32 flex flex-col justify-center items-center text-center overflow-hidden mx-15 bg-gray-400">
@@ -176,11 +226,22 @@ function Home() {
 
         {/* News & Partners */}
         <News />
-        <GalleryCard/>
+        <GalleryCard />
         <Partners />
       </div>
 
+      {showScrollTop && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="fixed bottom-20 right-8 bg-[#e41010] text-white p-4 rounded-full 
+               shadow-xl hover:bg-[#3608c2] transition z-50"
+        >
+          ↑
+        </button>
+      )}
+
       {/* FOOTER (no padding adjustment) */}
+
       <Footer />
 
       {/* Popup Form */}

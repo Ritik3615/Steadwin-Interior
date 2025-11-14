@@ -13,7 +13,8 @@ import {
   Instagram,
 } from "lucide-react";
 import logo from "../assets/logo.png";
-import TopBar from "../Pages/Topbaar";
+import TopBar from "../Pages/Singlepage/Topbaar";
+
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

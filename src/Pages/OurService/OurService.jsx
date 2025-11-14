@@ -1,25 +1,30 @@
+import { desc } from "motion/react-client";
 import { Link } from "react-router-dom";
 
 const services = [
   {
     name: "Consultancy Services",
-    image: "/Homeimage/consultancy.jpeg",
+    image: "/HAll/Hall23.jpg",
     path: "/Services/Consultancy",
+    desc: "Professional advice to optimize your space and design.",
   },
   {
     name: "Developer",
-    image: "/Homeimage/Developer.jpg",
+    image: "/Railing/Railing12.jpg",
     path: "/Services/Developer",
+    desc: "Expert development services for residential and commercial projects.",
   },
   {
     name: "Interior",
-    image: "/Homeimage/interior.jpg",
+    image: "/HAll/Hall23.jpg",
     path: "/Services/Interior",
+    desc: "Transforming spaces with innovative interior design solutions.",
   },
   {
     name: "Railing",
-    image: "/Homeimage/Railing.jpg",
+    image: "/Railing/Railing22.jpg",
     path: "/Services/Railing",
+    desc: "Durable and stylish railing solutions for safety and aesthetics.",
   },
 ];
 
@@ -52,7 +57,7 @@ function ServicesGrid() {
               opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center px-4 text-center"
             >
               <p className="text-white text-sm mb-4 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                {service.desc}
               </p>
               <Link
                 to={service.path}
