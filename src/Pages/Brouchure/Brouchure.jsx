@@ -50,7 +50,7 @@ function Brouchure() {
               <a
                 href={brochure.file}
                 download
-                className={`px-5 py-3 rounded-lg text-white font-semibold text-center bg-${brochure.color}-600 hover:bg-${brochure.color}-700 transition duration-300`}
+                className={`px-5 py-3 rounded-lg text-black font-semibold text-center bg-${brochure.color}-600 hover:bg-${brochure.color}-700 transition duration-300`}
               >
                 <button>Download {brochure.title}</button>
               </a>

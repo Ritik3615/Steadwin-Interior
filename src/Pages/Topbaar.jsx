@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { LiaLinkedinIn } from "react-icons/lia";
-import { BsInstagram, BsMailbox } from "react-icons/bs";
+import { BsInstagram, BsMailbox, BsTwitterX } from "react-icons/bs";
 import { ImFacebook } from "react-icons/im";
 import { FiMail } from "react-icons/fi";
 import { BiPhoneCall } from "react-icons/bi";
@@ -89,6 +89,13 @@ const TopBar = () => {
             rel="noopener noreferrer"
           >
             <BsInstagram className="h-5 w-5 text-red-500 hover:text-blue-300 transition" />
+          </a>
+           <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <BsTwitterX className="h-5 w-5  hover:text-blue-300 transition" />
           </a>
         </div>
       </div>

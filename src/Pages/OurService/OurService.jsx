@@ -27,13 +27,13 @@ function ServicesGrid() {
   return (
     <>
       <div>
-        <h2 className="text-center text-3xl md:text-5xl font-extrabold md:mb-7 bg-[#2b5d7c] bg-clip-text text-transparent tracking-wide pt-20">
+        <h2 className="text-center md:text-3xl font-extrabold md:mb-3 bg-[#2b5d7c] bg-clip-text text-transparent tracking-wide pt-10">
           Our Services
         </h2>
-        <span className="block md:w-[200px] lg:w-[340px] w-[150px] rounded-lg h-1 mx-auto mt-3 bg-[#2b5d7c]"></span>
+        <span className="block md:w-[100px] lg:w-[200px] w-[150px] rounded-lg h-1 mx-auto mt-3 bg-[#2b5d7c]"></span>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 px-8 py-10 0verflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 px-8 py-10 0verflow-hidden bg-blue-100">
         {services.map((service, index) => (
           <div
             key={index}

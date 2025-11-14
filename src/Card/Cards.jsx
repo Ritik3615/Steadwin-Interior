@@ -36,10 +36,13 @@ function Cards() {
   ];
 
   return (
-    <section className="relative px-6 md:px-20 py-12 bg-gradient-to-b from-white via-gray-50 to-white">
-      <h1 className="text-4xl font-extrabold mb-12 text-center text-gray-800">
-        Let’s Connect With Your Dream Home
-      </h1>
+    <section className="relative  ">
+      <div>
+        <h2 className="text-center md:text-3xl font-extrabold md:mb-3 bg-[#2b5d7c] bg-clip-text text-transparent tracking-wide pt-5">
+          Explore Our Property Packages
+        </h2>
+        <span className="block md:w-[100px] lg:w-[450px] w-[250px] rounded-lg h-1 mx-auto mt-3 bg-[#2b5d7c]"></span>
+      </div>
 
       {/* Left Scroll Button */}
       <button
@@ -52,7 +55,7 @@ function Cards() {
       {/* Cards Container */}
       <div
         ref={containerRef}
-        className="flex gap-6 overflow-x-auto scroll-smooth scrollbar-hide px-2"
+        className="flex gap-6 overflow-x-auto scroll-smooth scrollbar-hide px-2 py-10 "
       >
         {cardData.map((item, index) => (
           <div

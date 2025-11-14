@@ -25,13 +25,13 @@ const News = () => {
   ];
 
   return (
-    <section className="bg-white px-6 md:px-10 py-12">
+    <section className="bg-white ">
       {/* Section Heading */}
-      <div>
-        <h2 className="text-center text-3xl md:text-5xl font-extrabold md:mb-7 bg-[#2b5d7c] bg-clip-text text-transparent tracking-wide mt-20 ">
-          Latest News
+     <div>
+        <h2 className="text-center md:text-3xl font-extrabold md:mb-3 bg-[#2b5d7c] bg-clip-text text-transparent tracking-wide pt-5">
+          Latest News & Updates
         </h2>
-        <span className="block md:w-[200px] lg:w-[340px] w-[150px] rounded-lg h-1 mx-auto mt-3 bg-[#2b5d7c]"></span>
+        <span className="block md:w-[100px] lg:w-[350px] w-[200px] rounded-lg h-1 mx-auto mt-3 bg-[#2b5d7c]"></span>
       </div>
 
       {/* News Cards Grid */}

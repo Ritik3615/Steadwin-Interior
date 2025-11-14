@@ -7,7 +7,7 @@ import Footer from "../../Components/Footer";
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-gray-50 text-gray-800 font-sans">
+    <main className="min-h-screen bg-gray-50 text-gray-800 font-sans pt-20">
       {/* <header className="bg-white shadow">
         <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -27,13 +27,22 @@ export default function ServicesPage() {
       </header> */}
 
       <section className="max-w-6xl mx-auto px-6 py-12">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-extrabold">Our Services</h2>
-          <p className="mt-2 text-gray-600">
-            We build spaces and systems — explore each division below. This is a
-            demo services page.
+        <section className="relative h-[80vh] flex items-center justify-center text-center overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop"
+          alt="Investor Relations"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="relative z-10 px-6 max-w-3xl">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            Invest in the Future with <span className="text-amber-400">Steadwin Group</span>
+          </h1>
+          <p className="text-lg md:text-xl text-gray-200">
+            Partner with us to build a future of innovation, sustainability, and global excellence.
           </p>
         </div>
+      </section>
 
         <div className="grid gap-8 md:grid-cols-2">
           {/* Interior Section */}

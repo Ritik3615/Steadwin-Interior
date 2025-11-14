@@ -208,7 +208,7 @@ function ContactSidebar() {
           opacity: isFormOpen && isOpen ? 1 : 0,
         }}
         transition={{ type: "tween", duration: 0.35 }}
-        className="fixed top-[29%] right-[2.5rem] bg-white rounded-2xl shadow-2xl p-6 w-[28rem] z-20"
+        className="fixed top-[35%] md:[29%] right-[2.5rem] bg-white rounded-2xl shadow-2xl p-6 w-[300px] z-20 md:w-[32rem]"
       >
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-lg font-semibold text-[#2b5d7c]">Contact Form</h2>

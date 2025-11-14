@@ -145,7 +145,7 @@ function Home() {
       <ContactSidebar />
 
       {/* CONTENT SECTIONS — all with consistent padding */}
-      <div className="px-6 md:px-20 space-y-24 mt-20">
+      <div className="space-y-10 mt-10">
         <ServicesGrid />
         <AboutHome />
         <Cards />

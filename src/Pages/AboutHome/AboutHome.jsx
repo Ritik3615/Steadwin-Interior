@@ -38,20 +38,16 @@ function AboutHome() {
   }, []);
 
   return (
-    <div className="w-full py-12 md:py-16 md:px-20">
+    <div className="w-full ">
       {/* Heading */}
-      <motion.h1
-        className="text-center text-3xl md:text-5xl font-extrabold md:mb-12 bg-[#2b5d7c] bg-clip-text text-transparent tracking-wide"
-        initial={{ opacity: 0, y: -30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        About Us
-        <span className="block md:w-[240px] lg:w-20% w-[150px] rounded-lg h-1 mx-auto mt-3 bg-[#2b5d7c]"></span>
-      </motion.h1>
+      <div>
+        <h2 className="text-center md:text-3xl font-extrabold md:mb-3 bg-[#2b5d7c] bg-clip-text text-transparent tracking-wide">
+          About Our Organization
+        </h2>
+        <span className="block md:w-[100px] lg:w-[350px] w-[200px] rounded-lg h-1 mx-auto mt-3 bg-[#2b5d7c] mb-5"></span>
+      </div>
 
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-10 px-4 md:px-12 py-16 bg-gray-50">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-10 px-4 md:px-12 py-10 bg-gray-50">
         {/* Left side: Image */}
         <div className="relative w-full lg:w-[650px] h-[350px] md:h-[500px]">
           <motion.img

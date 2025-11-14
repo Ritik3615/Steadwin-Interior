@@ -1,6 +1,7 @@
 import React from "react";
 import { Building2, BarChart3, Users2, Globe2 } from "lucide-react";
 import Footer from "../../Components/Footer";
+import { Link } from "react-router-dom";
 
 
 const Investors = () => {
@@ -100,12 +101,12 @@ const Investors = () => {
             We invite investors who believe in innovation, quality, and sustainable business models.
             Partner with us and be part of a transformative vision.
           </p>
-          <a
-            href="/Contact"
+          <Link
+            to="/quote"
             className="px-10 py-4 bg-amber-500 text-white font-semibold rounded-full hover:bg-amber-600 transition"
           >
             Contact Investor Relations →
-          </a>
+          </Link>
         </div>
       </section>
 
