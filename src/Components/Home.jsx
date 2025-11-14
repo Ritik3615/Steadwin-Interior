@@ -11,7 +11,7 @@ import News from "../Pages/News/News";
 import ContactSidebar from "./ConatctSidebaar";
 import ServicesGrid from "../Pages/OurService/OurService";
 import GalleryCard from "../Pages/Gallery/GallaryCard";
-import FeaturesSection from "../Pages/singlepage/WhyUs";
+import FeaturesSection from "../Pages/Singlepage/FeaturesSection";
 import StatsSection from "../Pages/Singlepage/StatsSection";
 
 const heroSlides = [
