@@ -27,7 +27,7 @@ export default function ServicesPage() {
       </header> */}
 
       <section className="w-full px-6 py-12">
-        <section className="relative h-[80vh] flex items-center justify-center text-center overflow-hidden">
+        <section className="relative h-[70vh] flex items-center justify-center text-center overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop"
           alt="Investor Relations"
