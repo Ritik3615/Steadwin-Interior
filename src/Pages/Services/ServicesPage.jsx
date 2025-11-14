@@ -7,7 +7,7 @@ import Footer from "../../Components/Footer";
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-gray-50 text-gray-800 font-sans pt-20">
+    <main className="min-h-screen  bg-gray-50 text-gray-800 font-sans pt-20">
       {/* <header className="bg-white shadow">
         <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -26,7 +26,7 @@ export default function ServicesPage() {
         </div>
       </header> */}
 
-      <section className="max-w-6xl mx-auto px-6 py-12">
+      <section className="w-full px-6 py-12">
         <section className="relative h-[80vh] flex items-center justify-center text-center overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop"

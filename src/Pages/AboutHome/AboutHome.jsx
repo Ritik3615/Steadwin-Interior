@@ -38,7 +38,7 @@ function AboutHome() {
   }, []);
 
   return (
-    <div className="w-full ">
+    <div className="w-full">
       {/* Heading */}
       <div>
         <h2 className="text-center md:text-3xl font-extrabold md:mb-3 bg-[#2b5d7c] bg-clip-text text-transparent tracking-wide">
@@ -47,7 +47,7 @@ function AboutHome() {
         <span className="block md:w-[100px] lg:w-[350px] w-[200px] rounded-lg h-1 mx-auto mt-3 bg-[#2b5d7c] mb-5"></span>
       </div>
 
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-10 px-4 md:px-12 py-10 bg-gray-50">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-10 px-10 md:px-12 py-10 bg-gray-50">
         {/* Left side: Image */}
         <div className="relative w-full lg:w-[650px] h-[350px] md:h-[500px]">
           <motion.img
@@ -102,7 +102,7 @@ function AboutHome() {
           </p>
 
           {/* Icon + Services Count */}
-          <div className="flex flex-col items-center justify-center pt-8">
+          {/* <div className="flex flex-col items-center justify-center pt-8">
             <div className="bg-white rounded-full shadow-xl p-4">
               <img
                 src="/factory-icon.svg"
@@ -114,7 +114,7 @@ function AboutHome() {
             <p className="text-gray-600 font-medium text-sm">
               Services Available
             </p>
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </div>

@@ -3,7 +3,7 @@ import service from "/service.png";
 
 function Services() {
   return (
-    <section className="relative bg-gradient-to-r from-gray-50 to-gray-100 py-16">
+    <section className="relative bg-gradient-to-r px-15 from-gray-50 to-gray-100 py-16">
       {/* Content */}
       <div className="relative z-10">
         {/* Header */}
@@ -17,7 +17,7 @@ function Services() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 sm:px-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Card 1 */}
           <div className="border p-6 rounded-2xl shadow-md bg-white hover:shadow-xl hover:shadow-orange-200/40 hover:scale-105 transition duration-300">
             <div className="flex items-center">

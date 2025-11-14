@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import RailingHero from "../assets/RailingHero.jpg";
+import InteriorSlide from "../assets/InteriorSlide.jpg";
 import Cards from "../Card/Cards";
 import Services from "../Pages/Services/Services";
 import Partners from "../Pages/Partners/Partners";
@@ -12,13 +14,13 @@ import GalleryCard from "../Pages/Gallery/GallaryCard";
 
 const heroSlides = [
   {
-    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+    img: InteriorSlide,
     title: "Elegant Modern Interiors",
     desc: "Designs that blend functionality with timeless aesthetics for your dream home.",
     link: "/Services/Interior",
   },
   {
-    img: "https://images.pexels.com/photos/276551/pexels-photo-276551.jpeg",
+    img: RailingHero,
     title: "Premium Railing Systems",
     desc: "Durable and stylish railing solutions for home roofs and balconies, ensuring safety with elegance.",
     link: "/Services/Railing",
@@ -152,7 +154,7 @@ function Home() {
         <Services />
 
         {/* Process CTA */}
-        <div className="relative rounded-2xl py-32 flex flex-col justify-center items-center text-center overflow-hidden">
+        <div className="relative rounded-2xl py-32 flex flex-col justify-center items-center text-center overflow-hidden mx-15 bg-gray-400">
           <img
             src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop"
             alt="Workflow Background"
