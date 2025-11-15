@@ -42,7 +42,7 @@ export default function FeaturesSection() {
 
           {/* CENTER CIRCLE */}
           <div className="flex justify-center items-center">
-            <div className="h-80 w-80 bg-[#0093E9] rounded-full flex items-center justify-center overflow-hidden">
+            <div className="md:h-80 md:w-80  h-40 w-40 bg-[#0093E9] rounded-full flex items-center justify-center overflow-hidden">
               <img
                 src={ProcessImage}
                 alt="Center Furniture"
