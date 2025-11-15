@@ -1,6 +1,6 @@
 import React from "react";
 import Footer from "../../Components/Footer";
-import AboutImg from "../../Assets/About.jpg";
+import AboutImg from "../../assets/About.jpg";
 import interiorImage from "../../assets/bgimage.jpg";
 
 export default function About() {
