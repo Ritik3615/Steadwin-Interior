@@ -53,7 +53,7 @@ export default function StatsSection() {
     <div className="w-full flex justify-center py-12 px-15">
       <div
         ref={ref}
-        className="w-[90%] md:w-[80%] bg-white rounded-xl border-[3px] border-orange-400 px-10 py-12 shadow-sm"
+        className="w-full bg-white rounded-xl border-[3px] border-orange-400 px-10 py-12 shadow-sm"
       >
         <div className="grid grid-cols-1 md:grid-cols-4 text-center gap-10">
           {statsData.map((item, i) => (

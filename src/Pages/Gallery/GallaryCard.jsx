@@ -11,12 +11,12 @@ const galleryItems = [
     imageUrl:Hall20,
   },
   {
-    title: "Japanese Engineering",
+    title: "Innovative Railing Systems",
     subtitle: "Revolutionary housing solutions now available.",
     imageUrl: Railing10,
   },
   {
-    title: "Sleek Modern Doors",
+    title: "Modern Bedroom Designs",
     subtitle: "Experience the future of seamless living and elegance.",
     imageUrl: Bedroom32,
   },
@@ -56,7 +56,7 @@ export default function GalleryCard() {
         {/* Header */}
         <div className="flex justify-between items-center mb-10">
           <div>
-            <h1 className="text-3xl font-semibold text-slate-800">
+            <h1 className="text-3xl text-center font-semibold text-slate-800">
               Our Gallery
             </h1>
             <div className="w-38 h-1 bg-blue-600 mt-2 rounded"></div>
@@ -74,9 +74,9 @@ export default function GalleryCard() {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 transition-transform  ">
           {galleryItems.map((item, i) => (
-            <Gallery key={i} {...item} />
+            <Gallery key={i} {...item}/>
           ))}
         </div>
       </div>

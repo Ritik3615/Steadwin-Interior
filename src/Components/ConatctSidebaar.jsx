@@ -102,7 +102,7 @@ function ContactSidebar() {
 
         {/* WhatsApp (middle) */}
         <div
-          className="relative flex justify-center items-center h-[30%] bg-green-400 cursor-pointer"
+          className="relative flex justify-center items-center h-25 bg-[#2fea70f0] cursor-pointer"
           onMouseEnter={() => setIsHoveringWhatsApp(true)}
           onMouseLeave={() => setIsHoveringWhatsApp(false)}
         >
@@ -123,7 +123,7 @@ function ContactSidebar() {
               isHoveringWhatsApp ? { x: 9, opacity: 1 } : { x: 8, opacity: 0 }
             }
             transition={{ duration: 0.2 }}
-            className="absolute right-[calc(100%+8px)] top-1/2 -translate-y-1/2 w-36 p-[7px] rounded-l bg-green-400 text-white text-sm shadow-lg pointer-events-none z-50 text-center"
+            className="absolute right-[calc(100%+10px)] top-1/2 -translate-y-1/2 w-36 h-10 rounded-l flex items-center justify-center bg-[#2fea70f0] text-white text-sm shadow-lg pointer-events-none z-50 text-center"
           >
             WhatsApp
           </motion.div>
@@ -131,7 +131,7 @@ function ContactSidebar() {
 
         {/* Call (bottom) */}
         <div
-          className="relative flex justify-center items-center h-[30%] bg-green-400 cursor-pointer"
+          className="relative flex justify-center items-center h-25 bg-[#2fea70f0] cursor-pointer"
           onMouseEnter={() => setIsHoveringCall(true)}
           onMouseLeave={() => setIsHoveringCall(false)}
         >
@@ -150,14 +150,15 @@ function ContactSidebar() {
               isHoveringCall ? { x: 9, opacity: 1 } : { x: 8, opacity: 0 }
             }
             transition={{ duration: 0.2 }}
-            className="absolute right-[calc(100%+8px)] top-1/2 -translate-y-1/2 w-36 p-[7px] rounded-l bg-green-400 text-white text-sm shadow-lg pointer-events-none z-50 text-center"
+            className="absolute right-[calc(100%+10px)] top-1/2 -translate-y-1/2 w-36 h-10 rounded-l flex items-center justify-center
+             bg-[#2fea70f0] text-white text-sm shadow-lg pointer-events-none z-50 text-center"
           >
             Call Now
           </motion.div>
         </div>
         {/* location (last) */}
         <div
-          className="relative flex justify-center items-center h-[30%] bg-green-400 cursor-pointer rounded-bl-xl"
+          className="relative flex justify-center items-center h-25 bg-[#2fea70f0] cursor-pointer rounded-bl-xl"
           onMouseEnter={() => {
             setIsHoveringlocation(true);
             setRadius("0px");
@@ -191,7 +192,7 @@ function ContactSidebar() {
                 : { x: 8, opacity: 0 }
             }
             transition={{ duration: 0.2 }}
-            className="absolute right-[calc(100%+8px)] top-1/2 -translate-y-1/2 w-36 p-[8px] rounded-l bg-green-400 text-white text-sm shadow-lg pointer-events-none z-50 text-center"
+            className="absolute right-[calc(100%+10px)] top-1/2 -translate-y-1/2 w-36 h-10 flex items-center justify-center rounded-l bg-[#2fea70f0] text-white text-sm shadow-lg pointer-events-none text-center"
           >
             Location
           </motion.div>
@@ -201,14 +202,14 @@ function ContactSidebar() {
       {/* Contact Form (Limited Width, Right Side Only) */}
       <motion.div
         onMouseEnter={() => setIsFormOpen(true)}
-        onMouseLeave={() => setIsFormOpen(false)}
+        // onMouseLeave={() => setIsFormOpen(false)}
         initial={{ x: "110%" }}
         animate={{
           x: isFormOpen && isOpen ? "-2%" : "110%",
           opacity: isFormOpen && isOpen ? 1 : 0,
         }}
         transition={{ type: "tween", duration: 0.35 }}
-        className="fixed top-[35%] md:[29%] right-[2.5rem] bg-white rounded-2xl shadow-2xl p-6 w-[300px] z-20 md:w-[32rem]"
+        className="fixed top-[calc(50%-150px)] right-[2.5rem] bg-white rounded-2xl shadow-2xl p-6 w-[300px] z-20 md:w-[28rem]"
       >
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-lg font-semibold text-[#2b5d7c]">Contact Form</h2>

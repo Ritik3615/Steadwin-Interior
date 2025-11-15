@@ -13,6 +13,7 @@ import ServicesGrid from "../Pages/OurService/OurService";
 import GalleryCard from "../Pages/Gallery/GallaryCard";
 import FeaturesSection from "../Pages/Singlepage/FeaturesSection";
 import StatsSection from "../Pages/Singlepage/StatsSection";
+import Homepageform from "../Pages/Singlepage/Homepageform";
 
 const heroSlides = [
   {
@@ -20,24 +21,28 @@ const heroSlides = [
     title: "Elegant Modern Interiors",
     desc: "Designs that blend functionality with timeless aesthetics for your dream home.",
     link: "/Services/Interior",
+    botton:"Connect with experts",
   },
   {
     img: RailingHero,
     title: "Premium Railing Systems",
     desc: "Durable and stylish railing solutions for home roofs and balconies, ensuring safety with elegance.",
     link: "/Services/Railing",
+    botton:"Here is Letest railing Designs",
   },
   {
     img: "https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg",
     title: "Expert Consultancy Services",
     desc: "Get professional guidance for interiors, architecture, and design — tailored to your vision.",
     link: "Services/Consultancy",
+    botton:"Connect us For Letest update",
   },
   {
     img: "/Railing/Railing12.jpg",
     title: "Trusted Development Solutions",
     desc: "Building innovative, sustainable, and modern living spaces with trust and excellence.",
     link: "/about",
+    botton:"Build with US",
   },
 ];
 
@@ -73,7 +78,7 @@ function Home() {
       const scrollPos = window.scrollY + window.innerHeight;
       const pageHeight = document.documentElement.scrollHeight;
 
-      if (scrollPos >= pageHeight * 0.9) setShowScrollTop(true);
+      if (scrollPos >= pageHeight * 0.3) setShowScrollTop(true);
       else setShowScrollTop(false);
     };
 
@@ -123,7 +128,7 @@ function Home() {
         {/* LEFT BUTTON */}
         <button
           onClick={prevSlide}
-          className="absolute left-[50px] z-30 top-1/2 -translate-y-1/2 bg-white/40 
+          className="absolute hidden md:block left-[50px] z-20 top-1/2 -translate-y-1/2 bg-white/40 
              hover:bg-white/80 text-black p-3 rounded-full backdrop-blur 
              transition shadow-lg"
         >
@@ -133,7 +138,7 @@ function Home() {
         {/* RIGHT BUTTON */}
         <button
           onClick={nextSlide}
-          className="absolute right-[50px] z-30 top-1/2 -translate-y-1/2 bg-white/40 
+          className="absolute hidden md:block right-[50px] z-20 top-1/2 -translate-y-1/2 bg-white/40 
              hover:bg-white/80 text-black p-3 rounded-full backdrop-blur 
              transition shadow-lg"
         >
@@ -150,9 +155,13 @@ function Home() {
           </p>
           <Link
             to={heroSlides[currentIndex].link}
-            className="px-8 py-3 bg-gradient-to-r from-amber-500 to-pink-500 hover:from-amber-600 hover:to-pink-600 text-white text-lg md:text-xl font-semibold rounded-full shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-1 duration-300"
+            className="px-8 py-3 bg-[#2b5d7c] hover:bg-[#1b93de] text-white text-lg md:text-xl font-semibold rounded-full shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-1 duration-300"
           >
-            Explore More →
+            {heroSlides.map((Slide,index) => (
+              <span key={index}>
+                {index === currentIndex && Slide.botton}
+              </span>
+            ))}
           </Link>
         </div>
       </div>
@@ -228,6 +237,7 @@ function Home() {
         <News />
         <GalleryCard />
         <Partners />
+        {/* <Homepageform/> */}
       </div>
 
       {showScrollTop && (

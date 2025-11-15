@@ -42,9 +42,9 @@ function AboutHome() {
       {/* Heading */}
       <div>
         <h2 className="text-center md:text-3xl font-extrabold md:mb-3 bg-[#2b5d7c] bg-clip-text text-transparent tracking-wide">
-          About Our Organization
+          About us
         </h2>
-        <span className="block md:w-[100px] lg:w-[350px] w-[200px] rounded-lg h-1 mx-auto mt-3 bg-[#2b5d7c] mb-5"></span>
+        <span className="block md:w-[100px] lg:w-[180px] w-[100px] rounded-lg h-1 mx-auto mt-3 bg-[#2b5d7c] mb-5"></span>
       </div>
 
       <div className="flex flex-col lg:flex-row items-center justify-center gap-10 px-10 md:px-12 py-10 bg-gray-50">

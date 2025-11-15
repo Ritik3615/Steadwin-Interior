@@ -22,27 +22,27 @@ export default function FeaturesSection() {
 
             <FeatureItem
               icon={<CheckCircle className="h-10 w-10 text-white" />}
-              title="WARRANTY ON ALL FIXTURES"
-              desc="We offer comprehensive warranties on all fixtures and fittings."
+              title="TRANSPARENT PRICING"
+              desc="Clear, upfront pricing with no hidden costs."
             />
 
             <FeatureItem
               icon={<Cpu className="h-10 w-10 text-white" />}
-              title="LATEST TECHNOLOGIES"
-              desc="We use best-in-class modular fittings with accurately engineered components."
+              title="PROFESSIONAL TEAM"
+              desc="Skilled professionals ensuring high-quality work."
             />
 
             <FeatureItem
               icon={<PiMoonStarsThin className="h-10 w-10 text-white" />}
-              title="HIGH QUALITY DESIGNS"
-              desc="We recommend only the best designs for your home and space."
+              title="TIMELY DELIVERY"
+              desc="Guaranteed on-time delivery for every project."
             />
 
           </div>
 
           {/* CENTER CIRCLE */}
           <div className="flex justify-center items-center">
-            <div className="h-60 w-60 md:h-[500px] md:w-[500px] bg-[#0093E9] rounded-full flex items-center justify-center overflow-hidden">
+            <div className="h-80 w-80 bg-[#0093E9] rounded-full flex items-center justify-center overflow-hidden">
               <img
                 src={ProcessImage}
                 alt="Center Furniture"
