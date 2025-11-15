@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Hall20 from "/HAll/Hall20.jpg";
 import Railing10 from "/Railing/Railing10.jpg";
@@ -8,12 +8,17 @@ const galleryItems = [
   {
     title: "Luxury Sliding Windows",
     subtitle: "The perfect blend of durability and style for modern homes.",
-    imageUrl:Hall20,
+    imageUrl: Hall20,
   },
   {
     title: "Innovative Railing Systems",
     subtitle: "Revolutionary housing solutions now available.",
     imageUrl: Railing10,
+  },
+  {
+    title: "Innovative Home Designs",
+    subtitle: "Transforming spaces with cutting-edge architecture.",
+    imageUrl: "/HAll/Hall23.jpg",
   },
   {
     title: "Modern Bedroom Designs",
@@ -24,7 +29,7 @@ const galleryItems = [
 
 function Gallery({ title, subtitle, imageUrl }) {
   return (
-    <div className="relative w-full rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition">
+    <div className="relative min-w-[280px] md:min-w-[350px] rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition">
       <img
         src={imageUrl}
         alt={title}
@@ -36,7 +41,7 @@ function Gallery({ title, subtitle, imageUrl }) {
       />
 
       <div className="absolute top-0 left-0 bg-slate-800/80 text-white text-xs font-semibold px-3 py-1 rounded-br-lg">
-        TOSTEM
+        Steadwin
       </div>
 
       <div className="absolute inset-0 flex items-center justify-start p-6">
@@ -50,13 +55,23 @@ function Gallery({ title, subtitle, imageUrl }) {
 }
 
 export default function GalleryCard() {
+  const sliderRef = useRef(null);
+
+  const scrollLeft = () => {
+    sliderRef.current.scrollBy({ left: -350, behavior: "smooth" });
+  };
+
+  const scrollRight = () => {
+    sliderRef.current.scrollBy({ left: 350, behavior: "smooth" });
+  };
+
   return (
-    <section className=" bg-gray-50 p-6 px-12">
+    <section className="bg-gray-50 p-6 px-12">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="flex justify-between items-center mb-10">
           <div>
-            <h1 className="text-3xl text-center font-semibold text-slate-800">
+            <h1 className="text-3xl font-semibold text-slate-800">
               Our Gallery
             </h1>
             <div className="w-38 h-1 bg-blue-600 mt-2 rounded"></div>
@@ -64,19 +79,29 @@ export default function GalleryCard() {
 
           {/* Arrows */}
           <div className="flex space-x-2">
-            <button className="p-3 bg-slate-800 text-white rounded hover:bg-slate-600 transition">
+            <button
+              onClick={scrollLeft}
+              className="p-3 bg-slate-800 text-white rounded hover:bg-slate-600 transition"
+            >
               <ChevronLeft size={20} />
             </button>
-            <button className="p-3 bg-slate-800 text-white rounded hover:bg-slate-600 transition">
+
+            <button
+              onClick={scrollRight}
+              className="p-3 bg-slate-800 text-white rounded hover:bg-slate-600 transition"
+            >
               <ChevronRight size={20} />
             </button>
           </div>
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 transition-transform  ">
+        {/* Horizontal Slider */}
+        <div
+          ref={sliderRef}
+          className="flex gap-6 overflow-x-auto scroll-smooth scrollbar-hide pb-4"
+        >
           {galleryItems.map((item, i) => (
-            <Gallery key={i} {...item}/>
+            <Gallery key={i} {...item} />
           ))}
         </div>
       </div>

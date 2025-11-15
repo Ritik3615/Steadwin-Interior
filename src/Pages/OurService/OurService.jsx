@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const services = [
   {
     name: "Consultancy Services",
-    image: "/HAll/Hall23.jpg",
+    image: "/HAll/Consultaning.jpg",
     path: "/Services/Consultancy",
     desc: "Professional consultancy for your All Dreams and Projects.",
   },
@@ -22,7 +22,7 @@ const services = [
   },
   {
     name: "Railing",
-    image: "/Railing/Railing22.jpg",
+    image: "/Railing/Railing8.jpg",
     path: "/Services/Railing",
     desc: "Durable and stylish railing solutions for safety and aesthetics.",
   },

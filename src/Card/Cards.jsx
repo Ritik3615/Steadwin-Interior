@@ -39,7 +39,7 @@ function Cards() {
         <h2 className="text-center md:text-3xl font-extrabold bg-[#2b5d7c] bg-clip-text text-transparent tracking-wide pt-5">
           Explore Our Property Packages
         </h2>
-        <span className="block w-[180px] md:w-[350px] h-1 rounded-lg mx-auto mt-3 bg-[#2b5d7c]"></span>
+        <span className="block md:w-[465px] w-[250px]  h-1 rounded-lg mx-auto mt-3 bg-[#2b5d7c]"></span>
       </div>
 
       {/* LEFT BUTTON */}

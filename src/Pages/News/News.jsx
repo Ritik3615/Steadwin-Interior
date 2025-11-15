@@ -45,7 +45,7 @@ const News = () => {
             <img
               src={item.img}
               alt={item.title}
-              className="h-[280px] md:h-[340px] w-full object-cover px-3 "
+              className="h-[280px] md:h-[340px] w-full object-cover p-3 "
             />
 
             {/* Content */}

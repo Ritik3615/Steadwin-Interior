@@ -4,9 +4,12 @@ import ProcessImage from "../../assets/ProcessImage.jpg";
 import { PiMoonStarsThin } from "react-icons/pi";
 
 const Heading = () => (
-  <div className="text-center text-3xl font-extrabold text-[#2b5d7c] mb-10">
-    Why Choose Us
-  </div>
+  <div>
+        <h2 className="text-center md:text-3xl font-extrabold md:mb-3 bg-[#2b5d7c] bg-clip-text text-transparent tracking-wide pt-10">
+          Why Choose Us
+        </h2>
+        <span className="block md:w-[120px] lg:w-[220px] w-[150px] rounded-lg h-1 mx-auto mt-3 bg-[#2b5d7c]"></span>
+      </div>
 );
 
 export default function FeaturesSection() {
