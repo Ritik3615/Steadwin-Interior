@@ -133,15 +133,15 @@ function Gallery() {
   return (
     <div className="px-4 md:px-16 py-8 bg-gray-50">
       <div
-        className="relative bg-cover bg-center h-[40vh] flex items-center justify-center"
+        className="relative bg-cover bg-center top-20 md:h-28 flex items-center justify-center"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop')",
         }}
       >
-        <div className="absolute inset-0 bg-black/50"></div>
-        <h1 className="relative text-4xl md:text-6xl font-extrabold text-white text-center drop-shadow-lg">
-          Our<span className="text-amber-400 px-3">Gallary</span>
+        <div className="absolute inset-0 bg-black/60"></div>
+        <h1 className="relative text-xl md:text-4xl font-extrabold text-white text-center drop-shadow-lg">
+          Our <span className="text-amber-400 px-2">Gallery</span>
         </h1>
       </div>
 

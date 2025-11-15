@@ -33,7 +33,7 @@ export default function ProcessSteps() {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 px-6 md:px-0 bg-white">
       {/* HEADER */}
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900">OUR PROCESS</h2>
@@ -41,7 +41,7 @@ export default function ProcessSteps() {
       </div>
 
       {/* GRID */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6">
+      <div className="max-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-5 md:px-15">
         {steps.map((step) => (
           <div
             key={step.id}

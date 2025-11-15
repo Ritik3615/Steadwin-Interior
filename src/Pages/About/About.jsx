@@ -1,76 +1,106 @@
 import React from "react";
 import Footer from "../../Components/Footer";
+import AboutImg from "../../Assets/About.jpg";
+import interiorImage from "../../assets/bgimage.jpg";
 
-function About() {
+export default function About() {
   return (
     <>
-      {/* Hero Section with Background */}
-      <section className="relative h-[80vh] flex items-center justify-center text-center overflow-hidden">
+      {/* Top Spacing Section (h-20) */}
+      <div className="h-20 bg-white"></div>
+
+      {/* Hero Section */}
+      <section className="relative h-[65vh] flex items-center justify-center text-center overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop"
-          alt="Investor Relations"
+          src={AboutImg}
+          alt="About Steadwin Group"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/60"></div>
+
         <div className="relative z-10 px-6 max-w-3xl">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            About{" "}
-            <span className="text-amber-400">Steadwin Group</span>
+          <h1 className="text-4xl md:text-6xl font-bold text-white">
+            About <span className="text-amber-400">Steadwin Group</span>
           </h1>
+          <p className="text-gray-200 text-lg md:text-xl mt-4">
+            Building Experiences. Designing Futures.
+          </p>
         </div>
       </section>
 
-      {/* Main Content */}
-      <div className="px-6 md:px-28 py-12">
-        {/* Intro Section */}
-        <div className="text-gray-700 leading-relaxed text-justify text-lg mb-12">
-          <p>
-            <strong>Steadwin Group</strong> was founded in <strong>2018</strong>{" "}
-            with a vision to transform spaces into experiences. Starting our
-            journey with <span className="font-medium">Interior Design</span>,
-            we have now expanded our expertise into{" "}
-            <span className="font-medium">Railing Systems</span>,{" "}
-            <span className="font-medium">Consultancy</span>, and{" "}
-            <span className="font-medium">Development Services</span>.
-          </p>
-          <p className="mt-4">
-            From crafting modern, elegant homes to providing professional
-            consultancy for large-scale projects, our mission has always been to
-            deliver quality, innovation, and trust. Over the years, we’ve built
-            not just spaces, but long-lasting relationships with our clients.
-          </p>
-        </div>
+      {/* Main Container */}
+      <div className="px-6 md:px-28 py-16">
 
-        {/* Interior Section */}
-        <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
-          <img
-            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb9?q=80&w=1200&auto=format&fit=crop"
-            alt="Interior Design"
-            className="rounded-2xl shadow-xl w-full h-64 md:h-72 object-cover"
-          />
-          <div>
-            <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
-              Interior Design
-            </h2>
+        {/* Mission & Vision Section */}
+        <div className="grid md:grid-cols-2 gap-12 mb-20">
+          <div className="p-8 bg-gray-100 rounded-2xl shadow-lg border-l-4 border-amber-500">
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">Our Mission</h2>
             <p className="text-gray-700 leading-relaxed">
-              Our interior design services are focused on creating elegant,
-              functional, and timeless spaces. From modern apartments to luxury
-              villas, we blend aesthetics with practicality to match every
-              lifestyle and budget.
+              To craft functional, innovative, and elegant spaces while delivering
+              unmatched reliability and customer satisfaction across interiors,
+              railing systems, consultancy, and development services.
+            </p>
+          </div>
+
+          <div className="p-8 bg-gray-100 rounded-2xl shadow-lg border-l-4 border-amber-500">
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">Our Vision</h2>
+            <p className="text-gray-700 leading-relaxed">
+              To become a leading name in modern living solutions—designing
+              environments that inspire, empower, and elevate everyday life.
             </p>
           </div>
         </div>
 
-        {/* Railing System Section */}
-        <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
+        {/* Intro Section */}
+        <div className="text-gray-700 leading-relaxed text-lg mb-16 text-justify">
+          <p>
+            <strong>Steadwin Group</strong>, established in <strong>2018</strong>,
+            began with a mission to redefine the meaning of interior design. Today,
+            our expertise spans across <strong>Interior Design</strong>,
+            <strong> Railing Systems</strong>, <strong> Consultancy</strong>, and
+            <strong> Development Services</strong>, serving residential,
+            commercial, and large-scale modern projects.
+          </p>
+
+          <p className="mt-4">
+            Our philosophy is simple: we do not just build or design—
+            <span className="font-medium">
+              we create environments that feel alive, meaningful, and future-ready.
+            </span>
+            Through innovation, transparency, and unwavering commitment, Steadwin
+            has earned the trust of hundreds of families and organizations.
+          </p>
+        </div>
+
+        {/* Interior Design Section */}
+        <div className="grid md:grid-cols-2 gap-10 items-center mb-20">
+          <img
+            src={interiorImage}
+            alt="Interior Design"
+            className="rounded-2xl shadow-xl w-full h-64 md:h-72 object-cover"
+          />
           <div>
-            <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
+            <h2 className="text-3xl font-semibold text-gray-900 mb-3">
+              Interior Design
+            </h2>
+            <p className="text-gray-700 leading-relaxed">
+              We create luxurious, functional, and timeless interiors. From urban
+              apartments to premium villas, we balance aesthetics and utility to
+              reflect your lifestyle and vision.
+            </p>
+          </div>
+        </div>
+
+        {/* Railing Systems Section */}
+        <div className="grid md:grid-cols-2 gap-10 items-center mb-20">
+          <div>
+            <h2 className="text-3xl font-semibold text-gray-900 mb-3">
               Railing Systems
             </h2>
             <p className="text-gray-700 leading-relaxed">
-              Our premium railing systems combine durability and style,
-              delivering safety without compromising on aesthetics. Perfect for
-              modern homes, offices, and commercial spaces.
+              Built for durability and elegance, our railing systems elevate
+              modern homes, offices, and commercial environments with unmatched
+              strength and style.
             </p>
           </div>
           <img
@@ -81,37 +111,37 @@ function About() {
         </div>
 
         {/* Consultancy Section */}
-        <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
+        <div className="grid md:grid-cols-2 gap-10 items-center mb-20">
           <img
             src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop"
             alt="Consultancy"
             className="rounded-2xl shadow-xl w-full h-64 md:h-72 object-cover"
           />
           <div>
-            <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
+            <h2 className="text-3xl font-semibold text-gray-900 mb-3">
               Consultancy
             </h2>
             <p className="text-gray-700 leading-relaxed">
-              With years of expertise in the industry, we provide end-to-end
-              consultancy for residential and commercial projects. From design
-              guidance to material selection and execution strategies, our
-              consultancy ensures your project is on the right track.
+              Our consultancy services bring clarity and direction to every stage
+              of your project—budgeting, material selection, spatial planning, and
+              execution strategy.
             </p>
           </div>
         </div>
 
         {/* Developer Services Section */}
-        <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
+        <div className="grid md:grid-cols-2 gap-10 items-center mb-12">
           <div>
-            <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">
+            <h2 className="text-3xl font-semibold text-gray-900 mb-3">
               Developer Services
             </h2>
             <p className="text-gray-700 leading-relaxed">
-              Our developer services cover project management, planning, and
-              execution for large-scale ventures. With a focus on transparency
-              and innovation, we help developers bring their visions to life.
+              We manage large-scale development projects with precision—
+              integrating planning, execution, and quality assurance to bring
+              ambitious visions to life.
             </p>
           </div>
+
           <img
             src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop"
             alt="Developer Services"
@@ -124,5 +154,3 @@ function About() {
     </>
   );
 }
-
-export default About;

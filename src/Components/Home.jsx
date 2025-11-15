@@ -239,7 +239,7 @@ function Home() {
         <News />
         <GalleryCard />
         <Partners />
-        {/* <Homepageform/> */}
+        <Homepageform/>
       </div>
 
       {showScrollTop && (
