@@ -14,6 +14,7 @@ import GalleryCard from "../Pages/Gallery/GallaryCard";
 import FeaturesSection from "../Pages/Singlepage/FeaturesSection";
 import StatsSection from "../Pages/Singlepage/StatsSection";
 import Homepageform from "../Pages/Singlepage/Homepageform";
+import ProcessSteps from "../Pages/WorkFlow/ProcessSteps";
 
 const heroSlides = [
   {
@@ -186,13 +187,13 @@ function Home() {
           <div className="flex flex-col md:flex-row justify-center gap-4">
             <Link
               to="/Services"
-              className="border p-3 px-6 bg-[#2b5d7c] text-white rounded"
+              className="border p-3 px-6 bg-[#2b5d7c] hover:bg-blue-400 hover:scale-y-105 text-white rounded"
             >
               View Services
             </Link>
             <Link
               to="/Quote"
-              className="border p-3 px-6 bg-black text-white rounded"
+              className="border p-3 px-6 bg-gray-600 hover:bg-black hover:scale-y-105 text-white rounded"
             >
               Send Enquiry
             </Link>
@@ -211,9 +212,10 @@ function Home() {
         <Services />
         <FeaturesSection />
         <StatsSection />
+        <ProcessSteps/>
 
         {/* Process CTA */}
-        <div className="relative rounded-2xl py-32 flex flex-col justify-center items-center text-center overflow-hidden mx-15 bg-gray-400">
+        {/* <div className="relative rounded-2xl py-32 flex flex-col justify-center items-center text-center overflow-hidden mx-15 bg-gray-400">
           <img
             src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop"
             alt="Workflow Background"
@@ -231,7 +233,7 @@ function Home() {
               Explore Our Workflow →
             </Link>
           </div>
-        </div>
+        </div> */}
 
         {/* News & Partners */}
         <News />
