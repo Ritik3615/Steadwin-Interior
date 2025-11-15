@@ -69,9 +69,7 @@ function ContactSidebar() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`fixed right-0 z-20 transform transition-all duration-500 bg-black w-10 md:w-12 h-6 flex items-center justify-center rounded-tl-xl ${
-          isOpen
-            ? "top-[calc(50%-167px)]"
-            : "top-1/2 -translate-y-1/2 rounded-l-xl"
+          isOpen ? "top-[calc(50%-167px)]" : "top-1/2 -translate-y-1/2 rounded-l-xl"
         }`}
         aria-label="toggle contact sidebar"
       >
@@ -104,7 +102,7 @@ function ContactSidebar() {
 
         {/* WhatsApp (middle) */}
         <div
-          className="relative flex justify-center items-center w-[56px] h-[56px] bg-[#2fea70f0] cursor-pointer"
+          className="relative flex justify-center items-center h-24 bg-[#2fea70f0] cursor-pointer"
           onMouseEnter={() => setIsHoveringWhatsApp(true)}
           onMouseLeave={() => setIsHoveringWhatsApp(false)}
         >
@@ -113,20 +111,19 @@ function ContactSidebar() {
             target="_blank"
             rel="noreferrer"
             className="flex items-center justify-center w-full h-full"
+            aria-label="WhatsApp"
           >
-            <FaWhatsapp className="w-5 h-5 text-white" />
+            <FaWhatsapp className="w-4 h-4" />
           </a>
 
-          {/* Label */}
+          {/* WhatsApp slide label (appears to left of sidebar) */}
           <motion.div
-            initial={{ x: 6, opacity: 0 }}
+            initial={{ x: 8, opacity: 0 }}
             animate={
-              isHoveringWhatsApp ? { x: 0, opacity: 1 } : { x: 6, opacity: 0 }
+              isHoveringWhatsApp ? { x: 9, opacity: 1 } : { x: 8, opacity: 0 }
             }
             transition={{ duration: 0.2 }}
-            className="absolute right-[calc(100%+8px)] top-1/2 -translate-y-1/2 
-                 w-36 h-10 rounded-l bg-[#2fea70f0] text-white flex items-center 
-                 justify-center shadow-lg pointer-events-none"
+            className="absolute right-[calc(100%+10px)] top-1/2 -translate-y-1/2 w-36 h-[38px] rounded-l flex items-center justify-center bg-[#2fea70f0] text-white text-sm shadow-lg pointer-events-none z-50 text-center"
           >
             WhatsApp
           </motion.div>
@@ -134,56 +131,68 @@ function ContactSidebar() {
 
         {/* Call (bottom) */}
         <div
-          className="relative flex justify-center items-center w-[56px] h-[56px] bg-[#2fea70f0] cursor-pointer"
+          className="relative flex justify-center items-center h-24 bg-[#2fea70f0] cursor-pointer"
           onMouseEnter={() => setIsHoveringCall(true)}
           onMouseLeave={() => setIsHoveringCall(false)}
         >
           <a
             href="tel:+918792695400"
             className="flex items-center justify-center w-full h-full"
+            aria-label="Call"
           >
-            <PhoneCallIcon className="w-5 h-5 text-white" />
+            <PhoneCallIcon className="w-4 h-4" />
           </a>
 
-          {/* Label */}
+          {/* Call slide label */}
           <motion.div
-            initial={{ x: 6, opacity: 0 }}
+            initial={{ x: 8, opacity: 0 }}
             animate={
-              isHoveringCall ? { x: 0, opacity: 1 } : { x: 6, opacity: 0 }
+              isHoveringCall ? { x: 9, opacity: 1 } : { x: 8, opacity: 0 }
             }
             transition={{ duration: 0.2 }}
-            className="absolute right-[calc(100%+8px)] top-1/2 -translate-y-1/2 
-                 w-36 h-10 rounded-l bg-[#2fea70f0] text-white flex items-center 
-                 justify-center shadow-lg pointer-events-none"
+            className="absolute right-[calc(100%+10px)] top-1/2 -translate-y-1/2 w-36 h-[38px] rounded-l flex items-center justify-center
+             bg-[#2fea70f0] text-white text-sm shadow-lg pointer-events-none z-50 text-center"
           >
             Call Now
           </motion.div>
         </div>
         {/* location (last) */}
         <div
-          className="relative flex justify-center items-center w-[56px] h-[56px] bg-[#2fea70f0] cursor-pointer rounded-bl-xl"
-          onMouseEnter={() => setIsHoveringLocation(true)}
-          onMouseLeave={() => setIsHoveringLocation(false)}
+          className="relative flex justify-center items-center h-24 bg-[#2fea70f0] cursor-pointer rounded-bl-xl"
+          onMouseEnter={() => {
+            setIsHoveringlocation(true);
+            setRadius("0px");
+          }}
+          onMouseLeave={() => {
+            setIsHoveringlocation(false);
+            setRadius("12px");
+          }}
+          style={{
+            // borderTopLeftRadius: radius,
+            borderBottomLeftRadius: radius,
+            // borderTopRightRadius: "0px",
+            borderBottomRightRadius: "0px",
+          }}
         >
           <a
             href="https://maps.app.goo.gl/mVwtMjWRWehAwDnE9?g_st=ipc"
             target="_blank"
             rel="noreferrer"
             className="flex items-center justify-center w-full h-full"
+            aria-label="Location"
           >
-            <LocationEditIcon className="w-5 h-5 text-white" />
+            <LocationEditIcon className="w-4 h-4 text-white" />
           </a>
-
-          {/* Label */}
+          {/* WhatsApp slide label (appears to left of sidebar) */}
           <motion.div
-            initial={{ x: 6, opacity: 0 }}
+            initial={{ x: 8, opacity: 0 }}
             animate={
-              isHoveringLocation ? { x: 0, opacity: 1 } : { x: 6, opacity: 0 }
+              isHoveriglocation
+                ? { x: 9, opacity: 1, radius: 0 }
+                : { x: 8, opacity: 0 }
             }
             transition={{ duration: 0.2 }}
-            className="absolute right-[calc(100%+8px)] top-1/2 -translate-y-1/2 
-                 w-36 h-10 rounded-l bg-[#2fea70f0] text-white flex items-center 
-                 justify-center shadow-lg pointer-events-none"
+            className="absolute right-[calc(100%+10px)] top-1/2 -translate-y-1/2 w-36 h-[38px] flex items-center justify-center rounded-l bg-[#2fea70f0] text-white text-sm shadow-lg pointer-events-none text-center"
           >
             Location
           </motion.div>

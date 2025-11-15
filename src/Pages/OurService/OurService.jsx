@@ -6,7 +6,7 @@ const services = [
     name: "Consultancy Services",
     image: "/HAll/Hall23.jpg",
     path: "/Services/Consultancy",
-    desc: "Professional advice to optimize your space and design.",
+    desc: "Professional consultancy for your All Dreams and Projects.",
   },
   {
     name: "Developer",
