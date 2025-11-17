@@ -108,13 +108,13 @@ function Navbar() {
           ))}
 
           {/* Frenchises Button in Mobile */}
-          {/* <Link
+          <Link
             to="/frenchises"
             onClick={() => setIsOpen(false)}
             className="block bg-[#2b5d7c] text-white text-center px-4 py-2 rounded-3xl shadow hover:bg-[#1f445c] transition"
           >
             Frenchises
-          </Link> */}
+          </Link>
 
           {/* Services Dropdown */}
           {/* <div className="space-y-2">
@@ -132,7 +132,7 @@ function Navbar() {
           </div> */}
 
           {/* Search Bar in Mobile */}
-          <div className="flex items-center bg-gray-100 rounded-lg px-3 py-2">
+          {/* <div className="flex items-center bg-gray-100 rounded-lg px-3 py-2">
             <Search size={18} className="text-gray-500 mr-2" />
             <input
               type="text"
@@ -141,7 +141,7 @@ function Navbar() {
               onChange={(e) => handleSearch(e.target.value)}
               className="bg-transparent outline-none text-sm w-full"
             />
-          </div>
+          </div> */}
 
           {/* Login Button */}
           {/* <Link
