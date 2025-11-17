@@ -131,7 +131,7 @@ function ContactSidebar() {
 
         {/* Call (bottom) */}
         <div
-          className="relative flex justify-center items-center h-[70px] md:h-24 bg-[#2fea70f0] cursor-pointer"
+          className="relative flex justify-center items-center h-[70px] md:h-[33%] bg-[#2fea70f0] cursor-pointer"
           onMouseEnter={() => setIsHoveringCall(true)}
           onMouseLeave={() => setIsHoveringCall(false)}
         >
@@ -158,7 +158,7 @@ function ContactSidebar() {
         </div>
         {/* location (last) */}
         <div
-          className="relative flex justify-center items-center h-[70px] md:h-24 bg-[#2fea70f0] cursor-pointer rounded-bl-xl"
+          className="relative flex justify-center items-center h-[70px] md:h-[33%] bg-[#2fea70f0] cursor-pointer rounded-bl-xl"
           onMouseEnter={() => {
             setIsHoveringlocation(true);
             setRadius("0px");
