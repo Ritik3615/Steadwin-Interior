@@ -35,9 +35,11 @@ export default function ProcessSteps() {
   return (
     <section className="py-16 px-6 md:px-0 bg-white">
       {/* HEADER */}
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">OUR PROCESS</h2>
-        <div className="w-0 h-0 mx-auto mt-2 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-yellow-500"></div>
+      <div>
+        <h2 className="text-center md:text-3xl font-extrabold md:mb-3 bg-[#2b5d7c] bg-clip-text text-transparent tracking-wide">
+          Our Process
+        </h2>
+        <span className="block md:w-[100px] lg:w-[180px] w-[100px] rounded-lg h-1 mx-auto mt-3 bg-[#2b5d7c] mb-5"></span>
       </div>
 
       {/* GRID */}

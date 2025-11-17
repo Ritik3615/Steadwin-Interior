@@ -1,19 +1,19 @@
 import React, { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import Hall20 from "/HAll/Hall20.jpg";
+import Hall20 from "/HAll/Developers.jpg";
 import Railing10 from "/Railing/Railing10.jpg";
-import Bedroom32 from "/Bedroom/bedroom32.jpg";
+import Bedroom32 from "/Bedroom/GallaryConsultancy.jpg";
 
 const galleryItems = [
+  {
+    title: "Best consultancy services",
+    subtitle: "Expert advice for all your needs.",
+    imageUrl: Bedroom32,
+  },
   {
     title: "Luxury Sliding Windows",
     subtitle: "The perfect blend of durability and style for modern homes.",
     imageUrl: Hall20,
-  },
-  {
-    title: "Innovative Railing Systems",
-    subtitle: "Revolutionary housing solutions now available.",
-    imageUrl: Railing10,
   },
   {
     title: "Innovative Home Designs",
@@ -21,9 +21,9 @@ const galleryItems = [
     imageUrl: "/HAll/Hall23.jpg",
   },
   {
-    title: "Modern Bedroom Designs",
-    subtitle: "Experience the future of seamless living and elegance.",
-    imageUrl: Bedroom32,
+    title: "Innovative Railing Systems",
+    subtitle: "Revolutionary housing solutions now available.",
+    imageUrl: Railing10,
   },
 ];
 

@@ -7,7 +7,6 @@ import PrivateRoute from "./Admin/Components/PrivateRoute";
 import { AuthProvider } from "./Admin/context/Authcontext";
 import SubAdminApp from "./Admin/SubAdmin/SubAdminApp";
 import { useAuth } from "./Admin/context/Authcontext";
-import Investors from "./Pages/Investors/Investors";
 
 // Lazy load pages
 const Home = lazy(() => import("./Components/Home"));
@@ -23,6 +22,8 @@ const Brouchure = lazy(() => import("./Pages/Brouchure/Brouchure"));
 const AdminHome = lazy(() => import("./Components/AdminHome"));
 const ServicesPage = lazy(() => import("./Pages/Services/ServicesPage"));
 const OffersNewsPage = lazy(() => import("./Pages/News/OffersNewsPage"));
+const Franchise = lazy(() => import("./Pages/Singlepage/Franchise"));
+const Investors = lazy(() => import("./Pages/Investors/Investors"));
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -171,6 +172,14 @@ function App() {
             element={
               <Suspense fallback={<Loader />}>
                 <Investors/>
+              </Suspense>
+            }
+          />
+          <Route
+            path="/Franchise"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Franchise/>
               </Suspense>
             }
           />

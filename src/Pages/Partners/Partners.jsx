@@ -14,9 +14,12 @@ const Partners = () => {
     <section className="bg-white py-16 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 text-center">
         {/* Heading */}
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+        <div>
+        <h2 className="text-center md:text-3xl font-extrabold md:mb-3 bg-[#2b5d7c] bg-clip-text text-transparent tracking-wide">
           Our Trusted Partners
         </h2>
+        <span className="block md:w-[150px] lg:w-[320px] w-[100px] rounded-lg h-1 mx-auto mt-3 bg-[#2b5d7c] mb-5"></span>
+      </div>
         <p className="text-gray-600 mt-2">
           Winning collaborations that produce winning designs.
         </p>

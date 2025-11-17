@@ -78,7 +78,7 @@ function Navbar() {
         {/* ---------- RIGHT SECTION ---------- */}
         <div className="hidden md:flex">
           <Link
-            to="/quote"
+            to="/Franchise"
             className="bg-[#2b5d7c] text-white font-medium px-6 py-2 rounded-3xl hover:bg-[#1f445c] transition"
           >
             Frenchises
