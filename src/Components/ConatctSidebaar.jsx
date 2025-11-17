@@ -102,7 +102,7 @@ function ContactSidebar() {
 
         {/* WhatsApp (middle) */}
         <div
-          className="relative flex justify-center items-center h-[70px] md:h-[33%] bg-[#2fea70f0] cursor-pointer"
+          className="relative flex justify-center items-center h-24 md:h-[33%] bg-[#2fea70f0] cursor-pointer"
           onMouseEnter={() => setIsHoveringWhatsApp(true)}
           onMouseLeave={() => setIsHoveringWhatsApp(false)}
         >
@@ -131,7 +131,7 @@ function ContactSidebar() {
 
         {/* Call (bottom) */}
         <div
-          className="relative flex justify-center items-center h-[70px] md:h-[33%] bg-[#2fea70f0] cursor-pointer"
+          className="relative flex justify-center items-center h-24 md:h-[33%] bg-[#2fea70f0] cursor-pointer"
           onMouseEnter={() => setIsHoveringCall(true)}
           onMouseLeave={() => setIsHoveringCall(false)}
         >
@@ -158,7 +158,7 @@ function ContactSidebar() {
         </div>
         {/* location (last) */}
         <div
-          className="relative flex justify-center items-center h-[70px] md:h-[33%] bg-[#2fea70f0] cursor-pointer rounded-bl-xl"
+          className="relative flex justify-center items-center h-24 md:h-[33%] bg-[#2fea70f0] cursor-pointer rounded-bl-xl"
           onMouseEnter={() => {
             setIsHoveringlocation(true);
             setRadius("0px");
@@ -201,7 +201,7 @@ function ContactSidebar() {
 
       {/* Contact Form (Limited Width, Right Side Only) */}
       <motion.div
-        onMouseEnter={() => setIsFormOpen(true)}
+        onClick={() => setIsFormOpen(true)}
         // onMouseLeave={() => setIsFormOpen(false)}
         initial={{ x: "110%" }}
         animate={{
