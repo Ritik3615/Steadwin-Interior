@@ -91,8 +91,8 @@ function ContactSidebar() {
         {/* Contact Us (rotated text) */}
         <div
           className="cursor-pointer flex justify-center items-center text-sm font-semibold tracking-wider h-[150%] bg-[#2b5d7c]"
-          onMouseEnter={() => setIsFormOpen(true)}
-          onMouseLeave={() => setIsFormOpen(false)}
+          onClick={() => setIsFormOpen(true)}
+          // onClick={() => setIsFormOpen(false)}
         >
           <span className="transform -rotate-90 origin-center whitespace-nowrap flex items-center gap-2">
             <Mail className="h-4 w-4" />
@@ -201,7 +201,7 @@ function ContactSidebar() {
 
       {/* Contact Form (Limited Width, Right Side Only) */}
       <motion.div
-        onClick={() => setIsFormOpen(true)}
+        // onClick={() => setIsFormOpen(true)}
         // onMouseLeave={() => setIsFormOpen(false)}
         initial={{ x: "110%" }}
         animate={{

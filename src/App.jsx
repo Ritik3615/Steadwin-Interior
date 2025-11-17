@@ -21,6 +21,7 @@ const Gallery = lazy(() => import("./Pages/Gallery/Gallery"));
 const Brouchure = lazy(() => import("./Pages/Brouchure/Brouchure"));
 const AdminHome = lazy(() => import("./Components/AdminHome"));
 const ServicesPage = lazy(() => import("./Pages/Services/ServicesPage"));
+const Consultancy = lazy(() => import("./Pages/Services/Consultancy"));
 const OffersNewsPage = lazy(() => import("./Pages/News/OffersNewsPage"));
 const Franchise = lazy(() => import("./Pages/Singlepage/Franchise"));
 const Investors = lazy(() => import("./Pages/Investors/Investors"));
@@ -124,6 +125,14 @@ function App() {
             element={
               <Suspense fallback={<Loader />}>
                 <ServicesPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/Services/Consultancy"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Consultancy />
               </Suspense>
             }
           />
