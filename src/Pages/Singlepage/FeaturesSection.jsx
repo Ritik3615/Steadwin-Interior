@@ -42,12 +42,12 @@ export default function FeaturesSection() {
           </div>
 
           {/* CENTER CIRCLE */}
-          <div className="flex justify-center items-center">
-            <div className="h-56 w-56 md:h-72 md:w-72 bg-[#0093E9] rounded-full overflow-hidden shadow-xl">
+          <div className="flex justify-center items-center z-10">
+            <div className="h-56 w-56 md:h-72 md:w-72 bg-amber-100 overflow-hidden">
               <img
                 src={ProcessImage}
                 alt="Center Design"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover rounded-full"
               />
             </div>
           </div>
