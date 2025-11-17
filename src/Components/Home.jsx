@@ -13,7 +13,7 @@ import ServicesGrid from "../Pages/OurService/OurService";
 import GalleryCard from "../Pages/Gallery/GallaryCard";
 import FeaturesSection from "../Pages/Singlepage/FeaturesSection";
 import StatsSection from "../Pages/Singlepage/StatsSection";
-import Homepageform from "../Pages/Singlepage/Homepageform";
+import Homepageform from "../Form/Homepageform";
 import ProcessSteps from "../Pages/WorkFlow/ProcessSteps";
 
 const heroSlides = [

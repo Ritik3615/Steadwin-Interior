@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "../../Components/Footer";
+import Homepageform from "../../Form/Homepageform";
 
 // Image arrays
 const stairImages = [
@@ -149,6 +150,7 @@ function Gallery() {
         <GallerySection title="Bedrooms" images={bedroomImages} />
         <GallerySection title="Kitchens" images={kitchenImages} />
       </div>
+      <Homepageform/>
       <Footer />
     </>
   );

@@ -4,15 +4,34 @@ import { Mail, ChevronDown } from "lucide-react";
 export default function NewsletterForm() {
   const [isOpen, setIsOpen] = useState(false);
   const [type, setType] = useState("");
+  const [email, setEmail] = useState("");
+
 
   const handleSelect = (value) => {
     setType(value);
     setIsOpen(false);
   };
 
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+
+    if(!email.trim()){
+      alert("Enter a valid email")
+      return;
+    }
+
+    if(!type.trim()){
+      alert("Select a Type")
+      return;
+    }
+
+    alert(`Subscribe:\nEmail: ${email}\nType: ${type}`)
+
+  }
+
   return (
     <div className="w-full bg-[#1f2327] p-6 rounded-xl border border-gray-700">
-      <form className="w-full grid grid-cols-1 md:grid-cols-3 gap-4">
+      <form className="w-full grid grid-cols-1 md:grid-cols-3 gap-4" onSubmit={handleSubmit}>
 
         {/* EMAIL */}
         <div className="flex items-center gap-3 bg-[#1f2327] border border-gray-600 px-4 py-3 rounded-lg w-full">
@@ -21,6 +40,8 @@ export default function NewsletterForm() {
             type="email"
             placeholder="Enter your email"
             className="bg-transparent outline-none text-white w-full"
+            value={email}
+            onChange={(e)=> setEmail(e.target.value)}
           />
         </div>
 

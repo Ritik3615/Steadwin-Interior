@@ -2,6 +2,7 @@
 
 import React from "react";
 import Footer from "../../Components/Footer";
+import Homepageform from "../../Form/Homepageform";
 
 export default function ServicesPage() {
   const headerImage =
@@ -162,7 +163,7 @@ export default function ServicesPage() {
 
         </div>
       </section>
-
+      <Homepageform/>
       <Footer />
     </main>
   );

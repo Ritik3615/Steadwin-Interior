@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Footer from "../../Components/Footer";
 import NewsImage from "../../assets/image.jpg";
+import Homepageform from "../../Form/Homepageform";
 
 export default function OffersNewsPage() {
   const [offers, setOffers] = useState([
@@ -124,6 +125,7 @@ export default function OffersNewsPage() {
         </div>
       </section>
 
+      <Homepageform/>
       <Footer />
     </main>
   );

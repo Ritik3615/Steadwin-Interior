@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "../../Components/Footer";
+import Homepageform from "../../Form/Homepageform"
 import AboutImg from "../../assets/About.jpg";
 import interiorImage from "../../assets/bgimage.jpg";
 
@@ -148,6 +149,7 @@ export default function About() {
         </div>
       </div>
 
+      <Homepageform/>
       <Footer />
     </>
   );

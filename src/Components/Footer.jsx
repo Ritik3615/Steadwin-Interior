@@ -5,11 +5,13 @@ import {
   FaLinkedinIn,
   FaInstagram,
   FaYoutube,
-  FaPinterestP,
 } from "react-icons/fa";
 import { Mail, ChevronDown } from "lucide-react";
 import steadwinLogo from "../assets/logo.png";
 import NewsletterForm from "../Form/NewsletterForm";
+import { BsTwitterX } from "react-icons/bs";
+import { FiMail } from "react-icons/fi";
+import { BiPhoneCall } from "react-icons/bi";
 
 export default function Footer() {
   return (
@@ -41,7 +43,7 @@ export default function Footer() {
       {/* ======================================================
             MAIN FOOTER SECTIONS
       ====================================================== */}
-      <div className=" text-center max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
+      <div className="md:flex py-5 text-center justify-between  max-w-7xl mx-auto px-6 gap-12 mb-8">
         {/* QUICK LINKS */}
         <div>
           <h3 className="text-lg font-bold mb-4 text-yellow-400">
@@ -78,13 +80,18 @@ export default function Footer() {
         </div>
 
         {/* COMPANY INFO */}
-        {/* <div>
-          <h3 className="text-lg font-bold mb-4 text-yellow-400">Who We Are</h3>
-          <p className="text-gray-300 leading-relaxed">
-            Steadwin Group provides complete interior design, railing systems,  
-            modular solutions, architectural fabrication, and home innovation services.
-          </p>
-        </div> */}
+        <div className="flex flex-col items-center py-5 md:ml-20">
+          <img
+            src={steadwinLogo}
+            className="w-40 mb-8 rounded-full"
+            alt="Steadwin Logo"
+          />
+
+          <div className="gap-6 font-bold text-center">
+            <h1 className="text-white text-4xl">STEADWIN GROUP</h1>
+            <p className="text-yellow-400 text-2xl">Multitask Provider</p>
+          </div>
+        </div>
 
         {/* CONTACT INFO */}
         <div>
@@ -93,51 +100,42 @@ export default function Footer() {
           <p className="text-gray-300">Yelenahalli, Begur, Bengaluru</p>
           <p className="text-gray-300">Karnataka, 560068</p>
 
-          <p className="text-gray-300 mt-3">📞 +91 87926 95400</p>
-          <p className="text-gray-300">📧 info@steadwin.in</p>
-        </div>
+          <div className="flex flex-col items-center mt-4">
+            <a
+              href="mailto:info@Steadwin.in"
+              className="flex items-center gap-1 font-medium hover:text-blue-300 transition"
+            >
+              <FiMail
+                className="h-5 w-5"
+                style={{
+                  stroke: "url(#grad1)",
+                }}
+              />
 
-        {/* SOCIAL MEDIA */}
-        <div className="flex flex-col items-center">
-          <h3 className="text-lg font-bold mb-4 text-yellow-400 text-center">
-            Follow Us
-          </h3>
+              <svg width="0" height="0">
+                <defs>
+                  <linearGradient
+                    id="grad1"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stopColor="#ff5f6d" />
+                    <stop offset="100%" stopColor="#ffc371" />
+                  </linearGradient>
+                </defs>
+              </svg>
 
-          <div className="flex flex-row items-center gap-3 text-xl">
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              className="hover:text-yellow-400"
-            >
-              <FaFacebookF />
+              <span>info@Steadwin.in</span>
             </a>
+
             <a
-              href="https://instagram.com"
-              target="_blank"
-              className="hover:text-yellow-400"
+              href="tel:+918792695400"
+              className="flex items-center gap-2 font-medium hover:text-blue-300 transition"
             >
-              <FaInstagram />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              className="hover:text-yellow-400"
-            >
-              <FaLinkedinIn />
-            </a>
-            <a
-              href="https://youtube.com"
-              target="_blank"
-              className="hover:text-yellow-400"
-            >
-              <FaYoutube />
-            </a>
-            <a
-              href="https://pinterest.com"
-              target="_blank"
-              className="hover:text-yellow-400"
-            >
-              <FaPinterestP />
+              <BiPhoneCall className="h-5 w-5 text-green-600" />
+              <span>+91 8792695400</span>
             </a>
           </div>
         </div>
@@ -146,19 +144,50 @@ export default function Footer() {
       {/* ======================================================
             CENTER LOGO + SOCIAL ROW (ALUMIL STYLE)
       ====================================================== */}
-      <div className="flex flex-col items-center py-5">
-        <img
-          src={steadwinLogo}
-          className="w-40 mb-8 rounded-full"
-          alt="Steadwin Logo"
-        />
+      {/* SOCIAL MEDIA */}
+      <div className="flex flex-col items-center">
+        <h3 className="text-lg font-bold mb-4 text-yellow-400 text-center">
+          Follow Us
+        </h3>
 
-        <div className="gap-6 font-bold text-center">
-          <h1 className="text-blue-500 text-4xl">STEADWIN GROUP</h1>
-          <p className="text-amber-200 text-2xl">Multitask Provider</p>
+        <div className="flex gap-10 md:gap-20 items-center">
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedinIn className="h-5 w-5 text-blue-600 hover:text-blue-300 transition" />
+          </a>
+          <a
+            href="https://youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaYoutube className="h-5 w-5 text-red-500 hover:text-blue-300 transition" />
+          </a>
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaFacebookF className="h-5 w-5 text-blue-500 hover:text-blue-300 transition" />
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaInstagram className="h-5 w-5 text-red-500 hover:text-blue-300 transition" />
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <BsTwitterX className="h-5 w-5  hover:text-blue-300 transition" />
+          </a>
         </div>
       </div>
-
       {/* ======================================================
             COPYRIGHT
       ====================================================== */}

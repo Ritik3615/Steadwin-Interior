@@ -25,6 +25,36 @@ const galleryItems = [
     subtitle: "Revolutionary housing solutions now available.",
     imageUrl: Railing10,
   },
+  {
+    title: "Innovative Railing Systems",
+    subtitle: "Revolutionary housing solutions now available.",
+    imageUrl: Railing10,
+  },
+  {
+    title: "Innovative Railing Systems",
+    subtitle: "Revolutionary housing solutions now available.",
+    imageUrl: Railing10,
+  },
+  {
+    title: "Innovative Railing Systems",
+    subtitle: "Revolutionary housing solutions now available.",
+    imageUrl: Railing10,
+  },
+  {
+    title: "Innovative Railing Systems",
+    subtitle: "Revolutionary housing solutions now available.",
+    imageUrl: Railing10,
+  },
+  {
+    title: "Innovative Railing Systems",
+    subtitle: "Revolutionary housing solutions now available.",
+    imageUrl: Railing10,
+  },
+  {
+    title: "Innovative Railing Systems",
+    subtitle: "Revolutionary housing solutions now available.",
+    imageUrl: Railing10,
+  },
 ];
 
 function Gallery({ title, subtitle, imageUrl }) {
@@ -33,7 +63,7 @@ function Gallery({ title, subtitle, imageUrl }) {
       <img
         src={imageUrl}
         alt={title}
-        className="w-full h-56 object-cover"
+        className="w-full h-80 object-cover"
         onError={(e) => {
           e.target.src =
             "https://placehold.co/400x400/94a3b8/ffffff?text=Image+Missing";

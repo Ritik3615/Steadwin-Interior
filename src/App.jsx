@@ -7,6 +7,7 @@ import PrivateRoute from "./Admin/Components/PrivateRoute";
 import { AuthProvider } from "./Admin/context/Authcontext";
 import SubAdminApp from "./Admin/SubAdmin/SubAdminApp";
 import { useAuth } from "./Admin/context/Authcontext";
+import ScrollToTop from "./Components/ScrollToTop";
 
 // Lazy load pages
 const Home = lazy(() => import("./Components/Home"));
@@ -50,7 +51,7 @@ function App() {
           !location.pathname.toLowerCase().startsWith("/subadmin") && (
             <Navbar />
           )}
-
+        <ScrollToTop />
         <Routes>
           <Route
             path="/"
@@ -207,7 +208,7 @@ function App() {
             path="/investors"
             element={
               <Suspense fallback={<Loader />}>
-                <Investors/>
+                <Investors />
               </Suspense>
             }
           />
@@ -215,7 +216,7 @@ function App() {
             path="/Franchise"
             element={
               <Suspense fallback={<Loader />}>
-                <Franchise/>
+                <Franchise />
               </Suspense>
             }
           />

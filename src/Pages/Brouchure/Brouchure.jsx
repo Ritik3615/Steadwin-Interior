@@ -1,6 +1,8 @@
 import React from "react";
 import portfolip from "../../assets/Steadwin-Portfolio.pdf";
 import Railing from "../../assets/Steadwin-Railing-System.pdf";
+import Homepageform from "../../Form/Homepageform";
+import Footer from "../../Components/Footer";
 
 const headerImage =
   "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop";
@@ -67,6 +69,8 @@ function Brouchure() {
           </div>
         </div>
       </div>
+      <Homepageform/>
+      <Footer/>
     </>
   );
 }

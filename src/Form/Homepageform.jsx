@@ -1,24 +1,28 @@
 import { i } from "motion/react-client";
 import React from "react";
 import { useState } from "react";
-import bgimage from "../../assets/imagebg.jpg";
 
 function Homepageform() {
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [message, setMessage] = useState("");
+  const [phone, setPhone] = useState("");
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!email || !message) {
+    if (!email || !message || !name || !phone) {
       alert("Please fill all fields");
       return;
     }
 
-    console.log(email, message);
+    console.log(email, message,phone,name);
 
     setEmail("");
     setMessage("");
+    setName("");
+    setPhone("");
 
     alert("✅ Thank you! Your request has been submitted.");
   };
@@ -55,10 +59,27 @@ function Homepageform() {
               <div>
                 <input
                   type="text"
-                  placeholder="Enter Email or Phone"
+                  placeholder="Enter Name*"
+                  className="w-full border p-3 mb-5"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                />
+                <input
+                  type="text"
+                  placeholder="Enter Email*"
                   className="w-full border p-3 mb-5"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                <input
+                  type="text"
+                  placeholder="Enter Phone*"
+                  className="w-full border p-3 mb-5"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  required
                 />
               </div>
               <div>
