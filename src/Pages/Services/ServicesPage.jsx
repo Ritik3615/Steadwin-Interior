@@ -4,32 +4,27 @@ import React from "react";
 import Footer from "../../Components/Footer";
 
 export default function ServicesPage() {
+  const headerImage =
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop";
+
   return (
     <main className="min-h-screen bg-gray-50 text-gray-800 font-sans">
 
       {/* HERO SECTION */}
-      <section className="relative h-[70vh] w-full mt-20 flex items-center justify-center text-center overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop"
-          alt="Investor Relations"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+      <section className="relative h-[40vh] top-20 bg-cover bg-center flex items-center justify-center"
+        style={{ backgroundImage: `url(${headerImage})` }}>
         <div className="absolute inset-0 bg-black/60"></div>
 
         <div className="relative z-10 px-6 max-w-3xl">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Invest in the Future with{" "}
-            <span className="text-amber-400">Steadwin Group</span>
+            Services Under{" "}
           </h1>
-          <p className="text-lg md:text-xl text-gray-200">
-            Partner with us to build a future of innovation, sustainability,
-            and global excellence.
-          </p>
+            <span className="text-amber-400 text-3xl">Steadwin Group</span>
         </div>
       </section>
 
       {/* CONTENT GRID */}
-      <section className="w-full px-6 py-16 max-w-7xl mx-auto">
+      <section className="w-full px-6 py-16 max-w-7xl mx-auto mt-20">
 
         <div className="grid gap-10 md:grid-cols-2">
 

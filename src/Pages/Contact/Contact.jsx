@@ -1,17 +1,15 @@
 import React from "react";
 import Footer from "../../Components/Footer";
 import Form from "../../Components/Form";
+import heroImage from "/Railing/Railing13.jpg";
 
 function Contact() {
   return (
     <>
       {/* Top Banner */}
       <div
-        className="relative bg-cover bg-center h-20 md:h-28 flex items-center justify-center"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop')",
-        }}
+        className="relative h-[40vh] top-20 bg-cover bg-center flex items-center justify-center"
+          style={{ backgroundImage: `url(${heroImage})` }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
         <h1 className="relative text-xl md:text-4xl font-extrabold text-white text-center drop-shadow-lg">
@@ -20,7 +18,7 @@ function Contact() {
       </div>
 
       {/* Main Content */}
-      <div className="px-6 md:px-28 py-16 bg-gray-900 text-white">
+      <div className="relative mt-10 px-6 md:px-28 py-16 bg-gray-900 text-white">
         {/* Heading */}
         <div className="text-3xl md:text-4xl font-bold text-center mb-12">
           Get in <span className="text-blue-500">Touch</span>

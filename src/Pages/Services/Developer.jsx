@@ -8,7 +8,7 @@ function Developer() {
       <div className="w-full">
         {/* Top Heading Section */}
         <div
-          className="relative px-20 py-10 h-[250px] flex items-center justify-center bg-cover bg-center rounded-lg mb-16"
+          className="relative h-[40vh] top-20 bg-cover bg-center flex items-center justify-center"
           style={{
             backgroundImage:
               "url('https://images.pexels.com/photos/4393919/pexels-photo-4393919.jpeg')",
@@ -22,8 +22,8 @@ function Developer() {
 
         {/* Introduction */}
         <motion.div
-          className="px-20 mb-12"
-          initial={{ opacity: 0, y: 50 }}
+          className="px-20 mb-12 mt-32"
+          // initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >

@@ -7,29 +7,27 @@ export default function About() {
   return (
     <>
       {/* Top Spacing Section (h-20) */}
-      <div className="h-20 bg-white"></div>
+      
 
       {/* Hero Section */}
-      <section className="relative h-[65vh] flex items-center justify-center text-center overflow-hidden">
-        <img
-          src={AboutImg}
-          alt="About Steadwin Group"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+      <section className="relative h-[40vh] top-20 bg-cover bg-center flex items-center justify-center"
+        style={{ backgroundImage: `url(${AboutImg})` }}>
         <div className="absolute inset-0 bg-black/60"></div>
 
         <div className="relative z-10 px-6 max-w-3xl">
-          <h1 className="text-4xl md:text-6xl font-bold text-white">
-            About <span className="text-amber-400">Steadwin Group</span>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            About {" "}
+            <span className="text-amber-400">Steadwin Group</span>
           </h1>
-          <p className="text-gray-200 text-lg md:text-xl mt-4">
-            Building Experiences. Designing Futures.
+          <p className="text-lg md:text-xl text-gray-200">
+            Partner with us to build a future of innovation, sustainability,
+            and global excellence.
           </p>
         </div>
       </section>
 
       {/* Main Container */}
-      <div className="px-6 md:px-28 py-16">
+      <div className="relative px-6 md:px-28 py-16 mt-20">
 
         {/* Mission & Vision Section */}
         <div className="grid md:grid-cols-2 gap-12 mb-20">

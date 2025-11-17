@@ -37,7 +37,7 @@ function Brouchure() {
       </div>
 
       {/* Main Section */}
-      <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-start py-20 px-4">
+      <div className="min-h-screen mt-10 bg-gray-100 flex flex-col items-center justify-start py-20 px-4">
         <div className="bg-white rounded-xl p-10 max-w-5xl w-full shadow-lg">
           <p className="text-center text-gray-700 mb-12 text-lg">
             Browse through our brochures to get detailed insights into our

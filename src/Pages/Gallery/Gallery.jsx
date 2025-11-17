@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../../Components/Footer";
 
 // Image arrays
 const stairImages = [
@@ -131,25 +132,25 @@ function GallerySection({ title, images }) {
 
 function Gallery() {
   return (
-    <div className="px-4 md:px-16 py-8 bg-gray-50">
-      <div
-        className="relative bg-cover bg-center top-20 md:h-28 flex items-center justify-center"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop')",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <h1 className="relative text-xl md:text-4xl font-extrabold text-white text-center drop-shadow-lg">
-          Our <span className="text-amber-400 px-2">Gallery</span>
-        </h1>
-      </div>
+    <>
+      <div className="px-4 md:px-16 py-8 bg-gray-50">
+        <div
+          className="relative h-[40vh] top-20 bg-cover bg-center flex items-center justify-center"
+          style={{ backgroundImage: `url(${"/Railing/Railing22.jpg"})` }}
+        >
+          <div className="absolute inset-0 bg-black/60"></div>
+          <h1 className="relative text-6xl md:text-4xl font-extrabold text-white text-center drop-shadow-lg">
+            Our <span className="text-amber-400 px-2 text-3xl">Gallery</span>
+          </h1>
+        </div>
 
-      <GallerySection title="Stair Railings" images={stairImages} />
-      <GallerySection title="Living Halls" images={hallImages} />
-      <GallerySection title="Bedrooms" images={bedroomImages} />
-      <GallerySection title="Kitchens" images={kitchenImages} />
-    </div>
+        <GallerySection title="Stair Railings" images={stairImages} />
+        <GallerySection title="Living Halls" images={hallImages} />
+        <GallerySection title="Bedrooms" images={bedroomImages} />
+        <GallerySection title="Kitchens" images={kitchenImages} />
+      </div>
+      <Footer />
+    </>
   );
 }
 

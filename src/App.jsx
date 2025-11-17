@@ -22,6 +22,9 @@ const Brouchure = lazy(() => import("./Pages/Brouchure/Brouchure"));
 const AdminHome = lazy(() => import("./Components/AdminHome"));
 const ServicesPage = lazy(() => import("./Pages/Services/ServicesPage"));
 const Consultancy = lazy(() => import("./Pages/Services/Consultancy"));
+const Developer = lazy(() => import("./Pages/Services/Developer"));
+const Interior = lazy(() => import("./Pages/Services/Interior"));
+const Railing = lazy(() => import("./Pages/Services/Railing"));
 const OffersNewsPage = lazy(() => import("./Pages/News/OffersNewsPage"));
 const Franchise = lazy(() => import("./Pages/Singlepage/Franchise"));
 const Investors = lazy(() => import("./Pages/Investors/Investors"));
@@ -133,6 +136,30 @@ function App() {
             element={
               <Suspense fallback={<Loader />}>
                 <Consultancy />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/Services/Developer"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Developer />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/Services/Interior"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Interior />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/Services/Railing"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Railing />
               </Suspense>
             }
           />

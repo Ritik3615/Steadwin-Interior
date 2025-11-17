@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Footer from "../../Components/Footer";
+import NewsImage from "../../assets/image.jpg";
 
 export default function OffersNewsPage() {
   const [offers, setOffers] = useState([
@@ -38,12 +39,8 @@ export default function OffersNewsPage() {
     <main className="min-h-screen bg-gray-50 text-gray-800 font-sans">
 
       {/* HERO SECTION */}
-      <section className="relative h-[70vh] w-full mt-20 flex items-center justify-center text-center overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop"
-          alt="Offers Banner"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+      <section className="relative h-[40vh] top-20 bg-cover bg-center flex items-center justify-center"
+              style={{ backgroundImage: `url(${NewsImage})` }}>
         <div className="absolute inset-0 bg-black/60"></div>
 
         <div className="relative z-10 px-6 max-w-3xl">
@@ -58,7 +55,7 @@ export default function OffersNewsPage() {
       </section>
 
       {/* OFFERS SECTION */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
+      <section className="max-w-6xl mx-auto px-6 py-16 mt-20">
 
         <div className="text-center mb-10">
           <h2 className="text-3xl font-extrabold">Latest News & Offers</h2>

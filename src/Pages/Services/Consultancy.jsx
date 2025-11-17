@@ -1,27 +1,25 @@
 import React from "react";
 import Footer from "../../Components/Footer";
 
-
 function Consultancy() {
   return (
     <>
+      {/* Top Heading Section */}
+      <div
+        className="relative h-[40vh] top-20 bg-cover bg-center flex items-center justify-center"
+        style={{
+          backgroundImage:
+            "url('https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg')",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/40 rounded-lg"></div>
+        <h1 className="relative text-5xl font-bold text-white text-center drop-shadow-lg">
+          Steadwin Consultancy
+        </h1>
+      </div>
       <div className="w-full">
-        {/* Top Heading Section */}
-        <div
-          className="relative px-20 py-10 h-[250px] flex items-center justify-center bg-cover bg-center rounded-lg mb-16"
-          style={{
-            backgroundImage:
-              "url('https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg')",
-          }}
-        >
-          <div className="absolute inset-0 bg-black/40 rounded-lg"></div>
-          <h1 className="relative text-5xl font-bold text-white text-center drop-shadow-lg">
-            Steadwin Consultancy
-          </h1>
-        </div>
-
         {/* Introduction */}
-        <div className="px-20 mb-12">
+        <div className="px-20 mb-12 mt-32">
           <p className="text-lg text-gray-700 max-w-3xl">
             At Steadwin Consultancy, we provide professional guidance and expert
             solutions to help you transform your spaces and projects. Our team
@@ -83,7 +81,7 @@ function Consultancy() {
           </ul>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }

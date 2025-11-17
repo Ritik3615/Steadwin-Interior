@@ -8,12 +8,8 @@ const Investors = () => {
   return (
     <div className="bg-gray-50 text-gray-800 font-inter">
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center text-center overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop"
-          alt="Investor Relations"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+      <section className="relative h-[40vh] top-20 bg-cover bg-center flex items-center justify-center"
+          style={{ backgroundImage: `url(${"/Railing/Railing15.jpg"})` }}>
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="relative z-10 px-6 max-w-3xl">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -26,7 +22,7 @@ const Investors = () => {
       </section>
 
       {/* Company Vision */}
-      <section className="px-6 md:px-20 py-24 bg-white text-center">
+      <section className="px-6 md:px-20 py-24 bg-white text-center mt-10">
         <h2 className="text-3xl md:text-5xl font-bold text-[#2b5d7c] mb-8">Our Vision & Mission</h2>
         <p className="max-w-3xl mx-auto text-lg leading-relaxed text-gray-700">
           Steadwin Group is driven by a mission to redefine design, development, and engineering through
