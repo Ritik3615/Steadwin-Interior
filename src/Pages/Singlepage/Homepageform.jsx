@@ -31,7 +31,7 @@ function Homepageform() {
           className="w-full md:h-[500px] h-screen object-cover px-16 rounded-lg"
         />
         <div className="absolute md:h[500px] bg-black opacity-10"></div> */}
-        <div className="grid grid-flow-row md:grid-cols-2 px-20 py-22 gap-4 bg-gray-300 rounded">
+        <div className="grid grid-flow-row md:grid-cols-2 px-5 md:px-20 py-22 gap-4 bg-gray-300 rounded">
           <div className="md:p-10 px-2 ">
             <div className="mb-5 text-3xl text-[#172761] font-bold">
               <h2>Request A Call Back</h2>

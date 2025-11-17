@@ -3,7 +3,7 @@ import service from "/service.png";
 
 function Services() {
   return (
-    <section className="relative bg-gradient-to-r px-15 from-gray-50 to-gray-100 py-16">
+    <section className="relative bg-gradient-to-r px-5 md:px-15 from-gray-50 to-gray-100 py-10">
       {/* Content */}
       <div className="relative z-10">
         {/* Header */}

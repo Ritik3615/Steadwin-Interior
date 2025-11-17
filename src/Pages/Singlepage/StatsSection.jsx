@@ -50,7 +50,7 @@ export default function StatsSection() {
   }, [isVisible]);
 
   return (
-    <div className="w-full flex justify-center py-12 px-15">
+    <div className="w-full flex justify-center py-10 md:px-15 px-5">
       <div
         ref={ref}
         className="w-full bg-white rounded-xl border-[3px] border-orange-400 px-10 py-12 shadow-sm"
