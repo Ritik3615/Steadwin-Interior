@@ -102,7 +102,7 @@ function ContactSidebar() {
 
         {/* WhatsApp (middle) */}
         <div
-          className="relative flex justify-center items-center h-[70px] md:h-24 bg-[#2fea70f0] cursor-pointer"
+          className="relative flex justify-center items-center h-[70px] md:h-[33%] bg-[#2fea70f0] cursor-pointer"
           onMouseEnter={() => setIsHoveringWhatsApp(true)}
           onMouseLeave={() => setIsHoveringWhatsApp(false)}
         >
