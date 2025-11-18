@@ -18,7 +18,7 @@ export default function FeaturesSection() {
       <Heading />
 
       <div className="w-full bg-gray-50 py-20 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 place-items-center ">
+        <div className="mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 place-items-center ">
 
           {/* LEFT COLUMN */}
           <div className="flex flex-col gap-16 items-center px-5">

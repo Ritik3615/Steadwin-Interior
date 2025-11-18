@@ -110,11 +110,10 @@ function Form() {
                 className="border border-gray-300 p-3 rounded-lg text-sm focus:ring-2 focus:ring-[#2b5d7c] outline-none"
               >
                 <option value="">Select Property Type</option>
-                <option value="1BHK">1BHK</option>
-                <option value="2BHK">2BHK</option>
-                <option value="3BHK">3BHK</option>
-                <option value="Villa">Villa</option>
-                <option value="Commercial">Commercial</option>
+                <option value="1BHK">Interior</option>
+                <option value="2BHK">Railing</option>
+                <option value="3BHK">Developer</option>
+                <option value="Villa">Consultancy</option>
               </select>
 
               <textarea

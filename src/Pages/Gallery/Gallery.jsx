@@ -114,15 +114,23 @@ const kitchenImages = [
 
 function GallerySection({ title, images }) {
   return (
-    <div className="my-10">
-      <h2 className="text-3xl font-bold text-center mb-6">{title}</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div className="my-12">
+      {/* Section Title */}
+      <h2 className="text-3xl font-extrabold text-center mb-6 text-gray-800 border-b pb-2">
+        {title}
+      </h2>
+
+      {/* Responsive Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {images.map((img, index) => (
-          <div key={index} className="overflow-hidden rounded-lg shadow-lg">
+          <div
+            key={index}
+            className="rounded-xl overflow-hidden shadow-md hover:shadow-xl transition"
+          >
             <img
               src={img}
               alt={`${title} ${index + 1}`}
-              className="w-full h-60 object-cover transform hover:scale-105 hover:-scale-z-150 transition duration-300"
+              className="w-full h-auto object-contain bg-white"
             />
           </div>
         ))}
@@ -134,26 +142,28 @@ function GallerySection({ title, images }) {
 function Gallery() {
   return (
     <>
+      {/* HERO */}
       <section
         className="relative h-[40vh] top-20 bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: `url(${"/Bedroom/bedroom30.jpg"})` }}
+        style={{ backgroundImage: `url("/Bedroom/bedroom30.jpg")` }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
 
         <div className="relative z-10 px-6 max-w-3xl">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Our Gallary{" "}
+            Our Gallery
           </h1>
-          {/* <span className="text-amber-400 text-3xl">Gallary</span> */}
         </div>
       </section>
 
+      {/* SECTIONS */}
       <div className="px-4 md:px-16 mt-10 py-8 bg-gray-50">
         <GallerySection title="Stair Railings" images={stairImages} />
         <GallerySection title="Living Halls" images={hallImages} />
         <GallerySection title="Bedrooms" images={bedroomImages} />
         <GallerySection title="Kitchens" images={kitchenImages} />
       </div>
+
       <Homepageform />
       <Footer />
     </>

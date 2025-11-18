@@ -46,7 +46,7 @@ function Brouchure() {
             designs, services, and specialized systems.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid  gap-8">
             {brochures.map((b, index) => (
               <div
                 key={index}

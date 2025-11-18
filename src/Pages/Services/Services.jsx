@@ -1,5 +1,6 @@
 import React from "react";
 import service from "/service.png";
+import { Link } from "react-router-dom";
 
 function Services() {
   return (
@@ -11,9 +12,9 @@ function Services() {
           <h1 className="text-3xl sm:text-4xl font-extrabold tracking-wide text-gray-900 text-center sm:text-left">
             What we Offer?
           </h1>
-          <button className="mt-4 sm:mt-0 rounded-xl px-6 py-3 bg-orange-500 text-white font-medium hover:bg-orange-600 shadow-md transition">
+          <Link to="/quote" className="mt-4 sm:mt-0 rounded-xl px-6 py-3 bg-orange-500 text-white font-medium hover:bg-orange-600 shadow-md transition">
             Get your Quotation
-          </button>
+          </Link>
         </div>
 
         {/* Cards Grid */}

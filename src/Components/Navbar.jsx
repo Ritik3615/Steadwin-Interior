@@ -18,6 +18,7 @@ import TopBar from "../Pages/Singlepage/Topbaar";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [serviceHover, setServiceHover] = useState(false); // <--- ADDED
 
   const Nav = [
     { name: "Home", path: "/" },
@@ -37,7 +38,7 @@ function Navbar() {
     { name: "Developer", path: "/services/developer" },
     { name: "Interior", path: "/Services/Interior" },
     { name: "Railing", path: "/services/railing" },
-    { name: "view All", path: "/services" },
+    // { name: "view All", path: "/services" },
   ];
 
   const handleSearch = (query) => setSearchQuery(query);
@@ -47,9 +48,8 @@ function Navbar() {
       {/* Top Blue Line */}
       <TopBar />
 
-      {/* Main Navbar */}
       <div className="flex items-center justify-between h-20 w-full px-8">
-        {/* ---------- LEFT SECTION ---------- */}
+        {/* LEFT */}
         <div className="flex items-center gap-2">
           <Link to="/">
             <img src={logo} alt="logo" className="h-12 w-12 rounded-full" />
@@ -60,32 +60,50 @@ function Navbar() {
           </Link>
         </div>
 
-        {/* ---------- CENTER SECTION ---------- */}
+        {/* CENTER */}
         <div className="hidden md:flex items-center space-x-8 text-black relative">
           {Nav.filter((item) => !item.hidden).map((item, index) => {
             if (item.name === "Services") {
               return (
-                <div key={index} className="relative group">
-                  <div className="cursor-pointer hover:underline group-hover:text-[#2b5d7c]">
-                    Services
+                <div
+                  key={index}
+                  className="relative"
+                  onMouseEnter={() => setServiceHover(true)}
+                  onMouseLeave={() => setServiceHover(false)}
+                >
+                  <div className="flex items-center gap-1 cursor-pointer">
+                    <span className="hover:underline hover:text-[#2b5d7c]">
+                      Services
+                    </span>
+
+                    {/* Arrow */}
+                    <motion.span
+                      initial={{ rotate: 0 }}
+                      animate={{ rotate: serviceHover ? 180 : 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="text-sm"
+                    >
+                      ▼
+                    </motion.span>
                   </div>
 
-                  {/* Dropdown */}
-                  <div
-                    className="absolute left-0 top-full mt-2
-                          hidden group-hover:block bg-white shadow-xl 
-                          rounded-lg w-44 py-2 z-50"
-                  >
-                    {serviceCategories.map((srv, idx) => (
-                      <Link
-                        key={idx}
-                        to={srv.path}
-                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#2b5d7c]"
-                      >
-                        {srv.name}
-                      </Link>
-                    ))}
-                  </div>
+                  {/* DROPDOWN */}
+                  {serviceHover && (
+                    <div
+                      className="absolute left-0 top-full mt-2 bg-white shadow-xl 
+                      rounded-lg w-44 py-2 z-50"
+                    >
+                      {serviceCategories.map((srv, idx) => (
+                        <Link
+                          key={idx}
+                          to={srv.path}
+                          className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#2b5d7c]"
+                        >
+                          {srv.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
               );
             }
@@ -102,7 +120,7 @@ function Navbar() {
           })}
         </div>
 
-        {/* ---------- RIGHT SECTION ---------- */}
+        {/* RIGHT */}
         <div className="hidden md:flex">
           <Link
             to="/Franchise"
@@ -112,7 +130,7 @@ function Navbar() {
           </Link>
         </div>
 
-        {/* ---------- MOBILE MENU BUTTON ---------- */}
+        {/* MOBILE MENU BUTTON */}
         <div className="md:hidden flex items-center">
           <button onClick={() => setIsOpen(!isOpen)} className="p-2">
             {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -120,7 +138,7 @@ function Navbar() {
         </div>
       </div>
 
-      {/* ---------- MOBILE DROPDOWN ---------- */}
+      {/* ---------- MOBILE MENU ---------- */}
       {isOpen && (
         <div className="md:hidden bg-white shadow-lg p-4 space-y-4">
           {Nav.filter((item) => !item.hidden).map((item, idx) => (
@@ -134,7 +152,6 @@ function Navbar() {
             </Link>
           ))}
 
-          {/* Frenchises Button in Mobile */}
           <Link
             to="/frenchises"
             onClick={() => setIsOpen(false)}
@@ -143,7 +160,6 @@ function Navbar() {
             Frenchises
           </Link>
 
-          {/* Services Dropdown */}
           <div className="space-y-2">
             <div className="font-medium text-gray-800">Services</div>
             {serviceCategories.map((srv, idx) => (
@@ -157,27 +173,6 @@ function Navbar() {
               </Link>
             ))}
           </div>
-
-          {/* Search Bar in Mobile */}
-          {/* <div className="flex items-center bg-gray-100 rounded-lg px-3 py-2">
-            <Search size={18} className="text-gray-500 mr-2" />
-            <input
-              type="text"
-              placeholder="Search..."
-              value={searchQuery}
-              onChange={(e) => handleSearch(e.target.value)}
-              className="bg-transparent outline-none text-sm w-full"
-            />
-          </div> */}
-
-          {/* Login Button */}
-          {/* <Link
-            to="/login"
-            onClick={() => setIsOpen(false)}
-            className="block bg-blue-600 text-white text-center px-4 py-2 rounded-xl shadow hover:bg-blue-700 transition"
-          >
-            Login
-          </Link> */}
         </div>
       )}
     </nav>

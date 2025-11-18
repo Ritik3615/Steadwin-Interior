@@ -83,7 +83,7 @@ function InteriorShowcase() {
   return (
     <>
       {/* Hero Section */}
-      <div className="my-10 relative mx-10">
+      <div className="my-10 relative mt-20">
         <img
           src="/pexels2.jpg"
           alt="Interior Showcase"

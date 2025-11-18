@@ -10,7 +10,7 @@ function Cards() {
   ];
 
   return (
-    <section className="relative w-full max-w-[1400px] mx-auto px-4">
+    <section className="relative w-full px-4">
       {/* Heading */}
       <div>
         <h2 className="text-center md:text-3xl font-extrabold bg-[#2b5d7c] bg-clip-text text-transparent tracking-wide pt-5">
@@ -25,8 +25,8 @@ function Cards() {
           const c = document.getElementById("card-slider");
           c.scrollLeft -= c.offsetWidth / 1.2;
         }}
-        className="absolute left-0 top-1/2 -translate-y-1/2 bg-white border 
-          border-gray-300 p-3 rounded-full shadow-md hover:scale-110 transition z-20"
+        className="absolute left-16 top-[55%] -translate-y-1/2 bg-white border 
+      border-gray-300 p-3 rounded-full shadow-md hover:scale-110 transition z-20"
       >
         <ChevronLeft size={22} />
       </button>
@@ -35,14 +35,14 @@ function Cards() {
       <div
         id="card-slider"
         className="flex gap-6 overflow-x-auto scroll-smooth py-10
-                   scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200"
+               scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 w-full"
       >
         {cardData.map((item, idx) => (
           <div
             key={idx}
             className="group bg-white border rounded shadow-md 
-                       hover:shadow-xl hover:-translate-y-2 transition-all duration-300
-                       flex-shrink-0 w-[85%] sm:w-[60%] md:w-[40%] lg:w-[30%]"
+                   hover:shadow-xl hover:-translate-y-2 transition-all duration-300
+                   flex-shrink-0 w-[80%] sm:w-[55%] md:w-[35%] lg:w-[25%]"
           >
             <div className="relative">
               <img
@@ -63,8 +63,10 @@ function Cards() {
 
               {/* HOVER BUTTONS */}
               <div className="absolute inset-0 rounded-3xl overflow-hidden">
-                <div className="absolute bottom-0 left-0 right-0 bg-black/40 opacity-0 
-                    group-hover:opacity-100 transition p-4 flex justify-center gap-3">
+                <div
+                  className="absolute bottom-0 left-0 right-0 bg-black/40 opacity-0 
+                group-hover:opacity-100 transition p-4 flex justify-center gap-3"
+                >
                   <button className="border-2 px-4 py-2 rounded-2xl text-blue-900 bg-white hover:bg-blue-50 transition">
                     Book Consultation
                   </button>
@@ -84,8 +86,8 @@ function Cards() {
           const c = document.getElementById("card-slider");
           c.scrollLeft += c.offsetWidth / 1.2;
         }}
-        className="absolute right-0 top-1/2 -translate-y-1/2 bg-white border 
-          border-gray-300 p-3 rounded-full shadow-md hover:scale-110 transition"
+        className="absolute right-16 top-[55%] -translate-y-1/2 bg-white border 
+      border-gray-300 p-3 rounded-full shadow-md hover:scale-110 transition"
       >
         <ChevronRight size={22} />
       </button>

@@ -39,12 +39,12 @@ export default function GalleryCard() {
   };
 
   return (
-    <section className="w-full bg-gray-50 py-4 relative">
+    <section className="w-full bg-gray-50 py-4 relative mt-24">
 
       {/* Left Button */}
       <button
         onClick={scrollLeft}
-        className="absolute top-1/2 left-2 -translate-y-1/2 z-20 bg-black/60 hover:bg-black text-white p-3 rounded-full transition"
+        className="absolute top-[45%] left-16 -translate-y-1/2 z-20 bg-black/60 hover:bg-black text-white p-3 rounded-full transition"
       >
         <ChevronLeft size={22} />
       </button>
@@ -52,7 +52,7 @@ export default function GalleryCard() {
       {/* Right Button */}
       <button
         onClick={scrollRight}
-        className="absolute top-1/2 right-2 -translate-y-1/2 z-20 bg-black/60 hover:bg-black text-white p-3 rounded-full transition"
+        className="absolute top-[45%] right-16 -translate-y-1/2 z-20 bg-black/60 hover:bg-black text-white p-3 rounded-full transition"
       >
         <ChevronRight size={22} />
       </button>
@@ -66,7 +66,7 @@ export default function GalleryCard() {
       {/* Manual Scroll Slider */}
       <div
         ref={sliderRef}
-        className="flex gap-8 overflow-x-auto scroll-smooth no-scrollbar px-6 md:px-12 lg:px-20 pb-6"
+        className="flex gap-8 overflow-x-auto scroll-smooth no-scrollbar px-6 md:px-12 lg:px-20 p-6"
       >
         {galleryItems.map((item, index) => (
           <GalleryCardItem key={index} {...item} />
