@@ -7,15 +7,17 @@ function Contact() {
   return (
     <>
       {/* Top Banner */}
-      <div
-        className="relative h-[40vh] top-20 bg-cover bg-center flex items-center justify-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
-      >
+      <section className="relative h-[40vh] top-20 bg-cover bg-center flex items-center justify-center"
+        style={{ backgroundImage: `url(${heroImage})` }}>
         <div className="absolute inset-0 bg-black/60"></div>
-        <h1 className="relative text-xl md:text-4xl font-extrabold text-white text-center drop-shadow-lg">
-          Contact <span className="text-blue-500 px-2">Us</span>
-        </h1>
-      </div>
+
+        <div className="relative z-10 px-6 max-w-3xl">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            Contact {" "}
+          <span className="text-amber-400">Us</span>
+          </h1>
+        </div>
+      </section>
 
       {/* Main Content */}
       <div className="relative mt-10 px-6 md:px-28 py-16 bg-gray-900 text-white">

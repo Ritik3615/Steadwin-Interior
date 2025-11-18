@@ -134,23 +134,27 @@ function GallerySection({ title, images }) {
 function Gallery() {
   return (
     <>
-      <div className="px-4 md:px-16 py-8 bg-gray-50">
-        <div
-          className="relative h-[40vh] top-20 bg-cover bg-center flex items-center justify-center"
-          style={{ backgroundImage: `url(${"/Railing/Railing22.jpg"})` }}
-        >
-          <div className="absolute inset-0 bg-black/60"></div>
-          <h1 className="relative text-6xl md:text-4xl font-extrabold text-white text-center drop-shadow-lg">
-            Our <span className="text-amber-400 px-2 text-3xl">Gallery</span>
-          </h1>
-        </div>
+      <section
+        className="relative h-[40vh] top-20 bg-cover bg-center flex items-center justify-center"
+        style={{ backgroundImage: `url(${"/Bedroom/bedroom30.jpg"})` }}
+      >
+        <div className="absolute inset-0 bg-black/60"></div>
 
+        <div className="relative z-10 px-6 max-w-3xl">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            Our Gallary{" "}
+          </h1>
+          {/* <span className="text-amber-400 text-3xl">Gallary</span> */}
+        </div>
+      </section>
+
+      <div className="px-4 md:px-16 mt-10 py-8 bg-gray-50">
         <GallerySection title="Stair Railings" images={stairImages} />
         <GallerySection title="Living Halls" images={hallImages} />
         <GallerySection title="Bedrooms" images={bedroomImages} />
         <GallerySection title="Kitchens" images={kitchenImages} />
       </div>
-      <Homepageform/>
+      <Homepageform />
       <Footer />
     </>
   );

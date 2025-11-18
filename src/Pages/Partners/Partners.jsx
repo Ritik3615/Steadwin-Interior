@@ -12,7 +12,7 @@ const partners = [
 const Partners = () => {
   return (
     <section className="bg-white py-16 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6 text-center">
+      <div className="px-6 text-center">
         {/* Heading */}
         <div>
         <h2 className="text-center md:text-3xl font-extrabold md:mb-3 bg-[#2b5d7c] bg-clip-text text-transparent tracking-wide">

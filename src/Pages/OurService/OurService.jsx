@@ -6,7 +6,7 @@ const services = [
     name: "Consultancy Services",
     image: "/HAll/Consultaning.jpg",
     path: "/Services/Consultancy",
-    desc: "Professional consultancy for your All Dreams and Projects.",
+    desc: "End-to-end accounting, tax compliance, GST services, audits, and financial advisory for businesses.",
   },
   {
     name: "Developer",

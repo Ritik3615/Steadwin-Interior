@@ -18,12 +18,8 @@ export default function About() {
         <div className="relative z-10 px-6 max-w-3xl">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             About {" "}
-            <span className="text-amber-400">Steadwin Group</span>
+            <span className="text-amber-400">Us</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-200">
-            Partner with us to build a future of innovation, sustainability,
-            and global excellence.
-          </p>
         </div>
       </section>
 

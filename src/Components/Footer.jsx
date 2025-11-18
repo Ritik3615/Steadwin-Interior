@@ -7,7 +7,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import { Mail, ChevronDown } from "lucide-react";
-import steadwinLogo from "../assets/logo.png";
+import steadwinLogo from "/logo.svg";
 import NewsletterForm from "../Form/NewsletterForm";
 import { BsTwitterX } from "react-icons/bs";
 import { FiMail } from "react-icons/fi";
@@ -43,7 +43,7 @@ export default function Footer() {
       {/* ======================================================
             MAIN FOOTER SECTIONS
       ====================================================== */}
-      <div className="md:flex py-5 text-center justify-between  max-w-7xl mx-auto px-6 gap-12 mb-8">
+      <div className="md:flex py-5 justify-between  max-w-7xl mx-auto px-6 gap-12 mb-8">
         {/* QUICK LINKS */}
         <div>
           <h3 className="text-lg font-bold mb-4 text-yellow-400">
@@ -83,13 +83,15 @@ export default function Footer() {
         <div className="flex flex-col items-center py-5 md:ml-20">
           <img
             src={steadwinLogo}
-            className="w-40 mb-8 rounded-full"
+            className="w-40 h-40 mb-8 rounded-full object-cover bg-transparent"
             alt="Steadwin Logo"
           />
 
           <div className="gap-6 font-bold text-center">
             <h1 className="text-white text-4xl">STEADWIN GROUP</h1>
-            <p className="text-yellow-400 text-2xl">Multitask Provider</p>
+            <p className="text-yellow-400">
+              - the multitasking services provider -
+            </p>
           </div>
         </div>
 
@@ -100,7 +102,7 @@ export default function Footer() {
           <p className="text-gray-300">Yelenahalli, Begur, Bengaluru</p>
           <p className="text-gray-300">Karnataka, 560068</p>
 
-          <div className="flex flex-col items-center mt-4">
+          <div className="flex flex-col mt-4">
             <a
               href="mailto:info@Steadwin.in"
               className="flex items-center gap-1 font-medium hover:text-blue-300 transition"

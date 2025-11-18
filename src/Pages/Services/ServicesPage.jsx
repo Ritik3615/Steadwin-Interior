@@ -18,9 +18,8 @@ export default function ServicesPage() {
 
         <div className="relative z-10 px-6 max-w-3xl">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Services Under{" "}
+            Services{" "}
           </h1>
-            <span className="text-amber-400 text-3xl">Steadwin Group</span>
         </div>
       </section>
 

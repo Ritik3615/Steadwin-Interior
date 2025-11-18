@@ -29,6 +29,7 @@ const Railing = lazy(() => import("./Pages/Services/Railing"));
 const OffersNewsPage = lazy(() => import("./Pages/News/OffersNewsPage"));
 const Franchise = lazy(() => import("./Pages/Singlepage/Franchise"));
 const Investors = lazy(() => import("./Pages/Investors/Investors"));
+const InvestorForm = lazy(() => import("./Form/InvestorForm"));
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -217,6 +218,14 @@ function App() {
             element={
               <Suspense fallback={<Loader />}>
                 <Franchise />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/InvestorForm"
+            element={
+              <Suspense fallback={<Loader />}>
+                <InvestorForm />
               </Suspense>
             }
           />

@@ -15,7 +15,6 @@ import {
 import logo from "../assets/logo.png";
 import TopBar from "../Pages/Singlepage/Topbaar";
 
-
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -38,6 +37,7 @@ function Navbar() {
     { name: "Developer", path: "/services/developer" },
     { name: "Interior", path: "/Services/Interior" },
     { name: "Railing", path: "/services/railing" },
+    { name: "view All", path: "/services" },
   ];
 
   const handleSearch = (query) => setSearchQuery(query);
@@ -45,7 +45,7 @@ function Navbar() {
   return (
     <nav className="bg-white shadow-2xl w-full fixed top-0 z-50">
       {/* Top Blue Line */}
-      <TopBar/>
+      <TopBar />
 
       {/* Main Navbar */}
       <div className="flex items-center justify-between h-20 w-full px-8">
@@ -61,9 +61,36 @@ function Navbar() {
         </div>
 
         {/* ---------- CENTER SECTION ---------- */}
-        <div className="hidden md:flex items-center space-x-8 text-black">
-          {Nav.filter((item) => !item.hidden && item.name !== "").map(
-            (item, index) => (
+        <div className="hidden md:flex items-center space-x-8 text-black relative">
+          {Nav.filter((item) => !item.hidden).map((item, index) => {
+            if (item.name === "Services") {
+              return (
+                <div key={index} className="relative group">
+                  <div className="cursor-pointer hover:underline group-hover:text-[#2b5d7c]">
+                    Services
+                  </div>
+
+                  {/* Dropdown */}
+                  <div
+                    className="absolute left-0 top-full mt-2
+                          hidden group-hover:block bg-white shadow-xl 
+                          rounded-lg w-44 py-2 z-50"
+                  >
+                    {serviceCategories.map((srv, idx) => (
+                      <Link
+                        key={idx}
+                        to={srv.path}
+                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#2b5d7c]"
+                      >
+                        {srv.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            }
+
+            return (
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.1, color: "#2b5d7c" }}
@@ -71,8 +98,8 @@ function Navbar() {
               >
                 <Link to={item.path}>{item.name}</Link>
               </motion.div>
-            )
-          )}
+            );
+          })}
         </div>
 
         {/* ---------- RIGHT SECTION ---------- */}
@@ -117,7 +144,7 @@ function Navbar() {
           </Link>
 
           {/* Services Dropdown */}
-          {/* <div className="space-y-2">
+          <div className="space-y-2">
             <div className="font-medium text-gray-800">Services</div>
             {serviceCategories.map((srv, idx) => (
               <Link
@@ -129,7 +156,7 @@ function Navbar() {
                 {srv.name}
               </Link>
             ))}
-          </div> */}
+          </div>
 
           {/* Search Bar in Mobile */}
           {/* <div className="flex items-center bg-gray-100 rounded-lg px-3 py-2">

@@ -28,7 +28,7 @@ function Homepageform() {
   };
   return (
     <>
-      <div className="relative w-full md:px-15 px-5">
+      <div className="relative w-full">
         {/* <img
           src={bgimage}
           alt="bgimage"
@@ -60,7 +60,7 @@ function Homepageform() {
                 <input
                   type="text"
                   placeholder="Enter Name*"
-                  className="w-full border p-3 mb-5"
+                  className="w-full border p-3 mb-5 rounded-lg"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
@@ -68,7 +68,7 @@ function Homepageform() {
                 <input
                   type="text"
                   placeholder="Enter Email*"
-                  className="w-full border p-3 mb-5"
+                  className="w-full border p-3 mb-5 rounded-lg"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -76,7 +76,7 @@ function Homepageform() {
                 <input
                   type="text"
                   placeholder="Enter Phone*"
-                  className="w-full border p-3 mb-5"
+                  className="w-full border p-3 mb-5 rounded-lg"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   required
@@ -89,7 +89,7 @@ function Homepageform() {
                   cols="30"
                   rows="5"
                   placeholder="Write Your Message"
-                  className="w-full border p-3 mb-5"
+                  className="w-full border p-3 mb-5 rounded-lg"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                 ></textarea>

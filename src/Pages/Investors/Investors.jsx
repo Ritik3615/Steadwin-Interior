@@ -98,7 +98,7 @@ const Investors = () => {
             Partner with us and be part of a transformative vision.
           </p>
           <Link
-            to="/quote"
+            to="/InvestorForm"
             className="px-10 py-4 bg-amber-500 text-white font-semibold rounded-full hover:bg-amber-600 transition"
           >
             Contact Investor Relations →

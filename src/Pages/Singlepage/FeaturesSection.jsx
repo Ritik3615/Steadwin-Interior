@@ -17,11 +17,11 @@ export default function FeaturesSection() {
     <>
       <Heading />
 
-      <div className="w-full bg-amber-100 py-20 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 place-items-center">
+      <div className="w-full bg-gray-50 py-20 px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 place-items-center ">
 
           {/* LEFT COLUMN */}
-          <div className="flex flex-col gap-16 items-center">
+          <div className="flex flex-col gap-16 items-center px-5">
             <FeatureItem
               icon={<CheckCircle className="h-10 w-10 text-white" />}
               title="WARRANTY ON ALL FEATURES"
@@ -42,8 +42,8 @@ export default function FeaturesSection() {
           </div>
 
           {/* CENTER CIRCLE */}
-          <div className="flex justify-center items-center z-10">
-            <div className="h-56 w-56 md:h-72 md:w-72 bg-amber-100 overflow-hidden">
+          <div className="flex justify-center items-center">
+            <div className="h-56 w-56 md:h-[600px] md:w-[600px] bg-gray-50 overflow-hidden">
               <img
                 src={ProcessImage}
                 alt="Center Design"

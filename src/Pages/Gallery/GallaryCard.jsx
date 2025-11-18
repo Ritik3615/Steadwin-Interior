@@ -1,84 +1,27 @@
 import React, { useRef } from "react";
+import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import Hall20 from "/HAll/Developers.jpg";
-import Railing10 from "/Railing/Railing10.jpg";
-import Bedroom32 from "/Bedroom/GallaryConsultancy.jpg";
 
 const galleryItems = [
-  {
-    title: "Best consultancy services",
-    subtitle: "Expert advice for all your needs.",
-    imageUrl: Bedroom32,
-  },
-  {
-    title: "Luxury Sliding Windows",
-    subtitle: "The perfect blend of durability and style for modern homes.",
-    imageUrl: Hall20,
-  },
-  {
-    title: "Innovative Home Designs",
-    subtitle: "Transforming spaces with cutting-edge architecture.",
-    imageUrl: "/HAll/Hall23.jpg",
-  },
-  {
-    title: "Innovative Railing Systems",
-    subtitle: "Revolutionary housing solutions now available.",
-    imageUrl: Railing10,
-  },
-  {
-    title: "Innovative Railing Systems",
-    subtitle: "Revolutionary housing solutions now available.",
-    imageUrl: Railing10,
-  },
-  {
-    title: "Innovative Railing Systems",
-    subtitle: "Revolutionary housing solutions now available.",
-    imageUrl: Railing10,
-  },
-  {
-    title: "Innovative Railing Systems",
-    subtitle: "Revolutionary housing solutions now available.",
-    imageUrl: Railing10,
-  },
-  {
-    title: "Innovative Railing Systems",
-    subtitle: "Revolutionary housing solutions now available.",
-    imageUrl: Railing10,
-  },
-  {
-    title: "Innovative Railing Systems",
-    subtitle: "Revolutionary housing solutions now available.",
-    imageUrl: Railing10,
-  },
-  {
-    title: "Innovative Railing Systems",
-    subtitle: "Revolutionary housing solutions now available.",
-    imageUrl: Railing10,
-  },
+  { title: "Best consultancy services", imageUrl: "/Bedroom/GallaryConsultancy.jpg" },
+  { title: "Luxury Sliding Windows", imageUrl: "/HAll/Developers.jpg" },
+  { title: "Innovative Home Designs", imageUrl: "/HAll/Hall23.jpg" },
+  { title: "Innovative Railing Systems", imageUrl: "/HAll/Hall10.jpg" },
+  { imageUrl: "/Bedroom/bedroom7.jpg" },
+  { imageUrl: "/Railing/Railing11.jpg" },
+  { imageUrl: "/HAll/Hall12.jpg" },
+  { imageUrl: "/Bedroom/bedroom9.jpg" },
+  { imageUrl: "/Railing/Railing15.jpg" },
+  { imageUrl: "/HAll/Hall14.jpg" },
 ];
 
-function Gallery({ title, subtitle, imageUrl }) {
+// Card Component
+function GalleryCardItem({ title, imageUrl }) {
   return (
-    <div className="relative min-w-[280px] md:min-w-[350px] rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition">
-      <img
-        src={imageUrl}
-        alt={title}
-        className="w-full h-80 object-cover"
-        onError={(e) => {
-          e.target.src =
-            "https://placehold.co/400x400/94a3b8/ffffff?text=Image+Missing";
-        }}
-      />
-
-      <div className="absolute top-0 left-0 bg-slate-800/80 text-white text-xs font-semibold px-3 py-1 rounded-br-lg">
+    <div className="relative min-w-[350px] rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+      <img src={imageUrl} className="w-full h-[350px] object-cover" />
+      <div className="absolute top-0 left-0 bg-[#2b5d7c]/80 text-white text-xs font-semibold px-3 py-1 rounded-br-lg">
         Steadwin
-      </div>
-
-      <div className="absolute inset-0 flex items-center justify-start p-6">
-        <div className="bg-white/80 backdrop-blur-sm rounded-lg shadow-md p-3 max-w-xs">
-          <h3 className="text-lg font-bold text-gray-900">{title}</h3>
-          <p className="text-xs text-gray-700 mt-1">{subtitle}</p>
-        </div>
       </div>
     </div>
   );
@@ -96,44 +39,50 @@ export default function GalleryCard() {
   };
 
   return (
-    <section className="bg-gray-50 p-6 px-12">
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="flex justify-between items-center mb-10">
-          <div>
-            <h1 className="text-3xl font-semibold text-slate-800">
-              Our Gallery
-            </h1>
-            <div className="w-38 h-1 bg-blue-600 mt-2 rounded"></div>
-          </div>
+    <section className="w-full bg-gray-50 py-4 relative">
 
-          {/* Arrows */}
-          <div className="flex space-x-2">
-            <button
-              onClick={scrollLeft}
-              className="p-3 bg-slate-800 text-white rounded hover:bg-slate-600 transition"
-            >
-              <ChevronLeft size={20} />
-            </button>
+      {/* Left Button */}
+      <button
+        onClick={scrollLeft}
+        className="absolute top-1/2 left-2 -translate-y-1/2 z-20 bg-black/60 hover:bg-black text-white p-3 rounded-full transition"
+      >
+        <ChevronLeft size={22} />
+      </button>
 
-            <button
-              onClick={scrollRight}
-              className="p-3 bg-slate-800 text-white rounded hover:bg-slate-600 transition"
-            >
-              <ChevronRight size={20} />
-            </button>
-          </div>
-        </div>
+      {/* Right Button */}
+      <button
+        onClick={scrollRight}
+        className="absolute top-1/2 right-2 -translate-y-1/2 z-20 bg-black/60 hover:bg-black text-white p-3 rounded-full transition"
+      >
+        <ChevronRight size={22} />
+      </button>
 
-        {/* Horizontal Slider */}
-        <div
-          ref={sliderRef}
-          className="flex gap-6 overflow-x-auto scroll-smooth scrollbar-hide pb-4"
+      {/* Header */}
+      <div className="px-6 md:px-12 lg:px-20 mb-10 flex flex-col justify-center items-center">
+        <h1 className="text-3xl font-semibold text-[#2b5d7c]">Our Gallery</h1>
+        <div className="w-32 h-1 bg-[#2b5d7c] mt-2 rounded"></div>
+      </div>
+
+      {/* Manual Scroll Slider */}
+      <div
+        ref={sliderRef}
+        className="flex gap-8 overflow-x-auto scroll-smooth no-scrollbar px-6 md:px-12 lg:px-20 pb-6"
+      >
+        {galleryItems.map((item, index) => (
+          <GalleryCardItem key={index} {...item} />
+        ))}
+      </div>
+
+      {/* View All Button */}
+      <div className="flex justify-center mt-12 mb-10">
+        <Link
+          to="/Gallery"
+          className="inline-block px-10 py-3 bg-gradient-to-r from-[#2b5d7c] to-[#3c8dbc]
+                     text-white font-semibold rounded-full shadow-lg
+                     hover:from-[#1f445c] hover:to-[#367fa9] hover:shadow-xl transition-all duration-300"
         >
-          {galleryItems.map((item, i) => (
-            <Gallery key={i} {...item} />
-          ))}
-        </div>
+          VIEW ALL
+        </Link>
       </div>
     </section>
   );

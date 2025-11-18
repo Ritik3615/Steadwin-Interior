@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
 const statsData = [
+  { label: "Projects Undertaking", value: 200 },
+  { label: "Years of Experience", value: 7 },
+  { label: "Permanent Workforce", value: 25 },
   { label: "Projects Undertaking", value: 800 },
-  { label: "Years of Experience", value: 15 },
-  { label: "Permanent Workforce", value: 20 },
-  { label: "Projects Undertaking", value: 1000 },
 ];
 
 export default function StatsSection() {
