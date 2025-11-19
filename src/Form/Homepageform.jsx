@@ -1,6 +1,7 @@
 import { i } from "motion/react-client";
 import React from "react";
 import { useState } from "react";
+import CustomAlert from "./CustomAlert";
 
 function Homepageform() {
   const [email, setEmail] = useState("");
@@ -24,7 +25,7 @@ function Homepageform() {
     setName("");
     setPhone("");
 
-    alert("✅ Thank you! Your request has been submitted.");
+    CustomAlert("✅ Thank you! Your request has been submitted.");
   };
   return (
     <>
