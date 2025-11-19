@@ -8,17 +8,18 @@ function Homepageform() {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [phone, setPhone] = useState("");
-
+  const [ShowAlert, setCustomAlert] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setCustomAlert(true);
 
     if (!email || !message || !name || !phone) {
       alert("Please fill all fields");
       return;
     }
 
-    console.log(email, message,phone,name);
+    console.log(email, message, phone, name);
 
     setEmail("");
     setMessage("");
@@ -103,6 +104,9 @@ function Homepageform() {
                   Submit Now
                 </button>
               </div>
+              {ShowAlert && (
+                <CustomAlert onClose={() => setCustomAlert(false)} />
+              )}
             </form>
           </div>
         </div>

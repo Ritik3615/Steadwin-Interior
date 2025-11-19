@@ -34,7 +34,7 @@ export default function OffersNewsPage() {
 
         <div className="relative z-10 px-6 max-w-3xl">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Big Savings with <span className="text-amber-400">Steadwin Group</span>
+            Latest News & Offers <span className="text-amber-400"></span>
           </h1>
           <p className="text-lg md:text-xl text-gray-200">
             Explore all discounts, festive offers, and exclusive announcements.
@@ -45,12 +45,12 @@ export default function OffersNewsPage() {
       {/* OFFERS SECTION */}
       <section className="mx-auto px-6 py-16 mt-20">
 
-        <div className="text-center mb-10">
+        {/* <div className="text-center mb-10">
           <h2 className="text-3xl font-extrabold">Latest News & Offers</h2>
           <p className="mt-2 text-gray-600">
             Seasonal deals, special promotions, and important updates.
           </p>
-        </div>
+        </div> */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {galleryImages.map((img) => (
             <div
