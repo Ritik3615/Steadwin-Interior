@@ -109,9 +109,9 @@ export default function Footer() {
             >
               <FiMail
                 className="h-5 w-5 text-red-500"
-                style={{
-                  stroke: "url(#grad1)",
-                }}
+                // style={{
+                //   stroke: "url(#grad1)",
+                // }}
               />
 
               {/* <svg width="0" height="0">
