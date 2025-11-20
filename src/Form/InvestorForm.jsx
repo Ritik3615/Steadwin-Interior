@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Footer from "../Components/Footer";
+import { Mail } from "lucide-react";
 
 /**
  * InvestorForm
@@ -396,11 +397,11 @@ export default function InvestorForm({ endpoint, onSuccess }) {
               Reset
             </button>
 
-            <div className="text-sm text-gray-500 md:ml-auto w-full md:w-auto text-center md:text-right">
-              Or email:{" "}
+            <div className="text-sm flex gap-2 justify-center items-center text-gray-500 md:ml-auto w-full md:w-auto text-center md:text-right">
+              <Mail className="h-4 w-4 text-red-900"/>{" "}
               <a
                 href="mailto:investors@steadwingroup.com"
-                className="underline"
+                className="underline text-blue-800"
               >
                 info@Steadwin.in
               </a>

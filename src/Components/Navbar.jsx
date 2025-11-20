@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import logo from "../assets/logo.png";
 import TopBar from "../Pages/Singlepage/Topbaar";
+import { MdExpandCircleDown } from "react-icons/md";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -83,14 +84,14 @@ function Navbar() {
                       transition={{ duration: 0.2 }}
                       className="text-sm"
                     >
-                      ▼
+                      <MdExpandCircleDown/>
                     </motion.span>
                   </div>
 
                   {/* DROPDOWN */}
                   {serviceHover && (
                     <div
-                      className="absolute left-0 top-full mt-2 bg-white shadow-xl 
+                      className="absolute left-0 top-full bg-white shadow-xl 
                       rounded-lg w-44 py-2 z-50"
                     >
                       {serviceCategories.map((srv, idx) => (

@@ -72,7 +72,7 @@ export default function About() {
           <img
             src={interiorImage}
             alt="Interior Design"
-            className="rounded-2xl shadow-xl w-full h-64 md:h-72 object-cover"
+            className="rounded-2xl shadow-xl w-full h-64 md:h-80 object-cover"
           />
           <div>
             <h2 className="text-3xl font-semibold text-gray-900 mb-3">
@@ -88,7 +88,7 @@ export default function About() {
 
         {/* Railing Systems Section */}
         <div className="grid md:grid-cols-2 gap-10 items-center mb-20">
-          <div>
+          <div className="order-2 md:order-1 ">
             <h2 className="text-3xl font-semibold text-gray-900 mb-3">
               Railing Systems
             </h2>
@@ -99,9 +99,9 @@ export default function About() {
             </p>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?q=80&w=1200&auto=format&fit=crop"
+            src="/Railing/railing70.jpg"
             alt="Railing System"
-            className="rounded-2xl shadow-xl w-full h-64 md:h-72 object-cover"
+            className="order-1 md:order-2 rounded-2xl shadow-xl w-full h-64 md:h-80 object-cover"
           />
         </div>
 
@@ -110,7 +110,7 @@ export default function About() {
           <img
             src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop"
             alt="Consultancy"
-            className="rounded-2xl shadow-xl w-full h-64 md:h-72 object-cover"
+            className="rounded-2xl shadow-xl w-full h-64 md:h-80 object-cover"
           />
           <div>
             <h2 className="text-3xl font-semibold text-gray-900 mb-3">
@@ -126,7 +126,7 @@ export default function About() {
 
         {/* Developer Services Section */}
         <div className="grid md:grid-cols-2 gap-10 items-center mb-12">
-          <div>
+          <div className="order-2 md:order-1">
             <h2 className="text-3xl font-semibold text-gray-900 mb-3">
               Developer Services
             </h2>
@@ -138,9 +138,9 @@ export default function About() {
           </div>
 
           <img
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop"
+            src="https://images.pexels.com/photos/7031406/pexels-photo-7031406.jpeg?_gl=1*b4fdzk*_ga*Nzc5NDg5NzE2LjE3NTU3ODkyNTc.*_ga_8JE65Q40S6*czE3NjM2Mzk5OTYkbzQ0JGcxJHQxNzYzNjQwMDI5JGoyNyRsMCRoMA.."
             alt="Developer Services"
-            className="rounded-2xl shadow-xl w-full h-64 md:h-72 object-cover"
+            className="order-1 md:order-2 rounded-2xl shadow-xl w-full h-64 md:h-80 object-cover"
           />
         </div>
       </div>
