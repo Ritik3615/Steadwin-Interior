@@ -53,10 +53,10 @@ export default function ServicesPage() {
             </ul>
 
             <Link
-              to="/quote"
+              to="/Services/Interior"
               className="inline-block mt-6 px-6 py-3 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700"
             >
-              Get Interior Quote
+              More Details
             </Link>
           </div>
         </div>
@@ -64,7 +64,7 @@ export default function ServicesPage() {
         {/* ========= RAILING (Content Left) ========= */}
         <div className="grid md:grid-cols-2 gap-10 items-center">
 
-          <div>
+          <div className="order-2 md:order-1">
             <h2 className="text-3xl font-bold">Railing System</h2>
             <p className="mt-4 text-gray-600">
               Premium railing systems engineered for durability, safety and aesthetics.
@@ -77,20 +77,20 @@ export default function ServicesPage() {
             </ul>
 
             <div className="mt-6 flex gap-4">
-              <a
+              {/* <a
                 href="http://localhost:5173/services/railing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700"
               >
                 Visit Railing Site
-              </a>
+              </a> */}
 
               <Link
-                to="/quote"
-                className="px-6 py-3 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50"
+                to="/Services/Railing"
+                className="px-6 py-3 rounded-lg border border-gray-300 text-white bg-indigo-600 hover:bg-indigo-700"
               >
-                Request Railing Quote
+                More Details
               </Link>
             </div>
           </div>
@@ -98,36 +98,36 @@ export default function ServicesPage() {
           <img
             src={RailingImage}
             alt="Railing"
-            className="rounded-xl shadow-lg w-full object-cover h-80"
+            className="order-1 md:order-2 rounded-xl shadow-lg w-full object-cover h-80"
           />
         </div>
 
         {/* ========= CONSULTANCY (Image Left) ========= */}
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+        <div className=" grid md:grid-cols-2 gap-10 items-center">
 
           <img
             src="https://images.pexels.com/photos/5816283/pexels-photo-5816283.jpeg?_gl=1*15xmqk3*_ga*Nzc5NDg5NzE2LjE3NTU3ODkyNTc.*_ga_8JE65Q40S6*czE3NjM0NjE2NDYkbzQwJGcxJHQxNzYzNDYxNjc1JGozMSRsMCRoMA.."
             alt="Consultancy"
-            className="rounded-xl shadow-lg w-full object-cover h-80"
+            className=" rounded-xl shadow-lg w-full object-cover h-80"
           />
 
-          <div>
+          <div className="">
             <h2 className="text-3xl font-bold">Consultancy</h2>
             <p className="mt-4 text-gray-600">
               Professional advisory for budgeting, vendor selection and project evaluation.
             </p>
 
-            <ul className="mt-4 space-y-2 text-gray-700">
+            <ul className="mt-4 mb-7 space-y-2 text-gray-700">
               <li>• Feasibility & cost planning</li>
               <li>• Contractor evaluation</li>
               <li>• Compliance & audit review</li>
             </ul>
-
+            
             <Link
-              to="/quote"
-              className="inline-block mt-6 px-6 py-3 rounded-lg border border-indigo-600 text-indigo-600 hover:bg-indigo-50"
+              to="/Services/Consultancy"
+              className=" mt-6 px-6 py-3 rounded-lg border border-gray-300 text-white bg-indigo-600 hover:bg-indigo-700"
             >
-              Talk to Consultant
+              More Details
             </Link>
           </div>
         </div>
@@ -135,30 +135,30 @@ export default function ServicesPage() {
         {/* ========= DEVELOPER (Content Left) ========= */}
         <div className="grid md:grid-cols-2 gap-10 items-center">
 
-          <div>
+          <div className="order-2 md:order-1">
             <h2 className="text-3xl font-bold">Real Estate Developer</h2>
             <p className="mt-4 text-gray-600">
               From land acquisition to project handover — complete development services.
             </p>
 
-            <ul className="mt-4 space-y-2 text-gray-700">
+            <ul className="mt-4 space-y-2 mb-7 text-gray-700">
               <li>• Planning & approvals</li>
               <li>• Construction management</li>
               <li>• Post-handover services</li>
             </ul>
 
             <Link
-              to="/quote" 
-              className="inline-block mt-6 px-6 py-3 rounded-lg border border-indigo-600 text-indigo-600 hover:bg-indigo-50"
+              to="/Services/Developer" 
+              className="px-6 py-3 rounded-lg border border-gray-300 text-white bg-indigo-600 hover:bg-indigo-700"
             >
-              Explore Projects
+              More Details
             </Link>
           </div>
 
           <img
             src="https://images.pexels.com/photos/7061662/pexels-photo-7061662.jpeg?_gl=1*g012gm*_ga*Nzc5NDg5NzE2LjE3NTU3ODkyNTc.*_ga_8JE65Q40S6*czE3NjM0NjE2NDYkbzQwJGcxJHQxNzYzNDYxODMzJGo3JGwwJGgw"
             alt="Developer"
-            className="rounded-xl shadow-lg w-full object-cover h-80"
+            className="order-1 md:order-2 rounded-xl shadow-lg w-full object-cover h-80"
           />
         </div>
 

@@ -44,7 +44,7 @@ export default function GalleryCard() {
       {/* Left Button */}
       <button
         onClick={scrollLeft}
-        className="absolute top-[45%] left-16 -translate-y-1/2 z-20 bg-black/60 hover:bg-black text-white p-3 rounded-full transition"
+        className="hidden md:block absolute top-[45%] left-16 -translate-y-1/2 z-20 bg-black/60 hover:bg-black text-white p-3 rounded-full transition"
       >
         <ChevronLeft size={22} />
       </button>
@@ -52,7 +52,7 @@ export default function GalleryCard() {
       {/* Right Button */}
       <button
         onClick={scrollRight}
-        className="absolute top-[45%] right-16 -translate-y-1/2 z-20 bg-black/60 hover:bg-black text-white p-3 rounded-full transition"
+        className="hidden md:block absolute top-[45%] right-16 -translate-y-1/2 z-20 bg-black/60 hover:bg-black text-white p-3 rounded-full transition"
       >
         <ChevronRight size={22} />
       </button>

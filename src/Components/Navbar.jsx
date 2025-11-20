@@ -160,7 +160,7 @@ function Navbar() {
             Frenchises
           </Link>
 
-          <div className="space-y-2">
+          {/* <div className="space-y-2">
             <div className="font-medium text-gray-800">Services</div>
             {serviceCategories.map((srv, idx) => (
               <Link
@@ -172,7 +172,7 @@ function Navbar() {
                 {srv.name}
               </Link>
             ))}
-          </div>
+          </div> */}
         </div>
       )}
     </nav>

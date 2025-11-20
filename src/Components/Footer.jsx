@@ -43,9 +43,9 @@ export default function Footer() {
       {/* ======================================================
             MAIN FOOTER SECTIONS
       ====================================================== */}
-      <div className="md:flex py-5 justify-between  max-w-7xl mx-auto px-6 gap-12 mb-8">
+      <div className="md:flex py-5 justify-between items-center text-center md:text-start  max-w-7xl mx-auto px-6 gap-12 mb-8">
         {/* QUICK LINKS */}
-        <div>
+        <div className="">
           <h3 className="text-lg font-bold mb-4 text-yellow-400">
             Quick Links
           </h3>
@@ -102,19 +102,19 @@ export default function Footer() {
           <p className="text-gray-300">Yelenahalli, Begur, Bengaluru</p>
           <p className="text-gray-300">Karnataka, 560068</p>
 
-          <div className="flex flex-col mt-4">
+          <div className="flex flex-col mt-4 items-center md:items-start">
             <a
               href="mailto:info@Steadwin.in"
               className="flex items-center gap-1 font-medium hover:text-blue-300 transition"
             >
               <FiMail
-                className="h-5 w-5"
+                className="h-5 w-5 text-red-500"
                 style={{
                   stroke: "url(#grad1)",
                 }}
               />
 
-              <svg width="0" height="0">
+              {/* <svg width="0" height="0">
                 <defs>
                   <linearGradient
                     id="grad1"
@@ -127,9 +127,9 @@ export default function Footer() {
                     <stop offset="100%" stopColor="#ffc371" />
                   </linearGradient>
                 </defs>
-              </svg>
+              </svg> */}
 
-              <span>info@Steadwin.in</span>
+              <span>info@steadwin.in</span>
             </a>
 
             <a

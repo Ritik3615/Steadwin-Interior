@@ -33,27 +33,27 @@ const Investors = () => {
 
       {/* Stats Section */}
       <section className="bg-[#2b5d7c] text-white py-24">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 text-center">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
           <div>
             <Building2 className="mx-auto mb-3 w-10 h-10" />
-            <h3 className="text-4xl font-bold">12+</h3>
+            <h3 className="text-4xl font-bold">7+</h3>
             <p className="text-gray-200">Years of Excellence</p>
           </div>
           <div>
             <BarChart3 className="mx-auto mb-3 w-10 h-10" />
-            <h3 className="text-4xl font-bold">35%</h3>
+            <h3 className="text-4xl font-bold">30%</h3>
             <p className="text-gray-200">Average Annual Growth</p>
           </div>
           <div>
             <Users2 className="mx-auto mb-3 w-10 h-10" />
-            <h3 className="text-4xl font-bold">200+</h3>
+            <h3 className="text-4xl font-bold">25+</h3>
             <p className="text-gray-200">Team Members</p>
           </div>
-          <div>
+          {/* <div>
             <Globe2 className="mx-auto mb-3 w-10 h-10" />
             <h3 className="text-4xl font-bold">5+</h3>
             <p className="text-gray-200">Global Partnerships</p>
-          </div>
+          </div> */}
         </div>
       </section>
 

@@ -11,13 +11,13 @@ export default function OffersNewsPage() {
     { id: 8, src: "/News/offer8.jpg" },
     { id: 9, src: "/News/offer9.jpg" },
     { id: 10, src: "/News/offer10.jpg" },
+    { id: 2, src: "/News/offer2.jpg" },
+    { id: 3, src: "/News/offer3.jpg" },
+    { id: 5, src: "/News/offer5.jpg" },
     { id: 11, src: "/News/offer11.jpg" },
     // { id: 1, src: "public/News/offer1.jpg" },
     { id: 4, src: "/News/offer4.jpg" },
     { id: 6, src: "/News/offer6.jpg" },
-    { id: 2, src: "/News/offer2.jpg" },
-    { id: 3, src: "/News/offer3.jpg" },
-    { id: 5, src: "/News/offer5.jpg" },
     // { id: 7, src: "/News/offer7.jpg" },
     
   ];
@@ -34,7 +34,7 @@ export default function OffersNewsPage() {
 
         <div className="relative z-10 px-6 max-w-3xl">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Latest News & Offers <span className="text-amber-400"></span>
+            Latest News & <span className="text-amber-400"> Offers</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-200">
             Explore all discounts, festive offers, and exclusive announcements.

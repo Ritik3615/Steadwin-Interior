@@ -245,7 +245,7 @@ function Home() {
       {showScrollTop && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-10 right-8 bg-[#e41010] text-white p-3 rounded-2xl 
+          className="fixed bottom-10 right-2 bg-[#e41010] text-white p-3 rounded-2xl 
                shadow-xl hover:bg-[#3608c2] transition z-50"
         >
           ↑

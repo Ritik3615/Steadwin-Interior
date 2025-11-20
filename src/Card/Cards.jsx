@@ -25,7 +25,7 @@ function Cards() {
           const c = document.getElementById("card-slider");
           c.scrollLeft -= c.offsetWidth / 1.2;
         }}
-        className="absolute left-16 top-[55%] -translate-y-1/2 bg-white border 
+        className="hidden md:block absolute left-16 top-[55%] -translate-y-1/2 bg-white border 
       border-gray-300 p-3 rounded-full shadow-md hover:scale-110 transition z-20"
       >
         <ChevronLeft size={22} />
@@ -86,7 +86,7 @@ function Cards() {
           const c = document.getElementById("card-slider");
           c.scrollLeft += c.offsetWidth / 1.2;
         }}
-        className="absolute right-16 top-[55%] -translate-y-1/2 bg-white border 
+        className="hidden md:block absolute right-16 top-[55%] -translate-y-1/2 bg-white border 
       border-gray-300 p-3 rounded-full shadow-md hover:scale-110 transition"
       >
         <ChevronRight size={22} />
