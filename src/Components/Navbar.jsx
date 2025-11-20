@@ -153,7 +153,7 @@ function Navbar() {
           ))}
 
           <Link
-            to="/frenchises"
+            to="/Franchise"
             onClick={() => setIsOpen(false)}
             className="block bg-[#2b5d7c] text-white text-center px-4 py-2 rounded-3xl shadow hover:bg-[#1f445c] transition"
           >

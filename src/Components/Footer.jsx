@@ -98,9 +98,9 @@ export default function Footer() {
         {/* CONTACT INFO */}
         <div>
           <h3 className="text-lg font-bold mb-4 text-yellow-400">Contact</h3>
-          <p className="text-gray-300">76, Mylasandra Rd, Suraksha Nagar</p>
-          <p className="text-gray-300">Yelenahalli, Begur, Bengaluru</p>
-          <p className="text-gray-300">Karnataka, 560068</p>
+          <p className="text-gray-300">3rd Floor, Chandapura</p>
+          <p className="text-gray-300">Dommasandra Rd, opposite Bethany High, Sarjapura, Kommasandra, Bengaluru</p>
+          <p className="text-gray-300">Karnataka 562125</p>
 
           <div className="flex flex-col mt-4 items-center md:items-start">
             <a
