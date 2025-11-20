@@ -3,7 +3,7 @@ import Footer from "../../Components/Footer";
 
 export default function Franchise() {
   const bgImage =
-    "https://images.unsplash.com/photo-1503389152951-9f343605f61c?auto=format&fit=crop&w=1600&q=80";
+    "https://images.pexels.com/photos/3760093/pexels-photo-3760093.jpeg?_gl=1*zaa2mq*_ga*Nzc5NDg5NzE2LjE3NTU3ODkyNTc.*_ga_8JE65Q40S6*czE3NjM2MjMxMzckbzQyJGcxJHQxNzYzNjIzMzE5JGo0MiRsMCRoMA..";
 
   const [form, setForm] = useState({
     title: "",
@@ -35,7 +35,7 @@ export default function Franchise() {
         className="relative h-[60vh] bg-cover bg-center flex items-center justify-center"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1617957796159-161bbf07c9d8?auto=format&fit=crop&w=1600&q=80')",
+            "url('https://images.pexels.com/photos/3760093/pexels-photo-3760093.jpeg?_gl=1*zaa2mq*_ga*Nzc5NDg5NzE2LjE3NTU3ODkyNTc.*_ga_8JE65Q40S6*czE3NjM2MjMxMzckbzQyJGcxJHQxNzYzNjIzMzE5JGo0MiRsMCRoMA..')",
         }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
