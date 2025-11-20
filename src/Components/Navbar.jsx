@@ -98,7 +98,7 @@ function Navbar() {
                         <Link
                           key={idx}
                           to={srv.path}
-                          className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#2b5d7c]"
+                          className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#2b5d7c] hover:underline"
                         >
                           {srv.name}
                         </Link>
