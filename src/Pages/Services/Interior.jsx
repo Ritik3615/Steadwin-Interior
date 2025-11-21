@@ -3,14 +3,14 @@ import Footer from "../../Components/Footer";
 
 // Memoized Gallery Grid
 const GalleryGrid = memo(({ images, filter, activeSection }) => (
-  <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
+  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
     {images.map((img, index) => (
-      <div key={index} className="overflow-hidden rounded-lg">
+      <div key={index} className="overflow-hidden rounded-xl shadow-md">
         <img
           src={img}
           alt={`${activeSection} ${index + 1}`}
           loading="lazy"
-          className="w-full h-100 object-cover transform hover:scale-105 transition duration-300"
+          className="w-full h-80 object-cover hover:scale-105 transition duration-300"
           style={{ filter }}
         />
       </div>
@@ -21,7 +21,6 @@ const GalleryGrid = memo(({ images, filter, activeSection }) => (
 function InteriorShowcase() {
   const [activeSection, setActiveSection] = useState("Hall");
 
-  // Define images
   const sections = {
     Hall: {
       images: [
@@ -82,53 +81,192 @@ function InteriorShowcase() {
 
   return (
     <>
-      {/* Hero Section */}
-      <div className="my-10 relative mt-20">
-        <img
-          src="/pexels2.jpg"
-          alt="Interior Showcase"
-          className="h-[300px] w-full object-cover rounded-lg shadow-lg"
-          loading="lazy"
-        />
-
-        <div className="absolute inset-0 flex flex-col justify-center items-center bg-black/40 rounded-lg">
-          <h1 className="text-4xl md:text-5xl font-bold text-white text-center drop-shadow-lg mb-4">
-            Our Interior Showcase
+      {/* HERO (Full Screen) */}
+      <section
+        className="relative h-[100vh] w-full bg-cover bg-center"
+        style={{ backgroundImage: "url('/pexels2.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/30" />
+        <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-6">
+          <h1 className="text-5xl md:text-6xl font-extrabold text-white drop-shadow-lg">
+            Interior Showcase
           </h1>
-          <p className="text-white text-lg md:text-xl text-center max-w-2xl">
-            Explore our best work and experience in interior design. We take pride
-            in crafting elegant, modern, and functional spaces that reflect your
-            style and comfort.
+          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mt-4">
+            Discover elegant, modern, and functional interior spaces.
           </p>
         </div>
-      </div>
+      </section>
 
-      {/* Section Buttons */}
-      <div className="px-10 py-10">
-        <div className="flex justify-center gap-8 mb-8">
+      {/* ABOUT SECTION */}
+      <section className="px-6 md:px-20 py-16 bg-gradient-to-r from-[#f0f7ff] to-[#e8f0fa]">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-[#2b5d7c] mb-6">About Our Interiors</h2>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            We combine luxury, precision, and modern aesthetics to create interior spaces
+            that feel elegant and comfortable.
+          </p>
+          <p className="text-lg text-gray-700 mt-4">
+            Every design is a blend of premium materials, creativity, and
+            functionality.
+          </p>
+        </div>
+      </section>
+
+      {/* SERVICES WE OFFER */}
+      <section className="px-6 md:px-20 py-16 bg-[#f9fafb]">
+        <h2 className="text-4xl font-bold text-center text-[#2b5d7c] mb-12">
+          Our Interior Services
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {[
+            "Modular Kitchens",
+            "Bedroom Interiors",
+            "Hall & Living Area",
+            "False Ceiling Work",
+            "Wardrobes & Storage",
+            "Full Home Interiors",
+          ].map((title, index) => (
+            <div
+              key={index}
+              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl border border-blue-50 transition"
+            >
+              <h3 className="text-xl font-semibold text-[#2b5d7c]">{title}</h3>
+              <p className="text-gray-600 mt-2">Stylish, durable, and modern designs.</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* HIGHLIGHTS */}
+      <section className="px-6 md:px-20 py-16 bg-gradient-to-br from-white to-blue-50/30">
+        <h2 className="text-4xl font-bold text-center text-[#2b5d7c] mb-12">
+          Interior Highlights
+        </h2>
+
+        <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          {[
+            ["Premium Materials", "Quality plywood, laminates & hardware."],
+            ["Precise Execution", "Modular finish & clean detailing."],
+            ["Theme Concepts", "Modern, luxury, minimalist, contemporary."],
+            ["Budget Flexibility", "Affordable to premium solutions."],
+          ].map(([title, desc], i) => (
+            <div
+              key={i}
+              className="p-6 bg-white rounded-xl shadow-lg border border-blue-100 hover:shadow-xl transition"
+            >
+              <h3 className="text-xl font-bold text-[#2b5d7c]">{title}</h3>
+              <p className="text-gray-600 mt-2">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* WHY CHOOSE US */}
+      <section className="px-6 md:px-20 py-16 bg-[#f1f5f9]">
+        <h2 className="text-4xl font-bold text-center text-[#2b5d7c] mb-12">
+          Why Choose Us?
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {[
+            "10+ Years Expertise",
+            "Dedicated Designers",
+            "3D Visualizations",
+            "On-Time Delivery",
+            "Premium Finish",
+            "Customer Support",
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="p-6 bg-white rounded-xl shadow-lg border border-blue-100 hover:shadow-xl transition text-center"
+            >
+              <h3 className="text-xl font-semibold text-[#2b5d7c]">{item}</h3>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* WORKFLOW */}
+      <section className="px-6 md:px-20 py-16 bg-gradient-to-tr from-white to-gray-100">
+        <h2 className="text-4xl font-bold text-center text-[#2b5d7c] mb-12">
+          Our Workflow
+        </h2>
+
+        <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          {[
+            "Requirement Understanding",
+            "Concept & 3D Designing",
+            "Material Finalization",
+            "Execution & Handover",
+          ].map((step, i) => (
+            <div
+              key={i}
+              className="bg-white p-6 rounded-xl shadow-lg border border-blue-100 hover:shadow-xl transition text-center"
+            >
+              <div className="h-12 w-12 bg-blue-600 text-white mx-auto flex items-center justify-center rounded-full text-xl font-bold">
+                {i + 1}
+              </div>
+              <p className="mt-4 font-medium text-gray-800">{step}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CATEGORY BUTTONS */}
+      <section className="px-6 md:px-20 py-16 bg-white">
+        <h2 className="text-3xl font-bold text-center text-[#2b5d7c] mb-8">
+          Explore by Category
+        </h2>
+
+        <div className="flex justify-center flex-wrap gap-6 mb-12">
           {sectionNames.map((name) => (
             <button
               key={name}
               onClick={() => setActiveSection(name)}
-              className={`px-6 py-2 font-semibold rounded-full transition 
-                ${
-                  activeSection === name
-                    ? "bg-blue-500 text-white"
-                    : "bg-gray-200 text-black"
-                }`}
+              className={`px-6 py-2 rounded-full text-lg font-semibold transition 
+              ${
+                activeSection === name
+                  ? "bg-blue-600 text-white shadow-lg"
+                  : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+              }`}
             >
               {name}
             </button>
           ))}
         </div>
 
-        {/* Memoized Gallery Grid */}
-        <GalleryGrid
-          images={sections[activeSection].images}
-          filter={sections[activeSection].filter}
-          activeSection={activeSection}
-        />
-      </div>
+        {/* GALLERY */}
+        <div className="max-w-6xl mx-auto">
+          <GalleryGrid
+            images={sections[activeSection].images}
+            filter={sections[activeSection].filter}
+            activeSection={activeSection}
+          />
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section
+        className="relative py-24 bg-cover bg-center"
+        style={{ backgroundImage: "url('/HAll/Hall5.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 max-w-3xl mx-auto text-center text-white px-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Ready to Design Your Dream Home?
+          </h2>
+          <p className="text-xl mb-8">
+            Our expert team will bring your imagination to life.
+          </p>
+          <a
+            href="/Quote"
+            className="px-10 py-3 bg-blue-600 text-white text-xl rounded-full shadow-xl hover:bg-blue-700 transition"
+          >
+            Book Free Consultation →
+          </a>
+        </div>
+      </section>
 
       <Footer />
     </>
