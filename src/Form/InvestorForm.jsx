@@ -219,7 +219,7 @@ export default function InvestorForm({ endpoint, onSuccess }) {
                 name="fullName"
                 value={form.fullName}
                 onChange={handleChange("fullName")}
-                placeholder="Your full name"
+                placeholder="Enter full name"
                 className={`mt-1 block w-full rounded-lg border px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2b5d7c] ${
                   errors.fullName ? "border-red-300" : "border-gray-200"
                 }`}
@@ -237,7 +237,7 @@ export default function InvestorForm({ endpoint, onSuccess }) {
                 name="email"
                 value={form.email}
                 onChange={handleChange("email")}
-                placeholder="you@company.com"
+                placeholder="Enter Email"
                 className={`mt-1 block w-full rounded-lg border px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2b5d7c] ${
                   errors.email ? "border-red-300" : "border-gray-200"
                 }`}
@@ -255,7 +255,7 @@ export default function InvestorForm({ endpoint, onSuccess }) {
                 name="phone"
                 value={form.phone}
                 onChange={handleChange("phone")}
-                placeholder="+91 98765 43210"
+                placeholder="Enter Number"
                 className={`mt-1 block w-full rounded-lg border px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2b5d7c] ${
                   errors.phone ? "border-red-300" : "border-gray-200"
                 }`}
@@ -293,7 +293,7 @@ export default function InvestorForm({ endpoint, onSuccess }) {
                 name="expectedInvestment"
                 value={form.expectedInvestment}
                 onChange={handleChange("expectedInvestment")}
-                placeholder="e.g. ₹5,00,00,000 or $1,000,000"
+                placeholder="e.g. ₹5,00,00,000 or ₹1,000,000"
                 className={`mt-1 block w-full rounded-lg border px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2b5d7c] ${
                   errors.expectedInvestment
                     ? "border-red-300"

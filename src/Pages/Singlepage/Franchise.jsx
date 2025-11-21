@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import FranchiseForm from "../../Form/FranchiseForm";
-import Footer from "../../Components/Footer"
+import Footer from "../../Components/Footer";
 
 export default function FranchisePage() {
   return (
@@ -16,8 +16,7 @@ export default function FranchisePage() {
       >
         <div className="absolute inset-0 bg-black/60"></div>
         <h1 className="text-5xl md:text-6xl text-center font-extrabold text-white relative z-10">
-          Become a Franchise{" "}
-            <span className="text-amber-400">Partner</span>
+          Become a Franchise <span className="text-amber-400">Partner</span>
         </h1>
       </div>
 
@@ -77,10 +76,7 @@ export default function FranchisePage() {
               price: "₹8–15 Lakhs",
             },
           ].map((m, i) => (
-            <div
-              key={i}
-              className="bg-white border rounded-xl p-6 shadow-sm"
-            >
+            <div key={i} className="bg-white border rounded-xl p-6 shadow-sm">
               <h3 className="text-xl font-bold">{m.title}</h3>
               <p className="text-gray-600 mt-2">{m.desc}</p>
               <p className="mt-4 font-semibold text-blue-600">{m.price}</p>
@@ -112,9 +108,8 @@ export default function FranchisePage() {
             </div>
           ))}
         </div>
-
-        <FranchiseForm/>
       </section>
+      <FranchiseForm />
 
       <Footer />
     </>
