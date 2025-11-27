@@ -12,7 +12,7 @@ function SideBaar({ sideConfig, userName, role }) {
     logout();
     nevigate("/login");
   }
-
+  const savedUser = JSON.parse(localStorage.getItem("user"));
   const [openSettings, setOpenSettings] = useState(false);
   const [open, setOpen] = useState({});
   const [overlay, setOverlay] = useState(false); // overlay state

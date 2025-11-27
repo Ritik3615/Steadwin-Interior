@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import emailjs from "emailjs-com";
+import api from "../../src/Admin/services/api"; // IMPORTANT
 
 function ConsultationForm() {
   const [form, setForm] = useState({
@@ -19,32 +19,26 @@ function ConsultationForm() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("Sending...");
+    setStatus("Submitting...");
 
-    emailjs
-      .send(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        form,
-        "YOUR_PUBLIC_KEY"
-      )
-      .then(
-        () => {
-          setStatus("Message sent successfully!");
-          setForm({
-            name: "",
-            email: "",
-            phone: "",
-            service: "",
-            message: "",
-          });
-        },
-        () => {
-          setStatus("Failed to send. Try again.");
-        }
-      );
+    try {
+      await api.post("/api/consultation/submit", form);
+      setStatus("Submitted successfully!");
+
+      setForm({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        message: "",
+      });
+
+    } catch (error) {
+      console.error(error);
+      setStatus("Failed to submit.");
+    }
   };
 
   return (
@@ -57,7 +51,6 @@ function ConsultationForm() {
 
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-          {/* Full Name */}
           <div>
             <label className="text-white font-semibold">Full Name</label>
             <input
@@ -67,11 +60,10 @@ function ConsultationForm() {
               onChange={handleChange}
               required
               placeholder="Enter your name"
-              className="w-full mt-2 p-3 rounded-xl bg-white/90 border border-gray-300 outline-none focus:ring-4 focus:ring-blue-300 shadow-lg"
+              className="w-full mt-2 p-3 rounded-xl bg-white/90 border"
             />
           </div>
 
-          {/* Email */}
           <div>
             <label className="text-white font-semibold">Email</label>
             <input
@@ -81,11 +73,10 @@ function ConsultationForm() {
               onChange={handleChange}
               required
               placeholder="you@example.com"
-              className="w-full mt-2 p-3 rounded-xl bg-white/90 border border-gray-300 outline-none focus:ring-4 focus:ring-indigo-300 shadow-lg"
+              className="w-full mt-2 p-3 rounded-xl bg-white/90 border"
             />
           </div>
 
-          {/* Phone */}
           <div>
             <label className="text-white font-semibold">Phone Number</label>
             <input
@@ -95,11 +86,10 @@ function ConsultationForm() {
               onChange={handleChange}
               required
               placeholder="+91 XXXXX XXXXX"
-              className="w-full mt-2 p-3 rounded-xl bg-white/90 border border-gray-300 outline-none focus:ring-4 focus:ring-cyan-300 shadow-lg"
+              className="w-full mt-2 p-3 rounded-xl bg-white/90 border"
             />
           </div>
 
-          {/* Service Select */}
           <div>
             <label className="text-white font-semibold">Service Needed</label>
             <select
@@ -107,7 +97,7 @@ function ConsultationForm() {
               value={form.service}
               onChange={handleChange}
               required
-              className="w-full mt-2 p-3 rounded-xl bg-white/90 border border-gray-300 outline-none focus:ring-4 focus:ring-purple-300 shadow-lg"
+              className="w-full mt-2 p-3 rounded-xl bg-white/90 border"
             >
               <option value="">Select Service</option>
               <option>Digital Marketing</option>
@@ -119,7 +109,6 @@ function ConsultationForm() {
             </select>
           </div>
 
-          {/* Message */}
           <div className="md:col-span-2">
             <label className="text-white font-semibold">Your Message</label>
             <textarea
@@ -129,15 +118,14 @@ function ConsultationForm() {
               required
               rows="4"
               placeholder="Tell us about your project..."
-              className="w-full mt-2 p-4 rounded-xl bg-white/90 border border-gray-300 outline-none focus:ring-4 focus:ring-pink-300 shadow-lg"
+              className="w-full mt-2 p-4 rounded-xl bg-white/90 border"
             ></textarea>
           </div>
 
-          {/* Submit */}
           <div className="md:col-span-2 flex flex-col items-center">
             <button
               type="submit"
-              className="px-12 py-4 mt-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white text-xl font-semibold rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.4)] hover:-translate-y-1 transition-all duration-300"
+              className="px-12 py-4 mt-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white text-xl font-semibold rounded-full"
             >
               Submit Request →
             </button>

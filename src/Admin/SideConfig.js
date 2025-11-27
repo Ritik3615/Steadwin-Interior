@@ -36,7 +36,19 @@ export const sideConfig = {
     general: [
       { name: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
       { name: "Parties", path: "/parties", icon: Users },
-      { name: "Leads", path: "/leads", icon: Users },
+      {
+        name: "Leads",
+        icon: Users,
+        children: [
+          { name: "Consultancy Lead", path: "/leads/consultancy-lead" },
+          { name: "Franchise Lead", path: "/lead/franchise-lead" },
+          { name: "Investor Lead", path: "/lead/investor-lead" },
+          { name: "New Subscriber", path: "/lead/new-subscriber" },
+          { name: "Quote Requests", path: "/lead/quote-request" },
+          { name: "Call Requests", path: "/lead/call-request" },
+        ],
+      },
+
       {
         name: "Items",
         path: "/items",
@@ -143,6 +155,18 @@ export const sideConfig = {
       { name: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
       { name: "Parties", path: "/parties", icon: Users },
       {
+        name: "Leads",
+        icon: Users,
+        children: [
+          { name: "Consultancy Lead", path: "/leads/consultancy-lead" },
+          { name: "Franchise Lead", path: "/lead/franchise-lead" },
+          { name: "Investor Lead", path: "/lead/investor-lead" },
+          { name: "New Subscriber", path: "/lead/new-subscriber" },
+          { name: "Quote Requests", path: "/lead/quote-request" },
+          { name: "Call Requests", path: "/lead/call-request" },
+        ],
+      },
+      {
         name: "Items",
         path: "/items",
         icon: Boxes,
@@ -232,17 +256,29 @@ export const sideConfig = {
           },
         ],
       },
-      { name: "Manage Users", path: "/users", icon: GrUserAdmin },
+      // { name: "Manage Users", path: "/users", icon: GrUserAdmin },
       { name: "HR Portal", path: "/Hrportal", icon: FcManager },
       { name: "Online Orders", path: "/online", icon: ShoppingCart },
       { name: "Settings", path: "/settings", icon: Settings },
     ],
   },
 
-  employee: {
+  user: {
     general: [
       { name: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
       { name: "Parties", path: "/parties", icon: Users },
+      {
+        name: "Leads",
+        icon: Users,
+        children: [
+          { name: "Consultancy Lead", path: "/leads/consultancy-lead" },
+          { name: "Franchise Lead", path: "/lead/franchise-lead" },
+          { name: "Investor Lead", path: "/lead/investor-lead" },
+          { name: "New Subscriber", path: "/lead/new-subscriber" },
+          { name: "Quote Requests", path: "/lead/quote-request" },
+          { name: "Call Requests", path: "/lead/call-request" },
+        ],
+      },
       {
         name: "Items",
         path: "/items",
@@ -333,17 +369,19 @@ export const sideConfig = {
           },
         ],
       },
-      { name: "Manage Users", path: "/users", icon: GrUserAdmin },
-      { name: "HR Portal", path: "/subadmin/Hrportal", icon: FcManager },
+      // { name: "Manage Users", path: "/users", icon: GrUserAdmin },
+      // { name: "HR Portal", path: "/subadmin/Hrportal", icon: FcManager },
       { name: "Online Orders", path: "/online", icon: ShoppingCart },
       { name: "Settings", path: "/settings", icon: Settings },
     ],
   },
-  settingsitems:[
-    {name: "Manage Business ", path: "/settings/business", icon: DockIcon},
-    {name: "Invoice Settings" , path: "/settings/invoicesetting", icon: Settings2Icon},
-    {name: "Manage Users ", path: "/settings/manage", icon: User},
-
-  ]
+  settingsitems: [
+    { name: "Manage Business ", path: "/settings/business", icon: DockIcon },
+    {
+      name: "Invoice Settings",
+      path: "/settings/invoicesetting",
+      icon: Settings2Icon,
+    },
+    { name: "Manage Users ", path: "/settings/manage", icon: User },
+  ],
 };
-

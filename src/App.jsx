@@ -8,6 +8,9 @@ import { AuthProvider } from "./Admin/context/Authcontext";
 import SubAdminApp from "./Admin/SubAdmin/SubAdminApp";
 import { useAuth } from "./Admin/context/Authcontext";
 import ScrollToTop from "./Components/ScrollToTop";
+import ForgotPassword from "./Admin/Pages/ForgotPassword";
+import ResetPassword from "./Admin/Pages/ResetPassword";
+import UserApp from "./Admin/Users/UserApp";
 
 // Lazy load pages
 const Home = lazy(() => import("./Components/Home"));
@@ -49,6 +52,7 @@ function App() {
         {/* Hide Navbar on login */}
         {!location.pathname.startsWith("/login") &&
           !location.pathname.toLowerCase().startsWith("/admin") &&
+          !location.pathname.toLowerCase().startsWith("/user") &&
           !location.pathname.toLowerCase().startsWith("/subadmin") && (
             <Navbar />
           )}
@@ -108,7 +112,7 @@ function App() {
             element={
               <Suspense fallback={<Loader />}>
                 <PrivateRoute>
-                  <SubAdminApp />
+                  <SubAdminApp user={user}/>
                 </PrivateRoute>
               </Suspense>
             }
@@ -120,6 +124,16 @@ function App() {
               <Suspense fallback={<Loader />}>
                 <PrivateRoute>
                   <AdminApp user={user} />
+                </PrivateRoute>
+              </Suspense>
+            }
+          />
+          <Route
+            path="/user/*"
+            element={
+              <Suspense fallback={<Loader />}>
+                <PrivateRoute>
+                  <UserApp user={user} />
                 </PrivateRoute>
               </Suspense>
             }
@@ -226,6 +240,22 @@ function App() {
             element={
               <Suspense fallback={<Loader />}>
                 <InvestorForm />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/ForgotPassword"
+            element={
+              <Suspense fallback={<Loader />}>
+                <ForgotPassword />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/ResetPassword"
+            element={
+              <Suspense fallback={<Loader />}>
+                <ResetPassword />
               </Suspense>
             }
           />

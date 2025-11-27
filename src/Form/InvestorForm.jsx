@@ -1,17 +1,19 @@
 import React, { useState } from "react";
+import axios from "axios";
 import Footer from "../Components/Footer";
 import { Mail } from "lucide-react";
 
-export default function InvestorForm({ endpoint, onSuccess }) {
+export default function InvestorForm() {
   const [form, setForm] = useState({
-    fullName: "",
+    name: "",
     email: "",
     phone: "",
     company: "",
+    amount: "",
     expectedInvestment: "",
     message: "",
     consent: false,
-    website: "",
+    website: "", // honeypot bot trap
   });
 
   const [errors, setErrors] = useState({});
@@ -21,19 +23,21 @@ export default function InvestorForm({ endpoint, onSuccess }) {
 
   const validate = () => {
     const e = {};
-    if (!form.fullName.trim()) e.fullName = "Full name is required.";
+
+    if (!form.name.trim()) e.name = "Full name is required.";
     if (!form.email.trim()) e.email = "Email is required.";
     else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(form.email))
-      e.email = "Invalid email.";
+      e.email = "Invalid email format.";
 
     if (!form.phone.trim()) e.phone = "Phone is required.";
     if (!form.company.trim()) e.company = "Company is required.";
+
+    if (!form.amount.trim()) e.amount = "Investment amount is required.";
+
     if (!form.expectedInvestment.trim())
       e.expectedInvestment = "Expected investment is required.";
 
-    if (!form.consent)
-      e.consent = "Please allow us to contact you.";
-
+    if (!form.consent) e.consent = "Please allow us to contact you.";
     if (form.website.length > 0) e.website = "Bot detected.";
 
     return e;
@@ -49,8 +53,8 @@ export default function InvestorForm({ endpoint, onSuccess }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const validation = validate();
 
+    const validation = validate();
     if (Object.keys(validation).length > 0) {
       setErrors(validation);
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -61,68 +65,53 @@ export default function InvestorForm({ endpoint, onSuccess }) {
     setStatus(null);
 
     const payload = {
-      name: form.fullName,
+      name: form.name,
       email: form.email,
       phone: form.phone,
       company: form.company,
+      amount: Number(form.amount),
       expectedInvestment: form.expectedInvestment,
       message: form.message,
-      timestamp: new Date().toISOString(),
-      source: "Investor Form - Steadwin Group",
+      consent: form.consent,
+      website: form.website, // honeypot
     };
 
     try {
-      if (endpoint) {
-        const res = await fetch(endpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        });
+      const res = await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/api/investor/submit`,
+        payload
+      );
 
-        if (!res.ok) throw new Error("Server error");
-
-        setStatus("success");
-        setStatusMessage("Your investor request has been submitted!");
-      } else {
-        const subject = encodeURIComponent(
-          `Investor enquiry — ${payload.name} / ${payload.company}`
-        );
-        const body = encodeURIComponent(
-          Object.entries(payload)
-            .map(([k, v]) => `${k}: ${v}`)
-            .join("\n")
-        );
-
-        window.location.href = `mailto:investors@steadwingroup.com?subject=${subject}&body=${body}`;
-        setStatus("success");
-        setStatusMessage(
-          "Mail client opened. If it didn’t, email investors@steadwingroup.com"
-        );
-      }
+      setStatus("success");
+      setStatusMessage("Your investor request has been submitted!");
 
       setForm({
-        fullName: "",
+        name: "",
         email: "",
         phone: "",
         company: "",
+        amount: "",
         expectedInvestment: "",
         message: "",
         consent: false,
         website: "",
       });
-
-      if (onSuccess) onSuccess(payload);
     } catch (err) {
       setStatus("error");
-      setStatusMessage("Couldn't submit. Try again later.");
+      setStatusMessage("Failed to submit. Try again later.");
     } finally {
       setSubmitting(false);
     }
   };
 
+  const inputClass = (field, extra = "") =>
+    `mt-2 w-full p-3 rounded-xl bg-white/80 border ${
+      errors[field] ? "border-red-400" : "border-gray-300"
+    } shadow focus:ring-4 ${extra}`;
+
   return (
     <>
-      {/* PAGE HEADER */}
+      {/* HEADER */}
       <section className="h-[45vh] relative bg-gradient-to-r from-blue-700 via-blue-500 to-cyan-400 flex items-center justify-center px-6 mt-10 md:mt-20">
         <div className="absolute inset-0 bg-black/30"></div>
 
@@ -131,11 +120,10 @@ export default function InvestorForm({ endpoint, onSuccess }) {
         </h1>
       </section>
 
-      {/* FORM CARD */}
+      {/* FORM */}
       <section className="max-w-4xl mx-auto -mt-20 mb-16">
         <div className="bg-white/40 backdrop-blur-2xl border border-white/40 shadow-2xl rounded-3xl p-8 md:p-12">
 
-          {/* Title */}
           <h2 className="text-3xl font-bold text-[#123e57] mb-4">
             Partner With Steadwin
           </h2>
@@ -144,38 +132,34 @@ export default function InvestorForm({ endpoint, onSuccess }) {
             opportunities & partnerships.
           </p>
 
-          {/* Status Alerts */}
+          {/* Alerts */}
           {status === "success" && (
             <div className="bg-green-100 border border-green-300 text-green-700 p-3 rounded-lg mb-4">
               {statusMessage}
             </div>
           )}
+
           {status === "error" && (
             <div className="bg-red-100 border border-red-300 text-red-700 p-3 rounded-lg mb-4">
               {statusMessage}
             </div>
           )}
 
-          {/* FORM START */}
           <form onSubmit={handleSubmit}>
 
             <div className="grid md:grid-cols-2 gap-6">
 
-              {/* FULL NAME */}
+              {/* NAME */}
               <div>
                 <label className="text-gray-800 font-semibold">Full Name</label>
                 <input
                   type="text"
-                  value={form.fullName}
-                  onChange={handleChange("fullName")}
-                  placeholder="Enter full name"
-                  className={`mt-2 w-full p-3 rounded-xl bg-white/80 border ${
-                    errors.fullName ? "border-red-400" : "border-gray-300"
-                  } shadow focus:ring-4 focus:ring-blue-300`}
+                  value={form.name}
+                  onChange={handleChange("name")}
+                  placeholder="Enter name"
+                  className={inputClass("name", "focus:ring-blue-300")}
                 />
-                {errors.fullName && (
-                  <p className="text-red-600 text-sm mt-1">{errors.fullName}</p>
-                )}
+                {errors.name && <p className="text-red-600 text-sm">{errors.name}</p>}
               </div>
 
               {/* EMAIL */}
@@ -186,12 +170,10 @@ export default function InvestorForm({ endpoint, onSuccess }) {
                   value={form.email}
                   onChange={handleChange("email")}
                   placeholder="you@example.com"
-                  className={`mt-2 w-full p-3 rounded-xl bg-white/80 border ${
-                    errors.email ? "border-red-400" : "border-gray-300"
-                  } shadow focus:ring-4 focus:ring-cyan-300`}
+                  className={inputClass("email", "focus:ring-cyan-300")}
                 />
                 {errors.email && (
-                  <p className="text-red-600 text-sm mt-1">{errors.email}</p>
+                  <p className="text-red-600 text-sm">{errors.email}</p>
                 )}
               </div>
 
@@ -203,12 +185,10 @@ export default function InvestorForm({ endpoint, onSuccess }) {
                   value={form.phone}
                   onChange={handleChange("phone")}
                   placeholder="+91 XXXXX XXXXX"
-                  className={`mt-2 w-full p-3 rounded-xl bg-white/80 border ${
-                    errors.phone ? "border-red-400" : "border-gray-300"
-                  } shadow focus:ring-4 focus:ring-purple-300`}
+                  className={inputClass("phone", "focus:ring-purple-300")}
                 />
                 {errors.phone && (
-                  <p className="text-red-600 text-sm mt-1">{errors.phone}</p>
+                  <p className="text-red-600 text-sm">{errors.phone}</p>
                 )}
               </div>
 
@@ -219,18 +199,33 @@ export default function InvestorForm({ endpoint, onSuccess }) {
                   type="text"
                   value={form.company}
                   onChange={handleChange("company")}
-                  placeholder="Your organization"
-                  className={`mt-2 w-full p-3 rounded-xl bg-white/80 border ${
-                    errors.company ? "border-red-400" : "border-gray-300"
-                  } shadow focus:ring-4 focus:ring-amber-300`}
+                  placeholder="Your company"
+                  className={inputClass("company", "focus:ring-amber-300")}
                 />
                 {errors.company && (
-                  <p className="text-red-600 text-sm mt-1">{errors.company}</p>
+                  <p className="text-red-600 text-sm">{errors.company}</p>
+                )}
+              </div>
+
+              {/* INVESTMENT AMOUNT */}
+              <div>
+                <label className="text-gray-800 font-semibold">
+                  Investment Amount (₹)
+                </label>
+                <input
+                  type="number"
+                  value={form.amount}
+                  onChange={handleChange("amount")}
+                  placeholder="e.g 1000000"
+                  className={inputClass("amount", "focus:ring-teal-300")}
+                />
+                {errors.amount && (
+                  <p className="text-red-600 text-sm">{errors.amount}</p>
                 )}
               </div>
 
               {/* EXPECTED INVESTMENT */}
-              <div className="md:col-span-2">
+              <div>
                 <label className="text-gray-800 font-semibold">
                   Expected Investment
                 </label>
@@ -239,12 +234,13 @@ export default function InvestorForm({ endpoint, onSuccess }) {
                   value={form.expectedInvestment}
                   onChange={handleChange("expectedInvestment")}
                   placeholder="e.g ₹10,00,000"
-                  className={`mt-2 w-full p-3 rounded-xl bg-white/80 border ${
-                    errors.expectedInvestment ? "border-red-400" : "border-gray-300"
-                  } shadow focus:ring-4 focus:ring-teal-300`}
+                  className={inputClass(
+                    "expectedInvestment",
+                    "focus:ring-teal-300"
+                  )}
                 />
                 {errors.expectedInvestment && (
-                  <p className="text-red-600 text-sm mt-1">
+                  <p className="text-red-600 text-sm">
                     {errors.expectedInvestment}
                   </p>
                 )}
@@ -271,7 +267,8 @@ export default function InvestorForm({ endpoint, onSuccess }) {
                   className="mt-1 h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-400"
                 />
                 <span className="text-gray-700 text-sm">
-                  I agree to be contacted by Steadwin Group regarding investor opportunities.
+                  I agree to be contacted by Steadwin Group for investor
+                  opportunities.
                 </span>
               </label>
 
@@ -282,18 +279,17 @@ export default function InvestorForm({ endpoint, onSuccess }) {
               )}
             </div>
 
-            {/* SUBMIT BUTTON */}
+            {/* SUBMIT */}
             <div className="mt-8 flex flex-col md:flex-row items-center gap-4">
               <button
                 type="submit"
                 disabled={submitting}
                 className={`px-10 py-4 rounded-full text-lg font-semibold shadow-xl text-white transition transform hover:-translate-y-1
-                  ${
-                    submitting
-                      ? "bg-gray-400 cursor-not-allowed"
-                      : "bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400"
-                  }
-                `}
+                ${
+                  submitting
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : "bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400"
+                }`}
               >
                 {submitting ? "Submitting..." : "Submit Investment Inquiry →"}
               </button>
@@ -302,10 +298,11 @@ export default function InvestorForm({ endpoint, onSuccess }) {
                 type="button"
                 onClick={() =>
                   setForm({
-                    fullName: "",
+                    name: "",
                     email: "",
                     phone: "",
                     company: "",
+                    amount: "",
                     expectedInvestment: "",
                     message: "",
                     consent: false,

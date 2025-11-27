@@ -1,83 +1,55 @@
 import React, { useState } from "react";
 import logo from "../../assets/logo.png";
 import { useAuth } from "../context/Authcontext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import OfferSlides from "../Pages/OfferSlides";
 
 function Login() {
-  const { login } = useAuth(); // context se login function le liya
+  const { login } = useAuth();
   const navigate = useNavigate();
 
-  const [role, setRole] = useState(""); // Admin, SubAdmin, User
   const [userid, setUserid] = useState("");
   const [password, setPassword] = useState("");
-  const person = ["Admin", "SubAdmin", "User"];
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   if (!userid || !password || !role) {
-  //     alert("Please fill all fields");
-  //     return;
-  //   }
-
-  //   // fake authentication (backend connect karoge to api call karna)
-  //   const userData = {
-  //     name: userid,
-  //     role: role,
-  //     token: "dummy-jwt-token", // yaha backend se real token aayega
-  //   };
-  //   console.log(userData);
-  //   login(userData); // context me save
-
-  //   // role ke hisaab se navigate
-  //   if (userData.role === "Admin") {
-  //     navigate("/admin/dashboard");
-  //   } else if (userData.role === "SubAdmin") {
-  //     navigate("/SubAdmin/dashboard");
-  //   } else {
-  //     navigate("/user/dashboard");
-  //   } // redirect
-
-  // };
+  const [role, setRole] = useState(""); // Admin, SubAdmin, User
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!userid || !password || !role) {
-      alert("Please fill all fields");
-      return;
-    }
-
     try {
-      const response = await fetch("http://localhost:8081/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: userid, password: password }),
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/auth/login`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: userid, password }),
+        }
+      );
 
       if (!response.ok) {
-        throw new Error("Invalid credentials");
+        alert("Invalid credentials");
+        return;
       }
 
-      const userData = await response.json();
-      console.log(userData);
+      const data = await response.json();
 
-      // Use backend role if available, otherwise frontend selected role
-      const finalRole = userData.role || role;
-      userData.role = finalRole;
-      console.log(finalRole)
-      // Save in context
-      login(userData);
-      console.log(userData);
+      console.log("LOGIN RAW RESPONSE:", data);
 
-      // Navigate based on role
-      if (finalRole === "Admin") navigate("/Admin/Dashboard");
-      else if (finalRole === "SubAdmin") navigate("/SubAdmin/dashboard");
+      // Build REAL user object
+      const user = {
+        name: data.name,
+        email: data.email,
+        role: data.role,
+      };
+
+      // Save token
+      login({ token: data.token, user });
+
+      // Redirect based on backend role (not frontend radio button)
+      if (data.role === "ADMIN") navigate("/admin/dashboard");
+      else if (data.role === "SUBADMIN") navigate("/subadmin/dashboard");
       else navigate("/user/dashboard");
     } catch (error) {
-      console.error(error);
-      alert(error.message);
+      console.error("Login Error:", error);
     }
   };
 
@@ -101,41 +73,39 @@ function Login() {
               Login
             </h1>
 
-            <form
-              onSubmit={handleSubmit}
-              className="flex flex-col gap-5 mt-5 text-white"
-            >
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5 mt-5">
               <input
                 type="text"
                 value={userid}
                 onChange={(e) => setUserid(e.target.value)}
                 placeholder="Enter UserId"
-                className="placeholder-blue-50 px-2 py-1 rounded-2xl border-2 mx-7 text-black"
+                className="px-2 py-1 rounded-2xl border-2 mx-7 text-black"
               />
+
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter Password"
-                className="placeholder-blue-50 px-2 py-1 rounded-2xl border-2 mx-7 text-black"
+                className="px-2 py-1 rounded-2xl border-2 mx-7 text-black"
               />
 
-              <div className="mt-5 flex gap-5 mx-7">
-                {person.map((p) => (
-                  <label key={p} className="flex items-center gap-2">
+              {/* <div className="mt-5 flex gap-5 mx-7">
+                {["Admin", "SubAdmin", "User"].map((r) => (
+                  <label key={r} className="flex items-center gap-2">
                     <input
                       type="radio"
                       name="role"
-                      value={p}
-                      checked={role === p}
-                      onChange={() => setRole(p)}
+                      value={r}
+                      checked={role === r}
+                      onChange={() => setRole(r)}
                     />
                     <span className="bg-sky-100 px-2 rounded-2xl text-black">
-                      {p}
+                      {r}
                     </span>
                   </label>
                 ))}
-              </div>
+              </div> */}
 
               <button
                 type="submit"
@@ -144,12 +114,17 @@ function Login() {
                 Submit
               </button>
             </form>
+
             <p className="p-2">
-              <a className="text-white hover:text-blue-900" href="">
+              <Link
+                className="text-white hover:text-blue-900"
+                to="/ForgotPassword"
+              >
                 forget password
-              </a>
+              </Link>
             </p>
           </div>
+
           <div className="relative p-5 text-white text-center h-full w-full shadow-2xl">
             <OfferSlides />
           </div>

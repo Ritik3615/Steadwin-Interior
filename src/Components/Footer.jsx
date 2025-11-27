@@ -12,6 +12,7 @@ import NewsletterForm from "../Form/NewsletterForm";
 import { BsTwitterX } from "react-icons/bs";
 import { FiMail } from "react-icons/fi";
 import { BiPhoneCall } from "react-icons/bi";
+import { RiAdminLine } from "react-icons/ri";
 
 export default function Footer() {
   return (
@@ -99,7 +100,9 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-bold mb-4 text-yellow-400">Contact</h3>
           <p className="text-gray-300">3rd Floor, Chandapura</p>
-          <p className="text-gray-300">Dommasandra Rd, opposite Bethany High,</p>
+          <p className="text-gray-300">
+            Dommasandra Rd, opposite Bethany High,
+          </p>
           <p className="text-gray-300"> Sarjapura, Kommasandra, Bengaluru </p>
           <p className="text-gray-300">Karnataka 562125</p>
 
@@ -188,6 +191,9 @@ export default function Footer() {
             rel="noopener noreferrer"
           >
             <BsTwitterX className="h-5 w-5  hover:text-blue-300 transition" />
+          </a>
+          <a href="/login" target="_blank">
+            <RiAdminLine className="h-5 w-5" />
           </a>
         </div>
       </div>

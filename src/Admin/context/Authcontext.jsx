@@ -1,47 +1,48 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState } from "react";
 
-// 1. Create context
-const AuthContext = createContext();
+const AuthContext = createContext(null);
 
-// 2. Provider component
-export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(() => {
-    const savedUser = localStorage.getItem("user");
-    return savedUser ? JSON.parse(savedUser) : null;
+export function AuthProvider({ children }) {
+
+  // ALWAYS load clean object
+  const [auth, setAuth] = useState(() => {
+    const raw = localStorage.getItem("auth_v2");
+    return raw ? JSON.parse(raw) : null;
   });
 
-  // Check localStorage on mount
-  useEffect(() => {
-    const storedUser = localStorage.getItem("user");
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
-    }
-  }, []);
+  const login = ({ token, user }) => {
+    const payload = {
+      token,
+      user: {
+        name: user.name,
+        email: user.email,
+        role: user.role,
+      }
+    };
 
-  useEffect(() => {
-    if (user) {
-      localStorage.setItem("user", JSON.stringify(user));
-    } else {
-      localStorage.removeItem("user");
-    }
-  }, [user]);
-
-  const login = (data) => {
-    setUser(data);
-    localStorage.setItem("user", JSON.stringify(data));
+    localStorage.setItem("auth_v2", JSON.stringify(payload));
+    setAuth(payload);
   };
 
   const logout = () => {
-    setUser(null);
-    localStorage.removeItem("user");
+    localStorage.removeItem("auth_v2");
+    setAuth(null);
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider
+      value={{
+        token: auth?.token || null,
+        user: auth?.user || null,
+        role: auth?.user?.role || null,
+        isAuthenticated: !!auth?.token,
+        login,
+        logout,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
-};
+}
 
-// 3. Custom hook to use auth
 export const useAuth = () => useContext(AuthContext);

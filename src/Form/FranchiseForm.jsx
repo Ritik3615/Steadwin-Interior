@@ -1,7 +1,11 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 export default function FranchiseForm() {
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState("");
+  const [fail, setFail] = useState("");
 
   const [form, setForm] = useState({
     title: "",
@@ -42,12 +46,43 @@ export default function FranchiseForm() {
     return Object.keys(temp).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setSuccess("");
+    setFail("");
 
     if (!validateForm()) return;
 
-    console.log("Form submitted:", form);
+    setLoading(true);
+
+    try {
+      const res = await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/api/franchise/submit`,
+        form
+      );
+
+      setSuccess("Form submitted successfully!");
+      setForm({
+        title: "",
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        city: "",
+        state: "",
+        addresh: "",
+        pincode: "",
+        businessSpace: "",
+        budget: "",
+        businessType: "",
+        howYouKnow: "",
+      });
+
+    } catch (err) {
+      setFail("Failed to submit. Try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputClass = (field) =>
@@ -67,15 +102,27 @@ export default function FranchiseForm() {
           Franchise Application Form
         </h2>
 
+        {success && (
+          <p className="text-green-600 text-center mb-4 font-semibold">
+            {success}
+          </p>
+        )}
+        {fail && (
+          <p className="text-red-600 text-center mb-4 font-semibold">
+            {fail}
+          </p>
+        )}
+
         <form
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
           onSubmit={handleSubmit}
         >
-          {/* TITLE */}
+          {/* Title */}
           <div>
             <select
               name="title"
               className={inputClass("title")}
+              value={form.title}
               onChange={handleChange}
             >
               <option value="">Title</option>
@@ -83,38 +130,35 @@ export default function FranchiseForm() {
               <option>Ms</option>
               <option>Mrs</option>
             </select>
-            {errors.title && (
-              <p className="text-red-500 text-sm mt-1">{errors.title}</p>
-            )}
+            {errors.title && <p className="text-red-500 text-sm">{errors.title}</p>}
           </div>
 
-          <div></div>
-
-          {/* FIRST NAME */}
+          {/* FIRST + LAST NAME */}
           <div>
             <input
               type="text"
               name="firstName"
               placeholder="First Name"
               className={inputClass("firstName")}
+              value={form.firstName}
               onChange={handleChange}
             />
             {errors.firstName && (
-              <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>
+              <p className="text-red-500 text-sm">{errors.firstName}</p>
             )}
           </div>
 
-          {/* LAST NAME */}
           <div>
             <input
               type="text"
               name="lastName"
               placeholder="Last Name"
               className={inputClass("lastName")}
+              value={form.lastName}
               onChange={handleChange}
             />
             {errors.lastName && (
-              <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>
+              <p className="text-red-500 text-sm">{errors.lastName}</p>
             )}
           </div>
 
@@ -125,10 +169,11 @@ export default function FranchiseForm() {
               name="email"
               placeholder="Email Address"
               className={inputClass("email")}
+              value={form.email}
               onChange={handleChange}
             />
             {errors.email && (
-              <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+              <p className="text-red-500 text-sm">{errors.email}</p>
             )}
           </div>
 
@@ -139,10 +184,11 @@ export default function FranchiseForm() {
               name="phone"
               placeholder="Phone Number"
               className={inputClass("phone")}
+              value={form.phone}
               onChange={handleChange}
             />
             {errors.phone && (
-              <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+              <p className="text-red-500 text-sm">{errors.phone}</p>
             )}
           </div>
 
@@ -153,11 +199,10 @@ export default function FranchiseForm() {
               name="city"
               placeholder="City"
               className={inputClass("city")}
+              value={form.city}
               onChange={handleChange}
             />
-            {errors.city && (
-              <p className="text-red-500 text-sm mt-1">{errors.city}</p>
-            )}
+            {errors.city && <p className="text-red-500 text-sm">{errors.city}</p>}
           </div>
 
           {/* STATE */}
@@ -165,6 +210,7 @@ export default function FranchiseForm() {
             <select
               name="state"
               className={inputClass("state")}
+              value={form.state}
               onChange={handleChange}
             >
               <option value="">Select State</option>
@@ -188,21 +234,22 @@ export default function FranchiseForm() {
               ))}
             </select>
             {errors.state && (
-              <p className="text-red-500 text-sm mt-1">{errors.state}</p>
+              <p className="text-red-500 text-sm">{errors.state}</p>
             )}
           </div>
 
-          {/* ADDRESS FULL WIDTH */}
+          {/* ADDRESS */}
           <div className="md:col-span-2">
             <textarea
               name="addresh"
               placeholder="Full Address"
               className={inputClass("addresh")}
               rows="2"
+              value={form.addresh}
               onChange={handleChange}
             ></textarea>
             {errors.addresh && (
-              <p className="text-red-500 text-sm mt-1">{errors.addresh}</p>
+              <p className="text-red-500 text-sm">{errors.addresh}</p>
             )}
           </div>
 
@@ -213,10 +260,11 @@ export default function FranchiseForm() {
               name="pincode"
               placeholder="Pincode"
               className={inputClass("pincode")}
+              value={form.pincode}
               onChange={handleChange}
             />
             {errors.pincode && (
-              <p className="text-red-500 text-sm mt-1">{errors.pincode}</p>
+              <p className="text-red-500 text-sm">{errors.pincode}</p>
             )}
           </div>
 
@@ -227,12 +275,11 @@ export default function FranchiseForm() {
               name="businessSpace"
               placeholder="Business Space (sqft)"
               className={inputClass("businessSpace")}
+              value={form.businessSpace}
               onChange={handleChange}
             />
             {errors.businessSpace && (
-              <p className="text-red-500 text-sm mt-1">
-                {errors.businessSpace}
-              </p>
+              <p className="text-red-500 text-sm">{errors.businessSpace}</p>
             )}
           </div>
 
@@ -243,10 +290,11 @@ export default function FranchiseForm() {
               name="budget"
               placeholder="Your Budget (₹)"
               className={inputClass("budget")}
+              value={form.budget}
               onChange={handleChange}
             />
             {errors.budget && (
-              <p className="text-red-500 text-sm mt-1">{errors.budget}</p>
+              <p className="text-red-500 text-sm">{errors.budget}</p>
             )}
           </div>
 
@@ -255,6 +303,7 @@ export default function FranchiseForm() {
             <select
               name="businessType"
               className={inputClass("businessType")}
+              value={form.businessType}
               onChange={handleChange}
             >
               <option value="">Business Type</option>
@@ -264,9 +313,7 @@ export default function FranchiseForm() {
               <option>Contractor / Architect</option>
             </select>
             {errors.businessType && (
-              <p className="text-red-500 text-sm mt-1">
-                {errors.businessType}
-              </p>
+              <p className="text-red-500 text-sm">{errors.businessType}</p>
             )}
           </div>
 
@@ -277,19 +324,21 @@ export default function FranchiseForm() {
               placeholder="How did you hear about us?"
               className={inputClass("howYouKnow")}
               rows="3"
+              value={form.howYouKnow}
               onChange={handleChange}
             ></textarea>
             {errors.howYouKnow && (
-              <p className="text-red-500 text-sm mt-1">{errors.howYouKnow}</p>
+              <p className="text-red-500 text-sm">{errors.howYouKnow}</p>
             )}
           </div>
 
           {/* SUBMIT BUTTON */}
           <button
             type="submit"
-            className="md:col-span-2 bg-blue-600 py-3 rounded text-white font-bold hover:bg-blue-700 transition cursor-pointer"
+            disabled={loading}
+            className="md:col-span-2 bg-blue-600 py-3 rounded text-white font-bold hover:bg-blue-700 transition cursor-pointer disabled:bg-gray-400 disabled:cursor-not-allowed"
           >
-            Submit Application
+            {loading ? "Submitting..." : "Submit Application"}
           </button>
         </form>
       </div>

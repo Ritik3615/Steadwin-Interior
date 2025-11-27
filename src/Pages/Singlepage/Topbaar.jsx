@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { LiaLinkedinIn } from "react-icons/lia";
 import { BsInstagram, BsMailbox, BsTwitterX } from "react-icons/bs";
 import { ImFacebook } from "react-icons/im";
 import { FiMail } from "react-icons/fi";
 import { BiPhoneCall } from "react-icons/bi";
 import { FaYoutube } from "react-icons/fa";
+import { CgLogIn } from "react-icons/cg";
+import { RiAdminLine } from "react-icons/ri";
 
 const TopBar = () => {
   const [isHidden, setIsHidden] = useState(false);
@@ -90,12 +93,15 @@ const TopBar = () => {
           >
             <BsInstagram className="h-5 w-5 text-red-500 hover:text-blue-300 transition" />
           </a>
-           <a
+          <a
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
           >
             <BsTwitterX className="h-5 w-5  hover:text-blue-300 transition" />
+          </a>
+          <a href="/login" target="_blank">
+            <RiAdminLine className="h-5 w-5" />
           </a>
         </div>
       </div>
